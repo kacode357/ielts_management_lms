@@ -1,0 +1,24 @@
+{
+  "app": {
+    "name": "IELTS Management LMS",
+    "version": "1.0.0",
+    "description": "Learning Management System for IELTS Teachers and Students"
+  },
+  "pagination": {
+    "defaultLimit": 20,
+    "maxLimit": 100
+  },
+  "student": {
+    "maxCoursesPerStudent": 15,
+    "defaultTargetBand": 6.5
+  },
+  "course": {
+    "maxStudentsPerClass": 30,
+    "defaultDurationWeeks": 12
+  },
+  "assessment": {
+    "bandScoreMin": 0,
+    "bandScoreMax": 9,
+    "bandScoreStep": 0.5
+  }
+}
