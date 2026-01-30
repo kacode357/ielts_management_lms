@@ -1,5 +1,5 @@
 // Kafka Configuration
-const { Kafka, logLevel } = require("kafkajs");
+const { Kafka, logLevel, Partitioners } = require("kafkajs");
 
 let kafka = null;
 let producer = null;
@@ -9,13 +9,11 @@ let initAttempted = false;
 const initKafka = () => {
   // Skip Kafka if disabled or already attempted
   if (process.env.KAFKA_ENABLED === "false") {
-    console.log("⊘ Kafka disabled (KAFKA_ENABLED=false)");
     return null;
   }
 
   // Skip if not explicitly enabled (default is disabled)
   if (process.env.KAFKA_ENABLED !== "true") {
-    console.log("⊘ Kafka not enabled (set KAFKA_ENABLED=true to enable)");
     return null;
   }
 
@@ -29,12 +27,14 @@ const initKafka = () => {
     kafka = new Kafka({
       clientId: process.env.KAFKA_CLIENT_ID || "ielts-lms",
       brokers: (process.env.KAFKA_BROKERS || "localhost:9092").split(","),
-      connectionTimeout: 5000,
-      requestTimeout: 5000,
+      connectionTimeout: 10000,
+      requestTimeout: 30000,
       retry: {
-        retries: 0, // Disable retries to prevent spam
+        retries: 3,
+        initialRetryTime: 300,
+        maxRetryTime: 30000,
       },
-      logLevel: logLevel.WARN, // Reduce log verbosity
+      logLevel: logLevel.ERROR, // Only show errors
     });
 
     console.log("✓ Kafka client created");
@@ -47,7 +47,6 @@ const initKafka = () => {
       throw error;
     }
     
-    console.log("→ Running without Kafka (event publishing disabled)");
     return null;
   }
 };
@@ -57,15 +56,11 @@ const getKafkaProducer = async () => {
   
   if (!producer) {
     try {
-      producer = kafka.producer();
+      producer = kafka.producer({
+        createPartitioner: Partitioners.LegacyPartitioner, // Fix partitioner warning
+      });
       
-      // Set connection timeout
-      const connectPromise = producer.connect();
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error("Connection timeout")), 5000)
-      );
-      
-      await Promise.race([connectPromise, timeoutPromise]);
+      await producer.connect();
       console.log("✓ Kafka producer connected");
     } catch (error) {
       console.warn("⚠ Kafka producer unavailable:", error.message);
@@ -83,16 +78,12 @@ const getKafkaConsumer = async (groupId) => {
   if (!consumer) {
     try {
       consumer = kafka.consumer({ 
-        groupId: groupId || process.env.KAFKA_CONSUMER_GROUP || "ielts-lms-group" 
+        groupId: groupId || process.env.KAFKA_CONSUMER_GROUP || "ielts-lms-group",
+        sessionTimeout: 30000,
+        heartbeatInterval: 3000,
       });
       
-      // Set connection timeout
-      const connectPromise = consumer.connect();
-      const timeoutPromise = new Promise((_, reject) => 
-        setTimeout(() => reject(new Error("Connection timeout")), 5000)
-      );
-      
-      await Promise.race([connectPromise, timeoutPromise]);
+      await consumer.connect();
       console.log("✓ Kafka consumer connected");
     } catch (error) {
       console.warn("⚠ Kafka consumer unavailable:", error.message);
@@ -105,14 +96,16 @@ const getKafkaConsumer = async (groupId) => {
 };
 
 const disconnectKafka = async () => {
-  if (producer) {
-    await producer.disconnect();
-    console.log("✓ Kafka producer disconnected");
-  }
-  
-  if (consumer) {
-    await consumer.disconnect();
-    console.log("✓ Kafka consumer disconnected");
+  try {
+    if (producer) {
+      await producer.disconnect();
+    }
+    
+    if (consumer) {
+      await consumer.disconnect();
+    }
+  } catch (error) {
+    // Silent disconnect errors
   }
 };
 

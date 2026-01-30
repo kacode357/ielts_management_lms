@@ -5,6 +5,8 @@ class EventConsumer {
   constructor() {
     this.enabled = process.env.KAFKA_ENABLED !== "false";
     this.handlers = new Map();
+    this.consumer = null;
+    this.subscribedTopics = new Set();
   }
 
   /**
@@ -23,37 +25,45 @@ class EventConsumer {
    */
   async subscribe(topic, groupId = null) {
     if (!this.enabled) {
-      console.log(`Consumer not started (Kafka disabled): ${topic}`);
+      return;
+    }
+
+    // Avoid duplicate subscriptions
+    if (this.subscribedTopics.has(topic)) {
       return;
     }
 
     try {
-      const consumer = await getKafkaConsumer(groupId);
-      if (!consumer) return;
+      if (!this.consumer) {
+        this.consumer = await getKafkaConsumer(groupId);
+      }
 
-      await consumer.subscribe({ topic, fromBeginning: false });
+      if (!this.consumer) return;
 
-      await consumer.run({
-        eachMessage: async ({ topic, partition, message }) => {
-          try {
-            const event = JSON.parse(message.value.toString());
-            console.log(`Received event from ${topic}:`, event.type);
+      await this.consumer.subscribe({ topic, fromBeginning: false });
+      this.subscribedTopics.add(topic);
 
-            const handler = this.handlers.get(event.type);
-            if (handler) {
-              await handler(event.data);
-            } else {
-              console.warn(`No handler for event type: ${event.type}`);
+      // Only run consumer once
+      if (this.subscribedTopics.size === 1) {
+        await this.consumer.run({
+          eachMessage: async ({ topic, partition, message }) => {
+            try {
+              const event = JSON.parse(message.value.toString());
+              
+              const handler = this.handlers.get(event.type);
+              if (handler) {
+                await handler(event.data);
+              }
+            } catch (error) {
+              console.error("Error processing message:", error);
             }
-          } catch (error) {
-            console.error("Error processing message:", error);
-          }
-        },
-      });
+          },
+        });
+      }
 
-      console.log(`✓ Consumer subscribed to topic: ${topic}`);
+      console.log(`✓ Consumer subscribed to: ${topic}`);
     } catch (error) {
-      console.error(`Failed to subscribe to ${topic}:`, error);
+      console.error(`✗ Failed to subscribe to ${topic}:`, error.message);
     }
   }
 
@@ -62,13 +72,10 @@ class EventConsumer {
    */
   setupUserEventHandlers() {
     this.on("USER_REGISTERED", async (data) => {
-      console.log("Processing USER_REGISTERED:", data.email);
-      // Send welcome email
-      // Update analytics
+      // Send welcome email or update analytics
     });
 
     this.on("USER_LOGGED_IN", async (data) => {
-      console.log("Processing USER_LOGGED_IN:", data.email);
       // Update last login analytics
     });
   }
@@ -78,8 +85,7 @@ class EventConsumer {
    */
   setupNotificationEventHandlers() {
     this.on("EMAIL_NOTIFICATION", async (data) => {
-      console.log("Processing EMAIL_NOTIFICATION:", data.to);
-      // Send email via email service
+      // Send email notification
     });
   }
 }

@@ -1,5 +1,6 @@
 // Admin User Seeder
 const User = require("../models/user.model");
+const { USER_ROLES } = require("../constants/enums");
 
 async function ensureAdminUser() {
   try {
@@ -9,11 +10,10 @@ async function ensureAdminUser() {
     // Check if admin exists
     const existingAdmin = await User.findOne({
       email: adminEmail,
-      role: "admin",
+      role: USER_ROLES.ADMIN,
     });
 
     if (existingAdmin) {
-      console.log("✓ Admin user already exists");
       return existingAdmin;
     }
 
@@ -23,14 +23,9 @@ async function ensureAdminUser() {
       password: adminPassword,
       firstName: "Admin",
       lastName: "User",
-      role: "admin",
+      role: USER_ROLES.ADMIN,
       isActive: true,
     });
-
-    console.log("✓ Admin user created successfully");
-    console.log(`  Email: ${adminEmail}`);
-    console.log(`  Password: ${adminPassword}`);
-    console.log("  ⚠ Please change the default password after first login!");
 
     return admin;
   } catch (error) {

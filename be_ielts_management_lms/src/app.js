@@ -51,8 +51,9 @@ if (isSwaggerEnabled) {
   app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec, {
     customCss: '.swagger-ui .topbar { display: none }',
     customSiteTitle: "IELTS LMS API Documentation",
+    customJs: '/swagger-clear-auth.js',
     swaggerOptions: {
-      persistAuthorization: true,
+      persistAuthorization: false,
       displayRequestDuration: true,
       filter: true,
       syntaxHighlight: {
@@ -61,6 +62,23 @@ if (isSwaggerEnabled) {
       }
     }
   }));
+  
+  // Serve custom JS to clear authorization on page load
+  app.get('/swagger-clear-auth.js', (req, res) => {
+    res.type('application/javascript');
+    res.send(`
+      // Clear any saved authorization on page load
+      (function() {
+        localStorage.removeItem('authorized');
+        sessionStorage.clear();
+        // Clear Swagger UI auth
+        if (window.ui && window.ui.authActions) {
+          window.ui.authActions.logout(['bearerAuth']);
+        }
+      })();
+    `);
+  });
+  
   console.log("✓ Swagger UI enabled at /api-docs");
 } else {
   console.log("✗ Swagger UI disabled (NODE_ENV=" + process.env.NODE_ENV + ")");
@@ -68,6 +86,11 @@ if (isSwaggerEnabled) {
 
 // API Routes
 app.use("/api/auth", require("./routes/auth.routes"));
+app.use("/api/teachers", require("./routes/teacher.routes"));
+app.use("/api/courses", require("./routes/course.routes"));
+app.use("/api/course-levels", require("./routes/courseLevel.routes"));
+app.use("/api/schedules", require("./routes/schedule.routes"));
+app.use("/api/attendance", require("./routes/attendance.routes"));
 
 // 404 Handler
 app.use((req, res, next) => {

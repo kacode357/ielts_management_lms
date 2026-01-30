@@ -5,12 +5,8 @@ const MESSAGES = require("../constants/messages");
 
 async function auth(req, res, next) {
   try {
-    // Get token from header or cookie
-    let token = req.headers.authorization?.split(" ")[1]; // Bearer <token>
-    
-    if (!token) {
-      token = req.cookies.token;
-    }
+    // Get token from Authorization header only
+    const token = req.headers.authorization?.split(" ")[1]; // Bearer <token>
 
     if (!token) {
       throw new AppError(MESSAGES.ERROR.MISSING_TOKEN, 401);

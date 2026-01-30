@@ -65,14 +65,6 @@ exports.login = async (req, res, next) => {
     
     const { user, token } = await authService.login(email, password, lang);
     
-    // Set cookie
-    res.cookie("token", token, {
-      httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
-      maxAge: 7 * 24 * 60 * 60 * 1000, // 7 days
-    });
-    
     sendSuccess(res, { token, user }, 200, messages.AUTH.LOGIN_SUCCESS);
   } catch (error) {
     next(error);
@@ -94,7 +86,6 @@ exports.logout = async (req, res, next) => {
   try {
     const lang = req.headers["accept-language"] || "en";
     const messages = getMessages(lang);
-    res.clearCookie("token");
     sendSuccess(res, null, 200, messages.AUTH.LOGOUT_SUCCESS);
   } catch (error) {
     next(error);

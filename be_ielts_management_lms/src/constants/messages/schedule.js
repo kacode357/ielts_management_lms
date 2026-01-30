@@ -1,0 +1,22 @@
+// Schedule Messages Constants
+module.exports = {
+  GENERATED: "Schedules generated successfully",
+  UPDATED: "Schedule updated successfully",
+  DELETED: "Schedule deleted successfully",
+  BULK_DELETED: "All schedules for course deleted successfully",
+  NOT_FOUND: "Schedule not found",
+  LIST_SUCCESS: "Schedules retrieved successfully",
+  DETAIL_SUCCESS: "Schedule details retrieved successfully",
+  COURSE_NOT_FOUND: "Course not found for schedule generation",
+  TEACHER_SCHEDULE_SUCCESS: "Teacher schedule retrieved successfully",
+  STUDENT_SCHEDULE_SUCCESS: "Student schedule retrieved successfully",
+  ATTENDANCE_UPDATED: "Attendance updated successfully",
+  ATTENDANCES_UPDATED: "Attendances updated successfully",
+  ATTENDANCE_EDIT_SAME_DAY_ONLY: "You can only edit attendance on the same day as the schedule",
+  INVALID_WEEK_DAYS: "Invalid week days provided",
+  INVALID_TIME_RANGE: "Start time must be before end time",
+  NO_SCHEDULES_GENERATED: "No schedules generated - check date range and week days",
+  TEACHER_PERMISSION_DENIED: "You can only update schedules for courses you teach",
+  SUBSTITUTE_TEACHER_NOT_FOUND: "Substitute teacher not found",
+  LESSON_NOT_FOUND: "Lesson not found",
+};

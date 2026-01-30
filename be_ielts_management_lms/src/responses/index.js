@@ -1,24 +1,28 @@
-// Response Messages Manager
-const en = require("./en");
-const vi = require("./vi");
-
-const messages = {
-  en,
-  vi,
-};
+// Response Messages Manager - Multi-language support
+const common = require('./common');
+const auth = require('./auth');
+const course = require('./course');
+const schedule = require('./schedule');
 
 /**
  * Get messages for a specific language
  * @param {string} lang - Language code (en, vi)
- * @returns {Object} Messages object
+ * @returns {Object} Messages object grouped by module
  */
 const getMessages = (lang = "en") => {
-  return messages[lang] || messages.en;
+  const validLang = ["en", "vi"].includes(lang) ? lang : "en";
+  
+  return {
+    COMMON: common[validLang],
+    AUTH: auth[validLang],
+    COURSE: course[validLang],
+    SCHEDULE: schedule[validLang],
+  };
 };
 
 /**
  * Get a specific message
- * @param {string} key - Message key (e.g., 'AUTH.LOGIN_SUCCESS')
+ * @param {string} key - Message key (e.g., 'COURSE.CREATED')
  * @param {string} lang - Language code
  * @returns {string} Message
  */

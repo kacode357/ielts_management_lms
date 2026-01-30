@@ -59,35 +59,36 @@ async function start() {
   }
 
   // Start HTTP server
-  const server = app.listen(PORT, () => {
-    console.log(`\n🚀 IELTS Management LMS API is running on port ${PORT}`);
-    console.log(`📚 Environment: ${process.env.NODE_ENV || "development"}`);
+  const server = app.listen(PORT, async () => {
+    console.log(`\n🚀 IELTS Management LMS API`);
+    console.log(`   Port: ${PORT}`);
+    console.log(`   Environment: ${process.env.NODE_ENV || "development"}`);
     
     // Show Swagger docs URL only in development
     if (process.env.NODE_ENV === "development" && 
         String(process.env.SWAGGER_UI_ENABLED || "true").toLowerCase() === "true") {
-      console.log(`📖 API Documentation: http://localhost:${PORT}/api-docs`);
+      console.log(`   Docs: http://localhost:${PORT}/api-docs`);
     }
     
     // Show service status
-    console.log("\n📡 Services Status:");
+    console.log(`\n📡 Services:`);
     console.log(`   MongoDB: ✓ Connected`);
     
     // Redis status
-    if (process.env.REDIS_ENABLED === "true") {
-      const redisHost = process.env.REDIS_HOST || "localhost";
-      const redisPort = process.env.REDIS_PORT || "6379";
-      console.log(`   Redis: ${redisHost}:${redisPort} (${getRedisClient() ? "✓ Connected" : "✗ Disconnected"})`);
-    } else {
-      console.log(`   Redis: ⊘ Disabled`);
-    }
+    const redisHost = process.env.REDIS_HOST || "localhost";
+    const redisPort = process.env.REDIS_PORT || "6379";
+    const redisStatus = getRedisClient() ? "✓" : "✗";
+    console.log(`   Redis: ${redisStatus} ${redisHost}:${redisPort}`);
     
-    // Kafka status
+    // Kafka status - wait a bit for producer to connect
     if (process.env.KAFKA_ENABLED === "true") {
       const kafkaBrokers = process.env.KAFKA_BROKERS || "localhost:9092";
-      console.log(`   Kafka: ${kafkaBrokers} (${getKafkaProducer() ? "✓ Connected" : "⊙ Initializing"})`);
-    } else {
-      console.log(`   Kafka: ⊘ Disabled`);
+      // Give Kafka time to connect
+      setTimeout(async () => {
+        const producer = await getKafkaProducer();
+        const kafkaStatus = producer ? "✓" : "✗";
+        console.log(`   Kafka: ${kafkaStatus} ${kafkaBrokers}`);
+      }, 1000);
     }
     
     console.log("");
