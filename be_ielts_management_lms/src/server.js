@@ -3,6 +3,9 @@ require("dotenv").config();
 
 const app = require("./app");
 const { initDatabase } = require("./db/init");
+const { connectRedis, getRedisClient, disconnectRedis } = require("./config/redis");
+const { initKafka, getKafkaProducer, disconnectKafka } = require("./config/kafka");
+const eventConsumer = require("./events/event.consumer");
 
 const PORT = process.env.PORT || 3001;
 
@@ -11,14 +14,8 @@ const PORT = process.env.PORT || 3001;
  */
 async function start() {
   try {
-    // Connect to PostgreSQL database
+    // Connect to MongoDB and initialize database
     await initDatabase();
-    
-    // Ensure admin user exists
-    const { ensureAdminUser } = require("./entities/auth/adminSeeder");
-    await ensureAdminUser();
-    
-    console.log("✓ Database initialized successfully");
   } catch (err) {
     const allowStartWithoutDb =
       String(process.env.ALLOW_START_WITHOUT_DB || "")
@@ -36,19 +33,85 @@ async function start() {
     );
   }
 
+  // Initialize Redis (optional)
+  try {
+    await connectRedis();
+  } catch (err) {
+    console.warn("⚠ Redis initialization failed:", err.message);
+  }
+
+  // Initialize Kafka (optional)
+  try {
+    const kafkaClient = initKafka();
+    
+    // Only setup consumers if Kafka is initialized
+    if (kafkaClient) {
+      // Setup event consumers
+      eventConsumer.setupUserEventHandlers();
+      eventConsumer.setupNotificationEventHandlers();
+      
+      // Subscribe to topics
+      await eventConsumer.subscribe("user.events");
+      await eventConsumer.subscribe("notification.events");
+    }
+  } catch (err) {
+    console.warn("⚠ Kafka initialization failed:", err.message);
+  }
+
   // Start HTTP server
-  app.listen(PORT, () => {
+  const server = app.listen(PORT, () => {
     console.log(`\n🚀 IELTS Management LMS API is running on port ${PORT}`);
     console.log(`📚 Environment: ${process.env.NODE_ENV || "development"}`);
-    console.log(`🔗 Health check: http://localhost:${PORT}/health`);
     
     // Show Swagger docs URL only in development
     if (process.env.NODE_ENV === "development" && 
         String(process.env.SWAGGER_UI_ENABLED || "true").toLowerCase() === "true") {
       console.log(`📖 API Documentation: http://localhost:${PORT}/api-docs`);
     }
+    
+    // Show service status
+    console.log("\n📡 Services Status:");
+    console.log(`   MongoDB: ✓ Connected`);
+    
+    // Redis status
+    if (process.env.REDIS_ENABLED === "true") {
+      const redisHost = process.env.REDIS_HOST || "localhost";
+      const redisPort = process.env.REDIS_PORT || "6379";
+      console.log(`   Redis: ${redisHost}:${redisPort} (${getRedisClient() ? "✓ Connected" : "✗ Disconnected"})`);
+    } else {
+      console.log(`   Redis: ⊘ Disabled`);
+    }
+    
+    // Kafka status
+    if (process.env.KAFKA_ENABLED === "true") {
+      const kafkaBrokers = process.env.KAFKA_BROKERS || "localhost:9092";
+      console.log(`   Kafka: ${kafkaBrokers} (${getKafkaProducer() ? "✓ Connected" : "⊙ Initializing"})`);
+    } else {
+      console.log(`   Kafka: ⊘ Disabled`);
+    }
+    
     console.log("");
   });
+
+  // Graceful shutdown
+  const gracefulShutdown = async () => {
+    console.log("\n🛑 Shutting down gracefully...");
+    
+    server.close(async () => {
+      await disconnectRedis();
+      await disconnectKafka();
+      process.exit(0);
+    });
+
+    // Force close after 10s
+    setTimeout(() => {
+      console.error("⚠ Forcing shutdown after timeout");
+      process.exit(1);
+    }, 10000);
+  };
+
+  process.on("SIGTERM", gracefulShutdown);
+  process.on("SIGINT", gracefulShutdown);
 }
 
 // Handle unhandled promise rejections

@@ -29,26 +29,14 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 /**
- * @openapi
+ * @swagger
  * /health:
  *   get:
- *     tags:
- *       - Health
- *     summary: Health check endpoint
+ *     tags: [Health]
+ *     summary: Health check
  *     responses:
  *       200:
  *         description: Service is healthy
- *         content:
- *           application/json:
- *             schema:
- *               type: object
- *               properties:
- *                 status:
- *                   type: string
- *                   example: ok
- *                 timestamp:
- *                   type: string
- *                   example: 2026-01-26T10:00:00.000Z
  */
 app.get("/health", (req, res) => {
   res.json({ 
@@ -79,37 +67,75 @@ if (isSwaggerEnabled) {
 }
 
 // API Routes
-app.use("/api/auth", require("./entities/auth/auth.routes"));
-app.use("/api/students", require("./entities/student/student.routes"));
-app.use("/api/teachers", require("./entities/teacher/teacher.routes"));
-app.use("/api/courses", require("./entities/course/course.routes"));
-app.use("/api/classes", require("./entities/class/class.routes"));
-app.use("/api/assessments", require("./entities/assessment/assessment.routes"));
-app.use("/api/attendance", require("./entities/attendance/attendance.routes"));
-app.use("/api/materials", require("./entities/material/material.routes"));
-app.use("/api/dashboard", require("./entities/dashboard/dashboard.routes"));
+app.use("/api/auth", require("./routes/auth.routes"));
 
 // 404 Handler
 app.use((req, res, next) => {
   res.status(404).json({
     success: false,
     message: `Route ${req.originalUrl} not found`,
+    errors: [],
   });
 });
 
-// Global Error Handler
+// Global Error Handler - Standard format
 app.use((err, req, res, next) => {
   console.error("Error:", err);
 
+  // Handle operational errors (AppError)
   if (isAppError(err)) {
-    return sendError(res, err);
+    return res.status(err.statusCode).json({
+      success: false,
+      message: err.message,
+      errors: err.details ? [{ message: err.message, field: err.details }] : [],
+    });
   }
 
-  // Default error response
+  // Handle Mongoose validation errors
+  if (err.name === 'ValidationError') {
+    const errors = Object.keys(err.errors).map(key => ({
+      message: err.errors[key].message,
+      field: key
+    }));
+    return res.status(400).json({
+      success: false,
+      message: null,
+      errors,
+    });
+  }
+
+  // Handle Mongoose duplicate key error
+  if (err.code === 11000) {
+    const field = Object.keys(err.keyPattern)[0];
+    return res.status(409).json({
+      success: false,
+      message: `${field} already exists`,
+      errors: [{ message: `${field} already exists`, field }],
+    });
+  }
+
+  // Handle JWT errors
+  if (err.name === 'JsonWebTokenError') {
+    return res.status(401).json({
+      success: false,
+      message: 'Invalid token',
+      errors: [],
+    });
+  }
+
+  if (err.name === 'TokenExpiredError') {
+    return res.status(401).json({
+      success: false,
+      message: 'Token expired',
+      errors: [],
+    });
+  }
+
+  // Default error response for unknown errors
   res.status(500).json({
     success: false,
-    message: MESSAGES.ERROR.INTERNAL_SERVER_ERROR,
-    error: process.env.NODE_ENV === "development" ? err.message : undefined,
+    message: process.env.NODE_ENV === 'development' ? err.message : MESSAGES.ERROR.INTERNAL_SERVER_ERROR,
+    errors: [],
   });
 });
 

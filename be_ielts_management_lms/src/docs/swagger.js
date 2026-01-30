@@ -81,11 +81,15 @@ const options = {
   },
   apis: [
     "./src/app.js",
-    "./src/entities/**/*.routes.js",
-    "./src/entities/**/*.model.js",
+    "./src/controllers/**/*.js",
+    "./src/routes/**/*.js",
+    "./src/models/**/*.js",
   ],
 };
 
-const swaggerSpec = swaggerJsdoc(options);
+// Function to regenerate swagger spec (for hot reload)
+const generateSwaggerSpec = () => {
+  return swaggerJsdoc(options);
+};
 
-module.exports = swaggerSpec;
+module.exports = generateSwaggerSpec();

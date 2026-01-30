@@ -1,235 +1,266 @@
-# IELTS Management LMS - Backend
+# IELTS Management LMS API
 
-Backend API cho hệ thống quản lý học sinh IELTS (IELTS Learning Management System).
-
-## 🚀 Tính năng
-
-- **Xác thực & Phân quyền**: JWT authentication với 3 roles (Admin, Teacher, Student)
-- **Quản lý Users**: Quản lý tài khoản học sinh và giáo viên
-- **Quản lý Courses**: Tạo và quản lý các khóa học IELTS
-- **Quản lý Classes**: Lớp học, lịch học, enrollment
-- **Đánh giá (Assessments)**: Ghi nhận điểm số 4 kỹ năng IELTS
-- **Điểm danh (Attendance)**: Theo dõi sự có mặt của học sinh
-- **Tài liệu học tập (Materials)**: Upload và quản lý tài liệu
-- **Dashboard**: Thống kê cho Admin, Teacher, Student
-- **API Documentation**: Swagger UI
-
-## 📁 Cấu trúc Project
+## 📁 Project Structure
 
 ```
-ielts_management_lms/
-├── config/
-│   └── default.json           # App configuration
-├── scripts/
-│   ├── create-db.js           # Database creation script
-│   └── seed-data.js           # Seed sample data
-├── src/
-│   ├── constants/
-│   │   └── messages.js        # Error/success messages
-│   ├── db/
-│   │   ├── init.js            # Database initialization
-│   │   └── sequelize.js       # Sequelize instance
-│   ├── docs/
-│   │   └── swagger.js         # Swagger configuration
-│   ├── entities/
-│   │   ├── auth/              # Authentication
-│   │   ├── student/           # Student management
-│   │   ├── teacher/           # Teacher management
-│   │   ├── course/            # Course management
-│   │   ├── class/             # Class management
-│   │   ├── assessment/        # Assessments & scores
-│   │   ├── attendance/        # Attendance tracking
-│   │   ├── material/          # Learning materials
-│   │   └── dashboard/         # Dashboard stats
-│   ├── middleware/
-│   │   ├── auth.js            # JWT authentication
-│   │   ├── authorizeRoles.js  # Role-based access
-│   │   └── validate.js        # Request validation
-│   ├── utils/
-│   │   ├── appError.js        # Custom error class
-│   │   ├── response.js        # Response helpers
-│   │   └── email.js           # Email utilities
-│   ├── app.js                 # Express app setup
-│   └── server.js              # Server entry point
-├── .env.example               # Environment variables template
-├── .gitignore
-├── package.json
-└── README.md
+src/
+├── models/              # Database models (Mongoose schemas)
+│   └── user.model.js
+├── controllers/         # Request handlers (handle HTTP requests/responses)
+│   └── auth.controller.js
+├── services/           # Business logic layer
+│   └── auth.service.js
+├── routes/             # API route definitions
+│   └── auth.routes.js
+├── responses/          # Multi-language response messages
+│   ├── index.js       # Response manager
+│   ├── en.js          # English messages
+│   └── vi.js          # Vietnamese messages
+├── middleware/         # Custom middleware
+│   ├── auth.js
+│   ├── authorizeRoles.js
+│   └── validate.js
+├── utils/             # Helper utilities
+│   ├── appError.js
+│   ├── email.js
+│   └── response.js
+├── docs/              # API documentation (Swagger)
+│   └── swagger.js
+├── db/                # Database configuration
+│   ├── init.js
+│   ├── mongoose.js
+│   └── adminSeeder.js
+├── constants/         # Application constants
+│   └── messages.js
+├── app.js            # Express app setup
+└── server.js         # Server entry point
 ```
 
-## 🛠️ Cài đặt
+## 🚀 Getting Started
 
-### Yêu cầu hệ thống
+### Prerequisites
+- Node.js >= 16
+- MongoDB
 
-- Node.js >= 16.x
-- MongoDB >= 5.0
-- npm hoặc yarn
-
-### Bước 1: Clone và cài đặt dependencies
+### Installation
 
 ```bash
-cd ielts_management_lms
+# Install dependencies
 npm install
-```
 
-### Bước 2: Cấu hình môi trường
-
-Copy file `.env.example` thành `.env` và điều chỉnh các giá trị:
-
-```bash
+# Copy environment file
 cp .env.example .env
-```
 
-Cập nhật thông tin database và JWT secret trong `.env`:
-
-```env
-MONGODB_URI=mongodb://localhost:27017/ielts_lms_db
-
-JWT_SECRET=your_secret_key_change_this
-```
-
-### Bước 3: Khởi động MongoDB
-
-Đảm bảo MongoDB đang chạy trên local:
-
-```bash
-# Kiểm tra MongoDB service
-mongosh
-```
-
-MongoDB sẽ tự động tạo database khi có dữ liệu đầu tiên.
-
-### Bước 4: Chạy server
-
-```bash
-# Development mode with auto-reload
+# Start development server
 npm run dev
-
-# Production mode
-npm start
 ```
 
-Server sẽ chạy tại: `http://localhost:3001`
+## 🌍 Multi-language Support
 
-## 📚 API Documentation
-
-Khi server đang chạy, truy cập Swagger UI tại:
-
-```
-http://localhost:3001/api-docs
-```
-
-## 🔑 Authentication
-
-API sử dụng JWT tokens. Có 2 cách để gửi token:
-
-1. **Authorization Header**:
-```
-Authorization: Bearer <token>
-```
-
-2. **Cookie** (tự động set sau khi login):
-```
-Cookie: token=<token>
-```
-
-## 👥 Roles & Permissions
-
-| Role | Permissions |
-|------|-------------|
-| **Admin** | Full access - Quản lý tất cả resources |
-| **Teacher** | Quản lý classes, students, assessments, materials |
-| **Student** | Xem thông tin cá nhân, classes, assessments của mình |
-
-## 📊 Database Models
-
-### User (Auth)
-- id, email, password, role, firstName, lastName, phone, avatar
-
-### Student
-- id, userId, studentCode, dateOfBirth, currentLevel, targetBand
-
-### Teacher
-- id, userId, teacherCode, specialization, experience, certifications
-
-### Course
-- id, name, code, description, level, duration, price
-
-### Class
-- id, courseId, teacherId, className, startDate, endDate, schedule
-
-### Assessment
-- id, studentId, classId, assessmentType, listeningScore, readingScore, writingScore, speakingScore
-
-### Attendance
-- id, studentId, classId, attendanceDate, status
-
-### Material
-- id, courseId, teacherId, title, materialType, fileUrl
-
-## 🔧 Scripts
+API hỗ trợ đa ngôn ngữ thông qua header `Accept-Language`:
 
 ```bash
-# Development
-npm run dev
+# English (default)
+curl -H "Accept-Language: en" http://localhost:5000/api/auth/login
 
-# Production
-npm start
-
-# Seed sample data
-npm run seed
-
-# Create database
-npm run create-db
+# Vietnamese
+curl -H "Accept-Language: vi" http://localhost:5000/api/auth/login
 ```
 
-## 🌟 Default Admin Account
+### Thêm ngôn ngữ mới
 
-Sau khi chạy server lần đầu, admin account sẽ được tạo tự động:
-
+1. Tạo file message mới: `src/responses/ja.js` (ví dụ tiếng Nhật)
+2. Thêm import vào `src/responses/index.js`:
+```javascript
+const ja = require("./ja");
+const messages = {
+  en,
+  vi,
+  ja, // Add here
+};
 ```
-Email: admin@ieltslms.com
-Password: Admin@123456
+
+## 📖 API Documentation (Swagger)
+
+Swagger UI tự động cập nhật khi bạn thay đổi controller:
+
+1. Mở: http://localhost:5000/api-docs
+2. Thêm JSDoc comments trong controller:
+
+```javascript
+/**
+ * @openapi
+ * /api/auth/register:
+ *   post:
+ *     tags:
+ *       - Authentication
+ *     summary: Register a new user
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         application/json:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               email:
+ *                 type: string
+ *     responses:
+ *       201:
+ *         description: User registered successfully
+ */
+exports.register = async (req, res, next) => {
+  // ...
+};
 ```
 
-⚠️ **Quan trọng**: Đổi password sau khi login lần đầu!
+3. Lưu file → Swagger UI tự động reload!
 
-## 📝 API Endpoints
+## 🔧 Development Workflow
+
+### 1. Tạo Model mới
+```javascript
+// src/models/course.model.js
+const mongoose = require("mongoose");
+
+const courseSchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  // ...
+});
+
+module.exports = mongoose.model("Course", courseSchema);
+```
+
+### 2. Tạo Service
+```javascript
+// src/services/course.service.js
+const Course = require("../models/course.model");
+const { getMessage } = require("../responses");
+
+class CourseService {
+  async createCourse(data, lang = "en") {
+    // Business logic here
+    return course;
+  }
+}
+
+module.exports = new CourseService();
+```
+
+### 3. Tạo Controller với Swagger Doc
+```javascript
+// src/controllers/course.controller.js
+const courseService = require("../services/course.service");
+const { sendSuccess } = require("../utils/response");
+const { getMessage } = require("../responses");
+
+/**
+ * @openapi
+ * /api/courses:
+ *   post:
+ *     tags:
+ *       - Courses
+ *     summary: Create new course
+ */
+exports.createCourse = async (req, res, next) => {
+  try {
+    const lang = req.headers["accept-language"] || "en";
+    const course = await courseService.createCourse(req.body, lang);
+    sendSuccess(res, { course }, 201, getMessage("COURSE.CREATE_SUCCESS", lang));
+  } catch (error) {
+    next(error);
+  }
+};
+```
+
+### 4. Tạo Routes
+```javascript
+// src/routes/course.routes.js
+const express = require("express");
+const router = express.Router();
+const courseController = require("../controllers/course.controller");
+const auth = require("../middleware/auth");
+
+router.post("/", auth, courseController.createCourse);
+
+module.exports = router;
+```
+
+### 5. Register Route trong app.js
+```javascript
+// src/app.js
+app.use("/api/courses", require("./routes/course.routes"));
+```
+
+### 6. Thêm Response Messages
+```javascript
+// src/responses/en.js
+module.exports = {
+  COURSE: {
+    CREATE_SUCCESS: "Course created successfully",
+    // ...
+  }
+};
+
+// src/responses/vi.js
+module.exports = {
+  COURSE: {
+    CREATE_SUCCESS: "Tạo khóa học thành công",
+    // ...
+  }
+};
+```
+
+## 🔐 Authentication
+
+Tất cả protected routes yêu cầu JWT token:
+
+```bash
+# Login để lấy token
+curl -X POST http://localhost:5000/api/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"admin@ieltslms.com","password":"Admin@123456"}'
+
+# Sử dụng token
+curl http://localhost:5000/api/auth/profile \
+  -H "Authorization: Bearer YOUR_TOKEN_HERE"
+```
+
+## 📝 Available Scripts
+
+```bash
+npm run dev      # Start development server with nodemon
+npm start        # Start production server
+```
+
+## 🌟 Features
+
+- ✅ Clean architecture (Models, Controllers, Services, Routes)
+- ✅ Multi-language support (EN, VI - easily extensible)
+- ✅ Auto-reload Swagger documentation
+- ✅ JWT authentication
+- ✅ MongoDB with Mongoose
+- ✅ Error handling middleware
+- ✅ Request validation
+- ✅ Role-based access control
+
+## 🔗 API Endpoints
 
 ### Authentication
-- POST `/api/auth/register` - Đăng ký
-- POST `/api/auth/login` - Đăng nhập
-- POST `/api/auth/logout` - Đăng xuất
-- GET `/api/auth/me` - Lấy thông tin user hiện tại
-- POST `/api/auth/change-password` - Đổi password
+- `POST /api/auth/register` - Register new user
+- `POST /api/auth/login` - Login user
+- `POST /api/auth/logout` - Logout user (protected)
+- `GET /api/auth/profile` - Get user profile (protected)
+- `PUT /api/auth/profile` - Update profile (protected)
+- `PUT /api/auth/change-password` - Change password (protected)
 
-### Students
-- GET `/api/students` - Danh sách students
-- GET `/api/students/:id` - Chi tiết student
-- POST `/api/students` - Tạo student
-- PUT `/api/students/:id` - Cập nhật student
-- DELETE `/api/students/:id` - Xóa student
+### Health Check
+- `GET /health` - API health check
 
-### Teachers, Courses, Classes, Assessments, Attendance, Materials
-- Tương tự cấu trúc CRUD
+## 📚 Resources
 
-### Dashboard
-- GET `/api/dashboard/admin` - Dashboard cho Admin
-- GET `/api/dashboard/teacher` - Dashboard cho Teacher
-- GET `/api/dashboard/student` - Dashboard cho Student
-
-## 🤝 Contributing
-
-1. Fork the project
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+- Swagger UI: http://localhost:5000/api-docs
+- Health Check: http://localhost:5000/health
 
 ## 📄 License
 
-ISC
-
-## 👨‍💻 Author
-
-IELTS Management LMS Team
+MIT
