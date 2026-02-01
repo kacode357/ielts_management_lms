@@ -63,7 +63,6 @@ const teacherSchema = new mongoose.Schema(
 );
 
 // Index for quick lookup
-teacherSchema.index({ teacherCode: 1 });
 teacherSchema.index({ userId: 1 });
 
 const Teacher = mongoose.model("Teacher", teacherSchema);

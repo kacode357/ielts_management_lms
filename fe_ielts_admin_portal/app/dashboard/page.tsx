@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useAuth } from "@/hooks";
 import { Loader2 } from "lucide-react";
+import { AdminLayout } from "@/components/layout/AdminLayout";
 
 export default function DashboardPage() {
   const router = useRouter();
@@ -31,36 +32,15 @@ export default function DashboardPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <header className="bg-white shadow-sm border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-          <h1 className="text-xl font-bold text-gray-900">IELTS Admin Portal</h1>
-          <div className="flex items-center gap-4">
-            <span className="text-sm text-gray-600">
-              {user.firstName} {user.lastName}
-            </span>
-            <button
-              onClick={logout}
-              className="text-sm text-red-600 hover:text-red-700 font-medium"
-            >
-              Logout
-            </button>
-          </div>
-        </div>
-      </header>
-
-      {/* Main Content */}
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="bg-white rounded-lg shadow p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">
-            Welcome to Admin Dashboard
-          </h2>
-          <p className="text-gray-600">
-            This is the admin dashboard. You can start building admin features here.
-          </p>
-        </div>
-      </main>
-    </div>
+    <AdminLayout>
+      <div className="bg-white rounded-lg shadow p-6">
+        <h2 className="text-2xl font-bold text-gray-900 mb-4">
+          Chào mừng đến Dashboard
+        </h2>
+        <p className="text-gray-600">
+          Đây là trang quản trị IELTS. Bạn có thể bắt đầu xây dựng các tính năng quản trị tại đây.
+        </p>
+      </div>
+    </AdminLayout>
   );
 }

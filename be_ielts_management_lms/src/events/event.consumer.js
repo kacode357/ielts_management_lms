@@ -7,6 +7,7 @@ class EventConsumer {
     this.handlers = new Map();
     this.consumer = null;
     this.subscribedTopics = new Set();
+    this.topicsToSubscribe = [];
   }
 
   /**
@@ -19,19 +20,23 @@ class EventConsumer {
   }
 
   /**
-   * Start consuming events from topic
+   * Queue a topic for subscription (use this for multiple topics)
    * @param {string} topic 
+   */
+  queueSubscribe(topic) {
+    if (!this.enabled) return;
+    if (!this.topicsToSubscribe.includes(topic)) {
+      this.topicsToSubscribe.push(topic);
+    }
+  }
+
+  /**
+   * Start consuming events from all queued topics
    * @param {string} groupId 
    */
-  async subscribe(topic, groupId = null) {
-    if (!this.enabled) {
-      return;
-    }
-
-    // Avoid duplicate subscriptions
-    if (this.subscribedTopics.has(topic)) {
-      return;
-    }
+  async start(groupId = null) {
+    if (!this.enabled) return;
+    if (this.topicsToSubscribe.length === 0) return;
 
     try {
       if (!this.consumer) {
@@ -40,30 +45,33 @@ class EventConsumer {
 
       if (!this.consumer) return;
 
-      await this.consumer.subscribe({ topic, fromBeginning: false });
-      this.subscribedTopics.add(topic);
+      // Subscribe to all topics at once
+      await this.consumer.subscribe({
+        topics: this.topicsToSubscribe,
+        fromBeginning: false,
+      });
 
-      // Only run consumer once
-      if (this.subscribedTopics.size === 1) {
-        await this.consumer.run({
-          eachMessage: async ({ topic, partition, message }) => {
-            try {
-              const event = JSON.parse(message.value.toString());
-              
-              const handler = this.handlers.get(event.type);
-              if (handler) {
-                await handler(event.data);
-              }
-            } catch (error) {
-              console.error("Error processing message:", error);
+      this.topicsToSubscribe.forEach((t) => this.subscribedTopics.add(t));
+
+      // Start consuming
+      await this.consumer.run({
+        eachMessage: async ({ topic, partition, message }) => {
+          try {
+            const event = JSON.parse(message.value.toString());
+            
+            const handler = this.handlers.get(event.type);
+            if (handler) {
+              await handler(event.data);
             }
-          },
-        });
-      }
+          } catch (error) {
+            console.error(`[${topic}] Error processing message:`, error.message);
+          }
+        },
+      });
 
-      console.log(`✓ Consumer subscribed to: ${topic}`);
+      console.log(`✓ Consumer subscribed to: ${Array.from(this.subscribedTopics).join(", ")}`);
     } catch (error) {
-      console.error(`✗ Failed to subscribe to ${topic}:`, error.message);
+      console.error("✗ Failed to start consumer:", error.message);
     }
   }
 

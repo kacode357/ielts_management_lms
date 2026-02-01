@@ -108,6 +108,27 @@ class TeacherService {
   }
 
   /**
+   * Get teachers for dropdown (simplified format)
+   * @returns {Promise<Array>} Array of { id, name, code }
+   */
+  async getTeachersForDropdown() {
+    // Get all teachers with user info
+    const teachers = await Teacher.find()
+      .populate("userId", "firstName lastName isActive")
+      .sort({ "userId.lastName": 1 });
+
+    // Filter active users and format
+    return teachers
+      .filter(t => t.userId && t.userId.isActive)
+      .map(t => ({
+        id: t._id,
+        name: `${t.userId.firstName} ${t.userId.lastName}`,
+        code: t.teacherCode,
+        specialization: t.specialization,
+      }));
+  }
+
+  /**
    * Get teacher by ID
    * @param {string} teacherId - Teacher ID
    * @param {string} lang - Language preference

@@ -5,7 +5,7 @@ const { ensureAdminUser } = require("../src/db/adminSeeder");
 const { ensureDefaultTeachers } = require("../src/db/teacherSeeder");
 const { ensureDefaultStudents } = require("../src/db/studentSeeder");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/ielts_lms_db";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 async function seedAllDefaultAccounts() {
   try {

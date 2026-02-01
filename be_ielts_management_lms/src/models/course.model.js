@@ -90,7 +90,6 @@ const courseSchema = new mongoose.Schema(
 );
 
 // Index for quick lookup
-courseSchema.index({ code: 1 });
 courseSchema.index({ teacherId: 1 });
 courseSchema.index({ status: 1 });
 

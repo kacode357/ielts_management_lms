@@ -7,13 +7,14 @@ const authorizeRoles = require("../middleware/authorizeRoles");
 
 // Public routes - anyone can view levels
 router.get("/", courseLevelController.getLevels);
+router.get("/dropdown", courseLevelController.getLevelsForDropdown);
 
-// Admin only routes (specific routes before parameterized routes)
+// Parameterized routes (MUST be after specific routes)
+router.get("/:id", courseLevelController.getLevelById);
+
+// Admin only routes
 router.post("/", auth, authorizeRoles("admin"), courseLevelController.createLevel);
 router.post("/reorder", auth, authorizeRoles("admin"), courseLevelController.reorderLevels);
-
-// Parameterized routes
-router.get("/:id", courseLevelController.getLevelById);
 router.put("/:id", auth, authorizeRoles("admin"), courseLevelController.updateLevel);
 router.delete("/:id", auth, authorizeRoles("admin"), courseLevelController.deleteLevel);
 

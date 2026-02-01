@@ -131,6 +131,18 @@ class CourseLevelService {
 
     return this.getLevels({ includeInactive: false });
   }
+
+  /**
+   * Get course levels for dropdown (simplified format)
+   * @returns {Promise<Array>} Array of { id, name, code }
+   */
+  async getLevelsForDropdown() {
+    const levels = await CourseLevel.find({ isActive: true })
+      .select("_id name code")
+      .sort({ order: 1, name: 1 });
+
+    return levels;
+  }
 }
 
 module.exports = new CourseLevelService();

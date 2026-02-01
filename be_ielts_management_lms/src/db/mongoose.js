@@ -4,9 +4,7 @@ require("dotenv").config();
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(
-      process.env.MONGODB_URI || "mongodb://localhost:27017/ielts_lms_db",
-      {
+    const conn = await mongoose.connect(process.env.MONGODB_URI, {
         // Options for Mongoose 6+
       }
     );

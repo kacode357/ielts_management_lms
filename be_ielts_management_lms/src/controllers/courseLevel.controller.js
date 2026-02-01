@@ -1,6 +1,6 @@
 // Course Level Controller
 const courseLevelService = require("../services/courseLevel.service");
-const { successResponse, errorResponse } = require("../utils/response");
+const { sendSuccess, sendError } = require("../utils/response");
 
 /**
  * @swagger
@@ -28,9 +28,9 @@ const { successResponse, errorResponse } = require("../utils/response");
 const getLevels = async (req, res) => {
   try {
     const levels = await courseLevelService.getLevels(req.query);
-    return successResponse(res, levels, "Course levels retrieved successfully");
+    return sendSuccess(res, levels);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
@@ -55,9 +55,9 @@ const getLevels = async (req, res) => {
 const getLevelById = async (req, res) => {
   try {
     const level = await courseLevelService.getLevelById(req.params.id);
-    return successResponse(res, level, "Course level retrieved successfully");
+    return sendSuccess(res, level);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
@@ -98,9 +98,9 @@ const getLevelById = async (req, res) => {
 const createLevel = async (req, res) => {
   try {
     const level = await courseLevelService.createLevel(req.body);
-    return successResponse(res, level, "Course level created successfully", 201);
+    return sendSuccess(res, level, 201);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
@@ -144,9 +144,9 @@ const createLevel = async (req, res) => {
 const updateLevel = async (req, res) => {
   try {
     const level = await courseLevelService.updateLevel(req.params.id, req.body);
-    return successResponse(res, level, "Course level updated successfully");
+    return sendSuccess(res, level);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
@@ -173,9 +173,9 @@ const updateLevel = async (req, res) => {
 const deleteLevel = async (req, res) => {
   try {
     const level = await courseLevelService.deleteLevel(req.params.id);
-    return successResponse(res, level, "Course level deleted successfully");
+    return sendSuccess(res, level);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
@@ -210,15 +210,35 @@ const deleteLevel = async (req, res) => {
 const reorderLevels = async (req, res) => {
   try {
     const levels = await courseLevelService.reorderLevels(req.body.levels);
-    return successResponse(res, levels, "Course levels reordered successfully");
+    return sendSuccess(res, levels);
   } catch (error) {
-    return errorResponse(res, error.message, error.statusCode || 500);
+    return sendError(res, error.message, error.statusCode || 500);
+  }
+};
+
+/**
+ * @swagger
+ * /api/course-levels/dropdown:
+ *   get:
+ *     summary: Get course levels for dropdown (simplified format)
+ *     tags: [Course Levels]
+ *     responses:
+ *       200:
+ *         description: List of course levels for dropdown
+ */
+const getLevelsForDropdown = async (req, res) => {
+  try {
+    const levels = await courseLevelService.getLevelsForDropdown();
+    return sendSuccess(res, levels);
+  } catch (error) {
+    return sendError(res, error.message, error.statusCode || 500);
   }
 };
 
 module.exports = {
   getLevels,
   getLevelById,
+  getLevelsForDropdown,
   createLevel,
   updateLevel,
   deleteLevel,

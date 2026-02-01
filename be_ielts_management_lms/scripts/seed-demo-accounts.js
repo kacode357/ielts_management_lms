@@ -5,7 +5,7 @@ const User = require("../src/entities/auth/auth.model.mongoose");
 const Teacher = require("../src/entities/teacher/teacher.model.mongoose");
 const Student = require("../src/entities/student/student.model.mongoose");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/ielts_lms_db";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 const demoTeachers = [
   {

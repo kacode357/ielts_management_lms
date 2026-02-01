@@ -86,6 +86,28 @@ exports.getTeachers = async (req, res, next) => {
 
 /**
  * @swagger
+ * /api/teachers/dropdown:
+ *   get:
+ *     tags: [Teachers]
+ *     summary: Get teachers for dropdown
+ *     description: Get simplified list of teachers (id, name, code) for dropdown UI
+ *     security:
+ *       - bearerAuth: []
+ *     responses:
+ *       200:
+ *         description: List of teachers for dropdown
+ */
+exports.getTeachersForDropdown = async (req, res, next) => {
+  try {
+    const teachers = await teacherService.getTeachersForDropdown();
+    sendSuccess(res, { teachers }, 200);
+  } catch (error) {
+    next(error);
+  }
+};
+
+/**
+ * @swagger
  * /api/teachers/{id}:
  *   get:
  *     tags: [Teachers]

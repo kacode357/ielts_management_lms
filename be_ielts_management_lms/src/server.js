@@ -50,9 +50,12 @@ async function start() {
       eventConsumer.setupUserEventHandlers();
       eventConsumer.setupNotificationEventHandlers();
       
-      // Subscribe to topics
-      await eventConsumer.subscribe("user.events");
-      await eventConsumer.subscribe("notification.events");
+      // Queue topics for subscription
+      eventConsumer.queueSubscribe("user.events");
+      eventConsumer.queueSubscribe("notification.events");
+      
+      // Start consumer with all topics at once
+      await eventConsumer.start();
     }
   } catch (err) {
     console.warn("⚠ Kafka initialization failed:", err.message);

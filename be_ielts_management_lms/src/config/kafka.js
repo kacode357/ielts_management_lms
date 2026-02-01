@@ -28,13 +28,13 @@ const initKafka = () => {
       clientId: process.env.KAFKA_CLIENT_ID || "ielts-lms",
       brokers: (process.env.KAFKA_BROKERS || "localhost:9092").split(","),
       connectionTimeout: 10000,
-      requestTimeout: 30000,
+      requestTimeout: 60000,
       retry: {
-        retries: 3,
-        initialRetryTime: 300,
+        retries: 5,
+        initialRetryTime: 500,
         maxRetryTime: 30000,
       },
-      logLevel: logLevel.ERROR, // Only show errors
+      logLevel: logLevel.ERROR_ONLY, // Only show errors
     });
 
     console.log("✓ Kafka client created");

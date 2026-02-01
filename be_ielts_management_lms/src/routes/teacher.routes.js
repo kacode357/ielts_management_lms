@@ -20,6 +20,9 @@ router.use(auth);
 // Get all teachers (all authenticated users)
 router.get("/", teacherController.getTeachers);
 
+// Get teachers for dropdown (all authenticated users)
+router.get("/dropdown", teacherController.getTeachersForDropdown);
+
 // Get teacher by ID (all authenticated users)
 router.get("/:id", teacherController.getTeacherById);
 

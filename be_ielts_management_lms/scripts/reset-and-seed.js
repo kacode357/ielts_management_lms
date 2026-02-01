@@ -5,7 +5,7 @@ require("dotenv").config();
 const mongoose = require("mongoose");
 const readline = require("readline");
 
-const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/ielts_lms_db";
+const MONGODB_URI = process.env.MONGODB_URI;
 
 // Import all models
 const User = require("../src/models/user.model");

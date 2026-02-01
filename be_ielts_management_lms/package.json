@@ -4,14 +4,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./src/server.js",
+    "dev": "docker-compose up -d redis kafka && nodemon ./src/server.js",
     "start": "node ./src/server.js",
-    "seed": "node ./scripts/seed-data.js",
-    "seed:demo": "node ./scripts/seed-demo-accounts.js",
-    "seed:all": "node ./scripts/seed-all-accounts.js",
-    "create-db": "node ./scripts/create-db.js",
-    "db:reset": "node ./scripts/reset-and-seed.js",
-    "db:reset:force": "node ./scripts/reset-and-seed.js --force"
+    "db:clear": "node ./scripts/reset-and-seed.js --force",
+    "db:seed": "node ./scripts/seed-data.js"
   },
   "keywords": [
     "ielts",

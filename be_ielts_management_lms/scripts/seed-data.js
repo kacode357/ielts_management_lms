@@ -16,7 +16,7 @@ async function seedData() {
   let connection = null;
   try {
     // Connect to database
-    connection = await mongoose.connect(process.env.MONGO_URI || "mongodb://localhost:27017/ielts_lms_db");
+    connection = await mongoose.connect(process.env.MONGODB_URI);
     console.log("✓ Database connected");
 
     // Get existing users

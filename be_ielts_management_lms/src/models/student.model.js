@@ -66,7 +66,6 @@ const studentSchema = new mongoose.Schema(
 );
 
 // Index for quick lookup
-studentSchema.index({ studentCode: 1 });
 studentSchema.index({ userId: 1 });
 
 const Student = mongoose.model("Student", studentSchema);

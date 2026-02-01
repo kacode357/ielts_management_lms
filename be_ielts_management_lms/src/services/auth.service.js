@@ -158,8 +158,7 @@ class AuthService {
 
     // Log analytics
     try {
-      await eventProducer.publishAnalyticsTracked({
-        event: "user_login",
+      await eventProducer.publishAnalyticsEvent("user_login", {
         userId: user._id.toString(),
         metadata: { role: user.role },
       });
