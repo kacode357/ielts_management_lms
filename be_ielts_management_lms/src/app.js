@@ -10,10 +10,10 @@ const MESSAGES = require("./constants/messages");
 
 const app = express();
 
-// Toggle Swagger UI - only in development mode
+// Toggle Swagger UI - controlled by SWAGGER_UI_ENABLED env variable
+// Set SWAGGER_UI_ENABLED=true to enable Swagger UI
 const isSwaggerEnabled =
-  process.env.NODE_ENV === "development" &&
-  String(process.env.SWAGGER_UI_ENABLED || "true").toLowerCase() === "true";
+  String(process.env.SWAGGER_UI_ENABLED || "false").toLowerCase() === "true";
 
 // CORS Configuration - Allow all origins with credentials
 app.use(
