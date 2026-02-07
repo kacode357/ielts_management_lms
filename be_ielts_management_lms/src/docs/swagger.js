@@ -4,21 +4,24 @@ const swaggerJsdoc = require("swagger-jsdoc");
 // Dynamic server URL based on environment
 const getServerUrl = () => {
   if (process.env.NODE_ENV === "production") {
-    return process.env.API_URL || "https://api.ieltslms.com";
+    return process.env.API_URL || "http://localhost:5000";
   }
   return `http://localhost:${process.env.PORT || 5000}`;
 };
+
+// Contact info from environment
+const getContactEmail = () => process.env.API_SUPPORT_EMAIL || "support@example.com";
 
 const options = {
   definition: {
     openapi: "3.0.0",
     info: {
-      title: "IELTS Management LMS API",
-      version: "1.0.0",
-      description: "API documentation for IELTS Learning Management System",
+      title: process.env.API_TITLE || "IELTS Management LMS API",
+      version: process.env.API_VERSION || "1.0.0",
+      description: process.env.API_DESCRIPTION || "API documentation for IELTS Learning Management System",
       contact: {
         name: "API Support",
-        email: "support@ieltslms.com",
+        email: getContactEmail(),
       },
     },
     servers: [

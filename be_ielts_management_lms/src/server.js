@@ -20,9 +20,9 @@ async function start() {
     process.exit(1);
   }
 
-  // Start HTTP server
+  // Start HTTP server - get API URL from environment
   const serverUrl = process.env.NODE_ENV === "production"
-    ? process.env.API_URL || "https://api.ieltslms.com"
+    ? process.env.API_URL
     : `http://localhost:${PORT}`;
 
   app.listen(PORT, () => {
