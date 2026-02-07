@@ -8,3 +8,6 @@ JWT_SECRET=your-super-secret-jwt-key-min-32-characters
 
 # Optional: Enable Swagger UI in production
 # SWAGGER_UI_ENABLED=true
+
+# Optional: Production API URL (for Swagger docs)
+# API_URL=https://your-render-app-name.onrender.com

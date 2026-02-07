@@ -1,6 +1,14 @@
 // Swagger/OpenAPI documentation configuration
 const swaggerJsdoc = require("swagger-jsdoc");
 
+// Dynamic server URL based on environment
+const getServerUrl = () => {
+  if (process.env.NODE_ENV === "production") {
+    return process.env.API_URL || "https://api.ieltslms.com";
+  }
+  return `http://localhost:${process.env.PORT || 5000}`;
+};
+
 const options = {
   definition: {
     openapi: "3.0.0",
@@ -15,12 +23,8 @@ const options = {
     },
     servers: [
       {
-        url: "http://localhost:5000",
-        description: "Development server",
-      },
-      {
-        url: "https://api.ieltslms.com",
-        description: "Production server",
+        url: getServerUrl(),
+        description: process.env.NODE_ENV === "production" ? "Production server" : "Development server",
       },
     ],
     components: {

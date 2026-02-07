@@ -21,11 +21,16 @@ async function start() {
   }
 
   // Start HTTP server
+  const serverUrl = process.env.NODE_ENV === "production"
+    ? process.env.API_URL || "https://api.ieltslms.com"
+    : `http://localhost:${PORT}`;
+
   app.listen(PORT, () => {
     console.log(`\n🚀 IELTS Management LMS API`);
     console.log(`   Port: ${PORT}`);
     console.log(`   Environment: ${process.env.NODE_ENV}`);
-    console.log(`   Docs: http://localhost:${PORT}/api-docs`);
+    console.log(`   API: ${serverUrl}`);
+    console.log(`   Docs: ${serverUrl}/api-docs`);
     console.log("");
   });
 }
