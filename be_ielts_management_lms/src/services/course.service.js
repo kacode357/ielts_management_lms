@@ -1,47 +1,37 @@
-// Course Service - Business Logic Layer
-const mongoose = require("mongoose");
+// Course Service - MongoDB Driver
 const Course = require("../models/course.model");
 const Teacher = require("../models/teacher.model");
+const Student = require("../models/student.model");
+const Enrollment = require("../models/enrollment.model");
+const User = require("../models/user.model");
 const { AppError } = require("../utils/appError");
-const { getMessages } = require("../responses");
-const MESSAGES = require("../constants/messages");
-const { validateObjectId, validateRequired, validateDateRange } = require("../utils/validation");
-const {
-  COURSE_STATUS,
-  ENROLLMENT_STATUS
-} = require("../constants/enums");
+const { validateObjectId, validateDateRange } = require("../utils/validation");
+const { COURSE_STATUS, ENROLLMENT_STATUS } = require("../constants/enums");
 
 class CourseService {
-  /**
-   * Create a new course
-   * @param {Object} courseData - Course data
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Created course
-   */
   async createCourse(courseData, lang = "en") {
-    const messages = getMessages(lang);
     const { name, code, description, level, teacherId, startDate, endDate, totalHours, room, scheduleDesc, maxStudents } = courseData;
 
     // Validate required fields
-    validateRequired(courseData, ["name", "code", "level", "startDate", "endDate"]);
+    if (!name || !code || !level || !startDate || !endDate) {
+      throw new AppError("Name, code, level, startDate and endDate are required", 400);
+    }
 
-    // Validate dates
     validateDateRange(startDate, endDate);
 
-    // Check if teacher exists (if provided)
+    // Check if teacher exists
     if (teacherId) {
       validateObjectId(teacherId, "teacherId");
-      
       const teacher = await Teacher.findById(teacherId);
       if (!teacher) {
-        throw new AppError(MESSAGES.COURSE.TEACHER_NOT_FOUND, 404);
+        throw new AppError("Teacher not found", 404);
       }
     }
 
     // Check if course code already exists
     const existingCourse = await Course.findOne({ code });
     if (existingCourse) {
-      throw new AppError(MESSAGES.COURSE.CODE_EXISTS, 409);
+      throw new AppError("Course code already exists", 409);
     }
 
     // Create course
@@ -61,114 +51,120 @@ class CourseService {
       isActive: true,
     });
 
-    // Populate teacher info
-    await course.populate("teacherId", "teacherCode specialization");
+    // Get teacher info manually
+    let courseWithTeacher = { ...course };
+    if (teacherId) {
+      const teacher = await Teacher.findById(teacherId);
+      if (teacher) {
+        courseWithTeacher.teacherId = {
+          _id: teacher._id,
+          teacherCode: teacher.teacherCode,
+          specialization: teacher.specialization,
+        };
+      }
+    }
 
-    return course;
+    return courseWithTeacher;
   }
 
-  /**
-   * Get course by ID
-   * @param {string} courseId - Course ID
-   * @param {Object} user - Current user (from req.user)
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Course data
-   */
   async getCourseById(courseId, user, lang = "en") {
-    const messages = getMessages(lang);
-
-    const course = await Course.findById(courseId)
-      .populate("teacherId", "teacherCode specialization experience rating");
-
+    const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
+    }
+
+    // Get teacher info
+    let teacherInfo = null;
+    if (course.teacherId) {
+      const teacher = await Teacher.findById(course.teacherId);
+      if (teacher) {
+        teacherInfo = {
+          _id: teacher._id,
+          teacherCode: teacher.teacherCode,
+          specialization: teacher.specialization,
+          experience: teacher.experience,
+          rating: teacher.rating,
+        };
+      }
     }
 
     // Role-based access check
     if (user.role === "teacher") {
-      // Teacher can only view courses they teach
       const teacher = await Teacher.findOne({ userId: user.userId });
-      if (!teacher || course.teacherId?._id.toString() !== teacher._id.toString()) {
-        throw new AppError(MESSAGES.ERROR.FORBIDDEN, 403);
+      if (!teacher || course.teacherId?.toString() !== teacher._id.toString()) {
+        throw new AppError("Forbidden", 403);
       }
     } else if (user.role === "student") {
-      // Student can only view courses they are enrolled in
-      const Student = require("../models/student.model");
-      const Enrollment = require("../models/enrollment.model");
-      
       const student = await Student.findOne({ userId: user.userId });
       if (!student) {
-        throw new AppError(MESSAGES.ERROR.STUDENT_PROFILE_NOT_FOUND, 404);
+        throw new AppError("Student profile not found", 404);
       }
       
       const enrollment = await Enrollment.findOne({ 
-        studentId: student._id, 
-        courseId: course._id 
+        studentId: student._id.toString(), 
+        courseId: courseId 
       });
       
       if (!enrollment) {
-        throw new AppError(MESSAGES.ERROR.FORBIDDEN, 403);
+        throw new AppError("Forbidden", 403);
       }
     }
-    // Admin can view any course
 
-    return course;
+    return { ...course, teacherId: teacherInfo };
   }
 
-  /**
-   * Get all courses with filters and pagination
-   * @param {Object} user - Current user (from req.user)
-   * @param {Object} options - Pagination options
-   * @returns {Promise<Object>} Courses list with pagination
-   */
   async getCourses(user, options = {}) {
     const { page = 1, limit = 10, status, level, isActive } = options;
     const skip = (page - 1) * limit;
 
-    // Build query
     const query = {};
     if (status) query.status = status;
     if (level) query.level = level;
-    if (isActive !== undefined) query.isActive = isActive;
+    if (isActive !== undefined) query.isActive = isActive === "true";
 
     // Role-based filtering
     if (user.role === "teacher") {
-      // Teacher: Only see courses they teach
       const teacher = await Teacher.findOne({ userId: user.userId });
       if (!teacher) {
-        throw new AppError(MESSAGES.ERROR.TEACHER_PROFILE_NOT_FOUND, 404);
+        throw new AppError("Teacher profile not found", 404);
       }
-      query.teacherId = teacher._id;
+      query.teacherId = teacher._id.toString();
     } else if (user.role === "student") {
-      // Student: Only see courses they are enrolled in
-      const Student = require("../models/student.model");
-      const Enrollment = require("../models/enrollment.model");
-      
       const student = await Student.findOne({ userId: user.userId });
       if (!student) {
-        throw new AppError(MESSAGES.ERROR.STUDENT_PROFILE_NOT_FOUND, 404);
+        throw new AppError("Student profile not found", 404);
       }
       
-      // Get all courseIds from enrollments
-      const enrollments = await Enrollment.find({ studentId: student._id }).select("courseId");
+      const enrollments = await Enrollment.find({ studentId: student._id.toString() });
       const courseIds = enrollments.map(e => e.courseId);
-      
       query._id = { $in: courseIds };
     }
-    // Admin: No additional filter, can see all courses
 
-    // Execute query with pagination
     const [courses, total] = await Promise.all([
-      Course.find(query)
-        .populate("teacherId", "teacherCode specialization experience rating")
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(parseInt(limit)),
-      Course.countDocuments(query),
+      Course.find(query).skip(skip).limit(parseInt(limit)),
+      Course.count(query),
     ]);
 
+    // Add teacher info to each course
+    const coursesWithTeachers = await Promise.all(courses.map(async (course) => {
+      let teacherInfo = null;
+      if (course.teacherId) {
+        const teacher = await Teacher.findById(course.teacherId);
+        if (teacher) {
+          teacherInfo = {
+            _id: teacher._id,
+            teacherCode: teacher.teacherCode,
+            specialization: teacher.specialization,
+            experience: teacher.experience,
+            rating: teacher.rating,
+          };
+        }
+      }
+      return { ...course, teacherId: teacherInfo };
+    }));
+
     return {
-      courses,
+      courses: coursesWithTeachers,
       pagination: {
         total,
         page: parseInt(page),
@@ -178,20 +174,10 @@ class CourseService {
     };
   }
 
-  /**
-   * Update course
-   * @param {string} courseId - Course ID
-   * @param {Object} updateData - Data to update
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Updated course
-   */
   async updateCourse(courseId, updateData, lang = "en") {
-    const messages = getMessages(lang);
-
-    // Check if course exists
     const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
     }
 
     // Validate dates if provided
@@ -201,165 +187,128 @@ class CourseService {
       validateDateRange(start, end);
     }
 
-    // Check if teacher exists (if changing teacher)
+    // Check teacher exists
     if (updateData.teacherId && updateData.teacherId !== course.teacherId?.toString()) {
       validateObjectId(updateData.teacherId, "teacherId");
-      
       const teacher = await Teacher.findById(updateData.teacherId);
       if (!teacher) {
-        throw new AppError(MESSAGES.COURSE.TEACHER_NOT_FOUND, 404);
+        throw new AppError("Teacher not found", 404);
       }
     }
 
-    // Update course
-    Object.assign(course, updateData);
-    await course.save();
+    // Update
+    const { _id, createdAt, ...updateFields } = updateData;
+    await Course.updateById(courseId, updateFields);
 
-    // Populate teacher info
-    await course.populate("teacherId", "teacherCode specialization");
-
-    return course;
+    return await this.getCourseById(courseId, { role: "admin" });
   }
 
-  /**
-   * Delete course (soft delete)
-   * @param {string} courseId - Course ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Deleted course
-   */
   async deleteCourse(courseId, lang = "en") {
-    const messages = getMessages(lang);
-
     const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
     }
 
-    // Soft delete
-    course.isActive = false;
-    course.status = COURSE_STATUS.CANCELLED;
-    await course.save();
+    await Course.updateById(courseId, { 
+      isActive: false, 
+      status: COURSE_STATUS.CANCELLED 
+    });
 
-    return course;
+    return { message: "Course deleted successfully" };
   }
 
-  /**
-   * Get course members (teacher and enrolled students)
-   * @param {string} courseId - Course ID
-   * @param {Object} user - Current user (from req.user)
-   * @param {Object} options - Pagination options
-   * @returns {Promise<Object>} Course members list with pagination
-   */
   async getCourseMembers(courseId, user, options = {}) {
     const { page = 1, limit = 50 } = options;
     const skip = (page - 1) * limit;
 
-    // Validate courseId
     validateObjectId(courseId, "courseId");
 
-    // Check if course exists and populate teacher
-    const course = await Course.findById(courseId).populate({
-      path: "teacherId",
-      select: "teacherCode specialization experienceYears",
-      populate: {
-        path: "userId",
-        select: "firstName lastName email phone isActive"
-      }
-    });
-    
+    const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
     }
 
     // Role-based access check
     if (user.role === "teacher") {
-      // Teacher can only view members of courses they teach
       const teacher = await Teacher.findOne({ userId: user.userId });
-      if (!teacher || course.teacherId?._id.toString() !== teacher._id.toString()) {
-        throw new AppError(MESSAGES.ERROR.FORBIDDEN, 403);
+      if (!teacher || course.teacherId?.toString() !== teacher._id.toString()) {
+        throw new AppError("Forbidden", 403);
       }
     } else if (user.role === "student") {
-      // Student can only view members of courses they are enrolled in
-      const Student = require("../models/student.model");
-      const Enrollment = require("../models/enrollment.model");
-      
       const student = await Student.findOne({ userId: user.userId });
       if (!student) {
-        throw new AppError(MESSAGES.ERROR.STUDENT_PROFILE_NOT_FOUND, 404);
+        throw new AppError("Student profile not found", 404);
       }
       
       const enrollment = await Enrollment.findOne({ 
-        studentId: student._id, 
+        studentId: student._id.toString(), 
         courseId,
-        status: ENROLLMENT_STATUS.ACTIVE // Only active enrollments
+        status: ENROLLMENT_STATUS.ACTIVE 
       });
       
       if (!enrollment) {
-        throw new AppError(MESSAGES.ERROR.FORBIDDEN, 403);
+        throw new AppError("Forbidden", 403);
       }
     }
-    // Admin can view all course members
 
-    // Build enrollment query - only active enrollments
-    const Enrollment = require("../models/enrollment.model");
-    const enrollmentQuery = { courseId, status: ENROLLMENT_STATUS.ACTIVE };
-
-    // Get enrollments with pagination
-    const [enrollments, total] = await Promise.all([
-      Enrollment.find(enrollmentQuery)
-        .populate({
-          path: "studentId",
-          select: "studentCode currentLevel targetBand",
-          populate: {
-            path: "userId",
-            match: { isActive: true }, // Only active users
-            select: "firstName lastName email phone isActive"
-          }
-        })
-        .sort({ enrolledAt: -1 })
-        .skip(skip)
-        .limit(parseInt(limit)),
-      Enrollment.countDocuments(enrollmentQuery),
-    ]);
-
-    // Filter out enrollments with inactive users
-    const activeEnrollments = enrollments.filter(enrollment => 
-      enrollment.studentId?.userId?.isActive
-    );
-
-    // Format students data
-    const students = activeEnrollments.map(enrollment => ({
-      enrollmentId: enrollment._id,
-      enrolledAt: enrollment.enrolledAt,
-      attendanceRate: enrollment.attendanceRate,
-      averageScore: enrollment.averageScore,
-      student: {
-        _id: enrollment.studentId._id,
-        studentCode: enrollment.studentId.studentCode,
-        currentLevel: enrollment.studentId.currentLevel,
-        targetBand: enrollment.studentId.targetBand,
-        user: {
-          firstName: enrollment.studentId.userId.firstName,
-          lastName: enrollment.studentId.userId.lastName,
-          email: enrollment.studentId.userId.email,
-          phone: enrollment.studentId.userId.phone,
+    // Get teacher info
+    let teacherInfo = null;
+    if (course.teacherId) {
+      const teacher = await Teacher.findById(course.teacherId);
+      if (teacher) {
+        const userInfo = await User.findById(teacher.userId);
+        if (userInfo && userInfo.isActive) {
+          teacherInfo = {
+            _id: teacher._id,
+            teacherCode: teacher.teacherCode,
+            specialization: teacher.specialization,
+            experience: teacher.experience,
+            user: {
+              firstName: userInfo.firstName,
+              lastName: userInfo.lastName,
+              email: userInfo.email,
+              phone: userInfo.phone,
+            }
+          };
         }
       }
+    }
+
+    // Get enrollments
+    const enrollments = await Enrollment.find({ 
+      courseId, 
+      status: ENROLLMENT_STATUS.ACTIVE 
+    }).skip(skip).limit(parseInt(limit));
+
+    // Get students with user info
+    const students = await Promise.all(enrollments.map(async (enrollment) => {
+      const student = await Student.findById(enrollment.studentId);
+      if (!student) return null;
+      
+      const userInfo = await User.findById(student.userId);
+      if (!userInfo || !userInfo.isActive) return null;
+      
+      return {
+        enrollmentId: enrollment._id,
+        enrolledAt: enrollment.enrolledAt,
+        attendanceRate: enrollment.attendanceRate,
+        averageScore: enrollment.averageScore,
+        student: {
+          _id: student._id,
+          studentCode: student.studentCode,
+          currentLevel: student.currentLevel,
+          targetBand: student.targetBand,
+          user: {
+            firstName: userInfo.firstName,
+            lastName: userInfo.lastName,
+            email: userInfo.email,
+            phone: userInfo.phone,
+          }
+        }
+      };
     }));
 
-    // Format teacher data
-    const teacher = course.teacherId?.userId?.isActive ? {
-      _id: course.teacherId._id,
-      teacherCode: course.teacherId.teacherCode,
-      specialization: course.teacherId.specialization,
-      experienceYears: course.teacherId.experienceYears,
-      user: {
-        firstName: course.teacherId.userId.firstName,
-        lastName: course.teacherId.userId.lastName,
-        email: course.teacherId.userId.email,
-        phone: course.teacherId.userId.phone,
-      }
-    } : null;
+    const activeStudents = students.filter(s => s !== null);
 
     return {
       course: {
@@ -368,128 +317,88 @@ class CourseService {
         code: course.code,
         level: course.level,
       },
-      teacher,
-      students,
+      teacher: teacherInfo,
+      students: activeStudents,
       pagination: {
-        total: activeEnrollments.length,
+        total: activeStudents.length,
         page: parseInt(page),
         limit: parseInt(limit),
-        pages: Math.ceil(activeEnrollments.length / limit),
+        pages: Math.ceil(activeStudents.length / limit),
       },
     };
   }
-  
-  /**
-   * Enroll multiple students in course
-   * @param {string} courseId - Course ID
-   * @param {Array<string>} studentIds - Array of Student IDs (from Student collection)
-   * @returns {Promise<Object>} Enrollment results with success/failure details
-   */
+
   async enrollStudents(courseId, studentIds) {
-    // Validate course ID
     validateObjectId(courseId, "courseId");
 
-    // Validate studentIds is an array
     if (!Array.isArray(studentIds) || studentIds.length === 0) {
       throw new AppError("studentIds must be a non-empty array", 400);
     }
 
-    // Check if course exists
     const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
     }
 
-    const Student = require("../models/student.model");
-    const Enrollment = require("../models/enrollment.model");
-    
     const results = {
       successful: [],
       failed: [],
-      summary: {
-        total: studentIds.length,
-        enrolled: 0,
-        failed: 0
-      }
+      summary: { total: studentIds.length, enrolled: 0, failed: 0 }
     };
 
-    // Process each student
     for (const studentId of studentIds) {
       try {
-        // Validate student ID
         validateObjectId(studentId, "studentId");
 
-        // Check if student exists
-        const student = await Student.findById(studentId).populate("userId", "firstName lastName email");
+        const student = await Student.findById(studentId);
         if (!student) {
-          results.failed.push({
-            studentId,
-            reason: "Student not found"
-          });
+          results.failed.push({ studentId, reason: "Student not found" });
           continue;
         }
 
-        // Check if student is already enrolled
         const existingEnrollment = await Enrollment.findOne({
           courseId,
-          studentId,
+          studentId: student._id.toString(),
           status: ENROLLMENT_STATUS.ACTIVE
         });
         
         if (existingEnrollment) {
-          results.failed.push({
-            studentId,
-            studentCode: student.studentCode,
-            studentName: `${student.userId.firstName} ${student.userId.lastName}`,
-            reason: "Already enrolled in this course"
-          });
+          results.failed.push({ studentId, reason: "Already enrolled" });
           continue;
         }
 
-        // Check if course is full
         if (course.maxStudents && course.currentStudents >= course.maxStudents) {
-          results.failed.push({
-            studentId,
-            studentCode: student.studentCode,
-            studentName: `${student.userId.firstName} ${student.userId.lastName}`,
-            reason: "Course is full"
-          });
+          results.failed.push({ studentId, reason: "Course is full" });
           continue;
         }
 
-        // Create enrollment
-        const enrollment = await Enrollment.create({
+        await Enrollment.create({
           courseId,
-          studentId,
+          studentId: student._id.toString(),
           status: ENROLLMENT_STATUS.ACTIVE,
           enrolledAt: new Date()
         });
 
         // Update course student count
-        await Course.findByIdAndUpdate(courseId, {
-          $inc: { currentStudents: 1 }
+        await Course.updateById(courseId, { 
+          currentStudents: (course.currentStudents || 0) + 1 
         });
 
+        const userInfo = await User.findById(student.userId);
         results.successful.push({
-          enrollmentId: enrollment._id,
           studentId: student._id,
           studentCode: student.studentCode,
-          studentName: `${student.userId.firstName} ${student.userId.lastName}`,
-          enrolledAt: enrollment.enrolledAt
+          studentName: userInfo ? `${userInfo.firstName} ${userInfo.lastName}` : ""
         });
         results.summary.enrolled++;
 
       } catch (error) {
-        results.failed.push({
-          studentId,
-          reason: error.message || "Unknown error"
-        });
+        results.failed.push({ studentId, reason: error.message || "Unknown error" });
       }
     }
 
     results.summary.failed = results.failed.length;
 
-    // If all failed, throw error
     if (results.summary.enrolled === 0) {
       throw new AppError("Failed to enroll any students", 400);
     }
@@ -497,43 +406,23 @@ class CourseService {
     return results;
   }
 
-  /**
-   * Assign or change teacher for course
-   * @param {string} courseId - Course ID
-   * @param {string} teacherId - Teacher ID (from Teacher collection)
-   * @returns {Promise<Object>} Updated course
-   */
   async assignTeacher(courseId, teacherId) {
-    // Validate IDs
     validateObjectId(courseId, "courseId");
     validateObjectId(teacherId, "teacherId");
 
-    // Check if course exists
     const course = await Course.findById(courseId);
     if (!course) {
-      throw new AppError(MESSAGES.COURSE.NOT_FOUND, 404);
+      throw new AppError("Course not found", 404);
     }
 
-    // Check if teacher exists
     const teacher = await Teacher.findById(teacherId);
     if (!teacher) {
-      throw new AppError(MESSAGES.ERROR.TEACHER_PROFILE_NOT_FOUND, 404);
+      throw new AppError("Teacher not found", 404);
     }
 
-    // Update course with new teacher
-    const updatedCourse = await Course.findByIdAndUpdate(
-      courseId,
-      { teacherId },
-      { new: true, runValidators: true }
-    ).populate({
-      path: "teacherId",
-      select: "teacherCode specialization experienceYears",
-      populate: {
-        path: "userId",
-        select: "firstName lastName email"
-      }
-    });
+    await Course.updateById(courseId, { teacherId });
 
+    const updatedCourse = await Course.findById(courseId);
     return updatedCourse;
   }
 }

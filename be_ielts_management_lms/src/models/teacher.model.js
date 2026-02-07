@@ -1,5 +1,7 @@
-// Teacher Model (Mongoose)
-const mongoose = require("mongoose");
+// Teacher Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "teachers";
 
 /**
  * @swagger
@@ -16,55 +18,78 @@ const mongoose = require("mongoose");
  *         certifications: { type: array }
  *         bio: { type: string }
  *         rating: { type: number }
- *         hireDate: { type: string, format: date-time }
+ *         hireDate: { type: string }
  */
-const teacherSchema = new mongoose.Schema(
-  {
-    userId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "User",
-      required: true,
-    },
-    teacherCode: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-    specialization: {
-      type: String,
-      comment: "IELTS Writing, Speaking, General...",
-    },
-    experience: {
-      type: Number,
-      default: 0,
-      comment: "Years of experience",
-    },
-    certifications: {
-      type: [mongoose.Schema.Types.Mixed],
-      default: [],
-    },
-    bio: {
-      type: String,
-    },
-    rating: {
-      type: Number,
-      default: 0,
-      min: 0,
-      max: 5,
-    },
-    hireDate: {
-      type: Date,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for quick lookup
-teacherSchema.index({ userId: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.experience) data.experience = 0;
+  if (!data.certifications) data.certifications = [];
+  if (!data.rating) data.rating = 0;
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Teacher = mongoose.model("Teacher", teacherSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Teacher;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { createdAt: -1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

@@ -1,5 +1,5 @@
 // Initialize database connection
-const connectDB = require("./mongoose");
+const { connectDB } = require("./mongoose");
 const { ensureAdminUser } = require("./adminSeeder");
 const { ensureDefaultTeachers } = require("./teacherSeeder");
 const { ensureDefaultStudents } = require("./studentSeeder");

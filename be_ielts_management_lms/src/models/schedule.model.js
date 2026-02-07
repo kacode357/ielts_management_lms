@@ -1,5 +1,7 @@
-// Schedule Model (Mongoose)
-const mongoose = require("mongoose");
+// Schedule Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "schedules";
 
 /**
  * @swagger
@@ -15,84 +17,81 @@ const mongoose = require("mongoose");
  *         internalNotes: { type: string }
  *         sessionNumber: { type: number }
  *         title: { type: string }
- *         date: { type: string, format: date }
+ *         date: { type: string }
  *         startTime: { type: string }
  *         endTime: { type: string }
  *         room: { type: string }
  *         meetingUrl: { type: string }
- *         isCancelled: { type: boolean, description: "Only for exceptional cases like teacher sick" }
+ *         isCancelled: { type: boolean }
  */
-const scheduleSchema = new mongoose.Schema(
-  {
-    courseId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Course",
-      required: true,
-    },
-    lessonId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Lesson",
-      comment: "Bài học dự kiến cho buổi này",
-    },
-    // --- LOGIC DẠY THAY ---
-    substituteTeacherId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Teacher",
-      comment: "Nếu có ID thì GV này dạy thay buổi này",
-    },
-    internalNotes: {
-      type: String,
-      comment: "Lý do dạy thay, ghi chú nội bộ",
-    },
-    // ----------------------
-    sessionNumber: {
-      type: Number,
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    date: {
-      type: Date,
-      required: true,
-    },
-    startTime: {
-      type: String,
-      required: true,
-    },
-    endTime: {
-      type: String,
-      required: true,
-    },
-    room: {
-      type: String,
-    },
-    // Only for exceptional cases - normal status is computed from date
-    isCancelled: {
-      type: Boolean,
-      default: false,
-      comment: "Hủy buổi học (GV ốm, lý do đột xuất)",
-    },
-    cancellationReason: {
-      type: String,
-      comment: "Lý do hủy buổi học",
-    },
-    meetingUrl: {
-      type: String,
-      comment: "Link Zoom/Meet nếu học online",
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for quick lookup
-scheduleSchema.index({ courseId: 1, date: 1 });
-scheduleSchema.index({ substituteTeacherId: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.isCancelled) data.isCancelled = false;
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Schedule = mongoose.model("Schedule", scheduleSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Schedule;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { createdAt: -1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

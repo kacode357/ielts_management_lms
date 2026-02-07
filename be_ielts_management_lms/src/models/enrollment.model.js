@@ -1,5 +1,7 @@
-// Enrollment Model (Mongoose)
-const mongoose = require("mongoose");
+// Enrollment Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "enrollments";
 
 /**
  * @swagger
@@ -11,51 +13,82 @@ const mongoose = require("mongoose");
  *         _id: { type: string }
  *         courseId: { type: string }
  *         studentId: { type: string }
- *         enrolledAt: { type: string, format: date-time }
+ *         enrolledAt: { type: string }
  *         status: { type: string }
  *         attendanceRate: { type: number }
  *         averageScore: { type: number }
  */
-const enrollmentSchema = new mongoose.Schema(
-  {
-    courseId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Course",
-      required: true,
-    },
-    studentId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Student",
-      required: true,
-    },
-    enrolledAt: {
-      type: Date,
-      default: Date.now,
-    },
-    status: {
-      type: String,
-      enum: ["active", "completed", "dropped"],
-      default: "active",
-    },
-    attendanceRate: {
-      type: Number,
-      min: 0,
-      max: 100,
-    },
-    averageScore: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Unique constraint for courseId and studentId combination
-enrollmentSchema.index({ courseId: 1, studentId: 1 }, { unique: true });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.enrolledAt) data.enrolledAt = new Date();
+  if (!data.status) data.status = "active";
+  if (!data.attendanceRate) data.attendanceRate = 0;
+  if (!data.averageScore) data.averageScore = 0;
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Enrollment = mongoose.model("Enrollment", enrollmentSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Enrollment;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { createdAt: -1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

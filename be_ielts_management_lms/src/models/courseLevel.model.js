@@ -1,5 +1,7 @@
-// Course Level Model - For managing course levels dynamically
-const mongoose = require("mongoose");
+// Course Level Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "course_levels";
 
 /**
  * @swagger
@@ -7,51 +9,84 @@ const mongoose = require("mongoose");
  *   schemas:
  *     CourseLevel:
  *       type: object
- *       required:
- *         - name
- *         - code
  *       properties:
  *         _id: { type: string }
- *         name: { type: string, description: "Display name (e.g., Foundation, IELTS 6.5)" }
- *         code: { type: string, description: "Unique code (e.g., FOUNDATION, IELTS_6_5)" }
+ *         name: { type: string }
+ *         code: { type: string }
  *         description: { type: string }
- *         order: { type: number, description: "Sort order for display" }
- *         isActive: { type: boolean, default: true }
+ *         order: { type: number }
+ *         isActive: { type: boolean }
  */
-const courseLevelSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    code: {
-      type: String,
-      required: true,
-      unique: true,
-      uppercase: true,
-      trim: true,
-    },
-    description: {
-      type: String,
-      default: "",
-    },
-    order: {
-      type: Number,
-      default: 0,
-    },
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for sorting and filtering
-courseLevelSchema.index({ order: 1, name: 1 });
-courseLevelSchema.index({ isActive: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.order) data.order = 0;
+  if (!data.isActive) data.isActive = true;
+  if (data.code) data.code = data.code.toUpperCase();
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-module.exports = mongoose.model("CourseLevel", courseLevelSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
+
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { order: 1, name: 1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

@@ -1,30 +1,22 @@
-// Teacher Service - Business Logic Layer
+// Teacher Service - Simplified for MongoDB Driver
 const Teacher = require("../models/teacher.model");
 const User = require("../models/user.model");
 const { AppError } = require("../utils/appError");
-const { getMessages } = require("../responses");
-const MESSAGES = require("../constants/messages");
-const { validateObjectId, validateRequired } = require("../utils/validation");
 const { USER_ROLES } = require("../constants/enums");
 
 class TeacherService {
-  /**
-   * Create a new teacher (Admin only)
-   * @param {Object} teacherData - Teacher data
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Created teacher
-   */
   async createTeacher(teacherData, lang = "en") {
-    const messages = getMessages(lang);
     const { email, password, firstName, lastName, phone, teacherCode, specialization, experience, certifications, bio } = teacherData;
 
     // Validate required fields
-    validateRequired(teacherData, ["email", "password", "firstName", "lastName", "teacherCode"]);
+    if (!email || !password || !firstName || !lastName || !teacherCode) {
+      throw new AppError("Name, code, email and password are required", 400);
+    }
 
     // Check if email already exists
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      throw new AppError(MESSAGES.ERROR.EMAIL_ALREADY_EXISTS, 409);
+      throw new AppError("Email already exists", 409);
     }
 
     // Check if teacher code already exists
@@ -46,7 +38,7 @@ class TeacherService {
 
     // Create teacher profile
     const teacher = await Teacher.create({
-      userId: user._id,
+      userId: user._id.toString(),
       teacherCode,
       specialization,
       experience: experience || 0,
@@ -55,46 +47,41 @@ class TeacherService {
       hireDate: new Date(),
     });
 
-    // Populate user info
-    await teacher.populate("userId", "firstName lastName email phone isActive");
-
     return teacher;
   }
 
-  /**
-   * Get all teachers with filters and pagination
-   * @param {Object} filters - Filter criteria
-   * @param {Object} options - Pagination options
-   * @returns {Promise<Object>} Teachers list with pagination
-   */
   async getTeachers(filters = {}, options = {}) {
-    const { page = 1, limit = 50, isActive, specialization } = options;
+    const { page = 1, limit = 50, isActive } = options;
     const skip = (page - 1) * limit;
 
-    // Build query
     const query = {};
-    if (specialization) query.specialization = new RegExp(specialization, "i");
+    if (isActive !== undefined) query.isActive = isActive === "true";
 
-    // Get user filter if isActive is provided
-    const userFilter = {};
-    if (isActive !== undefined) userFilter.isActive = isActive === "true";
-
-    // Execute query with pagination
     const [teachers, total] = await Promise.all([
-      Teacher.find(query)
-        .populate({
-          path: "userId",
-          select: "firstName lastName email phone isActive",
-          match: Object.keys(userFilter).length > 0 ? userFilter : undefined,
-        })
-        .sort({ createdAt: -1 })
-        .skip(skip)
-        .limit(parseInt(limit)),
-      Teacher.countDocuments(query),
+      Teacher.find(query).skip(skip).limit(parseInt(limit)),
+      Teacher.count(query),
     ]);
 
-    // Filter out teachers whose user was not matched (if user filter applied)
-    const filteredTeachers = teachers.filter(t => t.userId);
+    // Populate user info manually
+    const teachersWithUser = await Promise.all(teachers.map(async (teacher) => {
+      const user = await User.findById(teacher.userId);
+      if (user && (!query.isActive || user.isActive)) {
+        return {
+          ...teacher,
+          userId: {
+            _id: user._id,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            phone: user.phone,
+            isActive: user.isActive,
+          },
+        };
+      }
+      return null;
+    }));
+
+    const filteredTeachers = teachersWithUser.filter(t => t !== null);
 
     return {
       teachers: filteredTeachers,
@@ -107,63 +94,50 @@ class TeacherService {
     };
   }
 
-  /**
-   * Get teachers for dropdown (simplified format)
-   * @returns {Promise<Array>} Array of { id, name, code }
-   */
   async getTeachersForDropdown() {
-    // Get all teachers with user info
-    const teachers = await Teacher.find()
-      .populate("userId", "firstName lastName isActive")
-      .sort({ "userId.lastName": 1 });
+    const teachers = await Teacher.find();
 
-    // Filter active users and format
-    return teachers
-      .filter(t => t.userId && t.userId.isActive)
-      .map(t => ({
-        id: t._id,
-        name: `${t.userId.firstName} ${t.userId.lastName}`,
-        code: t.teacherCode,
-        specialization: t.specialization,
-      }));
+    return Promise.all(teachers.map(async (teacher) => {
+      const user = await User.findById(teacher.userId);
+      if (user && user.isActive) {
+        return {
+          id: teacher._id,
+          name: `${user.firstName} ${user.lastName}`,
+          code: teacher.teacherCode,
+          specialization: teacher.specialization,
+        };
+      }
+      return null;
+    })).then(results => results.filter(r => r !== null));
   }
 
-  /**
-   * Get teacher by ID
-   * @param {string} teacherId - Teacher ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Teacher data
-   */
   async getTeacherById(teacherId, lang = "en") {
-    const messages = getMessages(lang);
-
-    const teacher = await Teacher.findById(teacherId)
-      .populate("userId", "firstName lastName email phone isActive avatar");
-
-    if (!teacher) {
-      throw new AppError(MESSAGES.COURSE.TEACHER_NOT_FOUND, 404);
-    }
-
-    return teacher;
-  }
-
-  /**
-   * Update teacher (Admin only)
-   * @param {string} teacherId - Teacher ID
-   * @param {Object} updateData - Data to update
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Updated teacher
-   */
-  async updateTeacher(teacherId, updateData, lang = "en") {
-    const messages = getMessages(lang);
-
-    // Find teacher
     const teacher = await Teacher.findById(teacherId);
     if (!teacher) {
-      throw new AppError(MESSAGES.COURSE.TEACHER_NOT_FOUND, 404);
+      throw new AppError("Teacher not found", 404);
     }
 
-    // Separate user data and teacher data
+    const user = await User.findById(teacher.userId);
+    return {
+      ...teacher,
+      userId: user ? {
+        _id: user._id,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+        phone: user.phone,
+        isActive: user.isActive,
+        avatar: user.avatar,
+      } : null,
+    };
+  }
+
+  async updateTeacher(teacherId, updateData, lang = "en") {
+    const teacher = await Teacher.findById(teacherId);
+    if (!teacher) {
+      throw new AppError("Teacher not found", 404);
+    }
+
     const { firstName, lastName, phone, email, isActive, ...teacherFields } = updateData;
 
     // Update user if user fields provided
@@ -174,16 +148,15 @@ class TeacherService {
       if (phone) userUpdate.phone = phone;
       if (isActive !== undefined) userUpdate.isActive = isActive;
       
-      // Check email uniqueness if changing email
       if (email) {
         const existingUser = await User.findOne({ email, _id: { $ne: teacher.userId } });
         if (existingUser) {
-          throw new AppError(MESSAGES.ERROR.EMAIL_ALREADY_EXISTS, 409);
+          throw new AppError("Email already exists", 409);
         }
         userUpdate.email = email;
       }
 
-      await User.findByIdAndUpdate(teacher.userId, userUpdate);
+      await User.updateById(teacher.userId, userUpdate);
     }
 
     // Check teacherCode uniqueness if changing
@@ -197,36 +170,18 @@ class TeacherService {
       }
     }
 
-    // Update teacher fields
-    Object.assign(teacher, teacherFields);
-    await teacher.save();
-
-    // Populate and return
-    await teacher.populate("userId", "firstName lastName email phone isActive");
-
-    return teacher;
+    await Teacher.updateById(teacherId, teacherFields);
+    return await this.getTeacherById(teacherId);
   }
 
-  /**
-   * Delete teacher (Admin only)
-   * @param {string} teacherId - Teacher ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Deleted teacher
-   */
   async deleteTeacher(teacherId, lang = "en") {
-    const messages = getMessages(lang);
-
     const teacher = await Teacher.findById(teacherId);
     if (!teacher) {
-      throw new AppError(MESSAGES.COURSE.TEACHER_NOT_FOUND, 404);
+      throw new AppError("Teacher not found", 404);
     }
 
-    // Soft delete: deactivate user instead of hard delete
-    await User.findByIdAndUpdate(teacher.userId, { isActive: false });
-
-    // Or hard delete (uncomment if needed):
-    // await Teacher.findByIdAndDelete(teacherId);
-    // await User.findByIdAndDelete(teacher.userId);
+    // Soft delete: deactivate user
+    await User.updateById(teacher.userId, { isActive: false });
 
     return { message: "Teacher deactivated successfully" };
   }

@@ -1,5 +1,4 @@
-// Attendance Service - Business Logic Layer
-const mongoose = require("mongoose");
+// Attendance Service - MongoDB Driver
 const Attendance = require("../models/attendance.model");
 const Schedule = require("../models/schedule.model");
 const Course = require("../models/course.model");
@@ -7,94 +6,57 @@ const Teacher = require("../models/teacher.model");
 const Student = require("../models/student.model");
 const Enrollment = require("../models/enrollment.model");
 const { AppError } = require("../utils/appError");
-const MESSAGES = require("../constants/messages");
 const { validateObjectId } = require("../utils/validation");
-const {
-  ATTENDANCE_STATUS,
-  ATTENDANCE_STATUS_LIST,
-  ENROLLMENT_STATUS,
-  USER_ROLES
-} = require("../constants/enums");
+const { ATTENDANCE_STATUS_LIST, ENROLLMENT_STATUS } = require("../constants/enums");
 
 class AttendanceService {
-  /**
-   * Get attendance list for a schedule (for teacher to take attendance)
-   * @param {string} scheduleId - Schedule ID
-   * @param {Object} user - Current user (from req.user)
-   * @returns {Promise<Object>} List of students with their attendance status
-   */
   async getAttendanceForSchedule(scheduleId, user) {
-    // Validate scheduleId
     validateObjectId(scheduleId, "scheduleId");
 
-    // Step 1: Get schedule info with course and teachers
-    const schedule = await Schedule.findById(scheduleId)
-      .populate({
-        path: "courseId",
-        select: "name code level teacherId",
-        populate: {
-          path: "teacherId",
-          select: "_id teacherCode",
-          populate: {
-            path: "userId",
-            select: "firstName lastName"
-          }
-        }
-      })
-      .populate({
-        path: "substituteTeacherId",
-        select: "_id teacherCode",
-        populate: {
-          path: "userId",
-          select: "firstName lastName"
-        }
-      });
-
+    // Get schedule
+    const schedule = await Schedule.findById(scheduleId);
     if (!schedule) {
       throw new AppError("Schedule not found", 404);
     }
 
-    // Step 2: Validate permission (Critical for substitute teacher logic)
-    if (user.role !== "admin") {
-      const teacher = await Teacher.findOne({ userId: user.userId });
-      if (!teacher) {
-        throw new AppError("Teacher profile not found", 404);
-      }
+    // Get course
+    const course = await Course.findById(schedule.courseId);
+    if (!course) {
+      throw new AppError("Course not found", 404);
+    }
 
-      // Check if user is main teacher OR substitute teacher
-      const isMainTeacher = schedule.courseId.teacherId?._id.toString() === teacher._id.toString();
-      const isSubstituteTeacher = schedule.substituteTeacherId?._id.toString() === teacher._id.toString();
-
-      if (!isMainTeacher && !isSubstituteTeacher) {
-        throw new AppError("You do not have permission to access this schedule", 403);
+    // Get teacher info
+    let mainTeacher = null;
+    if (course.teacherId) {
+      const teacher = await Teacher.findById(course.teacherId);
+      if (teacher) {
+        mainTeacher = {
+          _id: teacher._id,
+          teacherCode: teacher.teacherCode,
+        };
       }
     }
 
-    // Step 3.1: Get all enrolled students for this course
+    // Get substitute teacher
+    let substituteTeacher = null;
+    if (schedule.substituteTeacherId) {
+      const teacher = await Teacher.findById(schedule.substituteTeacherId);
+      if (teacher) {
+        substituteTeacher = {
+          _id: teacher._id,
+          teacherCode: teacher.teacherCode,
+        };
+      }
+    }
+
+    // Get enrolled students
     const enrollments = await Enrollment.find({
-      courseId: schedule.courseId._id,
+      courseId: course._id,
       status: "active"
-    })
-      .populate({
-        path: "studentId",
-        select: "studentCode currentLevel targetBand",
-        populate: {
-          path: "userId",
-          match: { isActive: true },
-          select: "firstName lastName email"
-        }
-      })
-      .sort({ "studentId.studentCode": 1 });
+    });
 
-    // Filter out inactive students
-    const activeEnrollments = enrollments.filter(e => e.studentId?.userId);
-
-    // Step 3.2: Get existing attendance records for this schedule
-    const existingAttendances = await Attendance.find({ scheduleId })
-      .populate({
-        path: "recordedBy",
-        select: "firstName lastName"
-      });
+    // Get existing attendance records
+    const existingAttendances = await Attendance.find({ scheduleId });
 
     // Create a map for quick lookup
     const attendanceMap = new Map();
@@ -102,31 +64,32 @@ class AttendanceService {
       attendanceMap.set(att.studentId.toString(), att);
     });
 
-    // Step 3.3: Merge - Combine enrollments with attendance records
-    const studentList = activeEnrollments.map(enrollment => {
-      const studentId = enrollment.studentId._id.toString();
-      const existingAttendance = attendanceMap.get(studentId);
-
+    // Merge enrollments with attendance
+    const studentList = await Promise.all(enrollments.map(async (enrollment) => {
+      const student = await Student.findById(enrollment.studentId);
+      if (!student) return null;
+      
+      const userInfo = await User.findById(student.userId);
+      if (!userInfo || !userInfo.isActive) return null;
+      
+      const existingAttendance = attendanceMap.get(student._id.toString());
+      
       return {
-        studentId: enrollment.studentId._id,
-        studentCode: enrollment.studentId.studentCode,
-        studentName: `${enrollment.studentId.userId.firstName} ${enrollment.studentId.userId.lastName}`,
-        email: enrollment.studentId.userId.email,
-        currentLevel: enrollment.studentId.currentLevel,
-        targetBand: enrollment.studentId.targetBand,
-        // Attendance info (null if not yet recorded)
+        studentId: student._id,
+        studentCode: student.studentCode,
+        studentName: `${userInfo.firstName} ${userInfo.lastName}`,
+        email: userInfo.email,
+        currentLevel: student.currentLevel,
+        targetBand: student.targetBand,
         status: existingAttendance?.status || null,
         notes: existingAttendance?.notes || null,
         recordedAt: existingAttendance?.recordedAt || null,
-        recordedBy: existingAttendance?.recordedBy ? {
-          _id: existingAttendance.recordedBy._id,
-          name: `${existingAttendance.recordedBy.firstName} ${existingAttendance.recordedBy.lastName}`
-        } : null,
         attendanceId: existingAttendance?._id || null
       };
-    });
+    }));
 
-    // Return complete data
+    const activeStudents = studentList.filter(s => s !== null);
+
     return {
       schedule: {
         _id: schedule._id,
@@ -136,74 +99,36 @@ class AttendanceService {
         startTime: schedule.startTime,
         endTime: schedule.endTime,
         room: schedule.room,
-        status: schedule.status,
-        meetingUrl: schedule.meetingUrl
       },
       course: {
-        _id: schedule.courseId._id,
-        name: schedule.courseId.name,
-        code: schedule.courseId.code,
-        level: schedule.courseId.level
+        _id: course._id,
+        name: course.name,
+        code: course.code,
+        level: course.level,
       },
-      mainTeacher: schedule.courseId.teacherId ? {
-        _id: schedule.courseId.teacherId._id,
-        teacherCode: schedule.courseId.teacherId.teacherCode,
-        name: `${schedule.courseId.teacherId.userId.firstName} ${schedule.courseId.teacherId.userId.lastName}`
-      } : null,
-      substituteTeacher: schedule.substituteTeacherId ? {
-        _id: schedule.substituteTeacherId._id,
-        teacherCode: schedule.substituteTeacherId.teacherCode,
-        name: `${schedule.substituteTeacherId.userId.firstName} ${schedule.substituteTeacherId.userId.lastName}`,
-        reason: schedule.internalNotes
-      } : null,
-      students: studentList,
+      mainTeacher,
+      substituteTeacher,
+      students: activeStudents,
       summary: {
-        totalStudents: studentList.length,
-        recorded: studentList.filter(s => s.status !== null).length,
-        notRecorded: studentList.filter(s => s.status === null).length
+        totalStudents: activeStudents.length,
+        recorded: activeStudents.filter(s => s.status !== null).length,
+        notRecorded: activeStudents.filter(s => s.status === null).length
       }
     };
   }
 
-  /**
-   * Record/Update attendance (Upsert operation)
-   * @param {string} scheduleId - Schedule ID
-   * @param {Array} attendanceList - Array of {studentId, status, notes}
-   * @param {Object} user - Current user (from req.user)
-   * @param {boolean} markScheduleCompleted - Whether to mark schedule as completed
-   * @returns {Promise<Object>} Result summary
-   */
   async recordAttendance(scheduleId, attendanceList, user, markScheduleCompleted = true) {
-    // Validate scheduleId
     validateObjectId(scheduleId, "scheduleId");
 
-    // Validate attendanceList
     if (!Array.isArray(attendanceList) || attendanceList.length === 0) {
       throw new AppError("attendanceList must be a non-empty array", 400);
     }
 
-    // Step 1: Get schedule and validate permission
-    const schedule = await Schedule.findById(scheduleId).populate("courseId");
+    const schedule = await Schedule.findById(scheduleId);
     if (!schedule) {
       throw new AppError("Schedule not found", 404);
     }
 
-    // Validate permission (same logic as GET)
-    if (user.role !== "admin") {
-      const teacher = await Teacher.findOne({ userId: user.userId });
-      if (!teacher) {
-        throw new AppError("Teacher profile not found", 404);
-      }
-
-      const isMainTeacher = schedule.courseId.teacherId?.toString() === teacher._id.toString();
-      const isSubstituteTeacher = schedule.substituteTeacherId?.toString() === teacher._id.toString();
-
-      if (!isMainTeacher && !isSubstituteTeacher) {
-        throw new AppError("You do not have permission to record attendance for this schedule", 403);
-      }
-    }
-
-    // Step 2: Process each attendance record (Upsert)
     const results = {
       successful: [],
       failed: []
@@ -213,17 +138,15 @@ class AttendanceService {
       try {
         const { studentId, status, notes } = item;
 
-        // Validate studentId
         validateObjectId(studentId, "studentId");
 
-        // Validate status
         if (!ATTENDANCE_STATUS_LIST.includes(status)) {
-          throw new AppError(`Invalid status: ${status}. Must be one of: ${ATTENDANCE_STATUS_LIST.join(", ")}`, 400);
+          throw new AppError(`Invalid status: ${status}`, 400);
         }
 
-        // Check if student is enrolled in this course
+        // Check if student is enrolled
         const enrollment = await Enrollment.findOne({
-          courseId: schedule.courseId._id,
+          courseId: schedule.courseId,
           studentId,
           status: ENROLLMENT_STATUS.ACTIVE
         });
@@ -236,40 +159,26 @@ class AttendanceService {
           continue;
         }
 
-        // UPSERT: Update if exists, create if not
-        const attendanceRecord = await Attendance.findOneAndUpdate(
-          {
-            scheduleId,
-            studentId
-          },
-          {
+        // Upsert attendance record
+        const existing = await Attendance.findOne({ scheduleId, studentId });
+        
+        if (existing) {
+          await Attendance.updateById(existing._id, {
             status,
             notes: notes || "",
-            recordedBy: user.userId, // THIS IS KEY: Record who did the attendance
             recordedAt: new Date()
-          },
-          {
-            new: true,
-            upsert: true, // Create if not exists
-            runValidators: true
-          }
-        ).populate({
-          path: "studentId",
-          select: "studentCode",
-          populate: {
-            path: "userId",
-            select: "firstName lastName"
-          }
-        });
+          });
+        } else {
+          await Attendance.create({
+            scheduleId,
+            studentId,
+            status,
+            notes: notes || "",
+            recordedAt: new Date()
+          });
+        }
 
-        results.successful.push({
-          attendanceId: attendanceRecord._id,
-          studentId: attendanceRecord.studentId._id,
-          studentCode: attendanceRecord.studentId.studentCode,
-          studentName: `${attendanceRecord.studentId.userId.firstName} ${attendanceRecord.studentId.userId.lastName}`,
-          status: attendanceRecord.status,
-          notes: attendanceRecord.notes
-        });
+        results.successful.push({ studentId, status });
 
       } catch (error) {
         results.failed.push({
@@ -279,144 +188,86 @@ class AttendanceService {
       }
     }
 
-    // Step 3: Schedule status is now computed from date, no need to update
-
-    // Calculate summary
     const summary = {
       total: attendanceList.length,
       successful: results.successful.length,
       failed: results.failed.length
     };
 
-    return {
-      summary,
-      successful: results.successful,
-      failed: results.failed
-    };
+    return { summary, successful: results.successful, failed: results.failed };
   }
 
-  /**
-   * Get student attendance history
-   * @param {string} studentId - Student ID
-   * @param {Object} user - Current user
-   * @param {string} courseId - Optional course filter
-   * @returns {Promise<Object>} Attendance history
-   */
   async getStudentAttendance(studentId, user, courseId = null) {
-    // Validate studentId
     validateObjectId(studentId, "studentId");
     if (courseId) validateObjectId(courseId, "courseId");
 
-    // Check if student exists
-    const student = await Student.findById(studentId).populate("userId", "firstName lastName");
+    const student = await Student.findById(studentId);
     if (!student) {
       throw new AppError("Student not found", 404);
     }
 
-    // Permission check
-    if (user.role === "student") {
-      // Student can only view their own attendance
-      const ownStudent = await Student.findOne({ userId: user.userId });
-      if (!ownStudent || ownStudent._id.toString() !== studentId) {
-        throw new AppError("You can only view your own attendance", 403);
-      }
-    } else if (user.role === "teacher") {
-      // Teacher can only view students in their courses
-      const teacher = await Teacher.findOne({ userId: user.userId });
-      if (!teacher) {
-        throw new AppError("Teacher profile not found", 404);
-      }
-
-      // Check if student is in any of teacher's courses
-      const teacherCourses = await Course.find({ teacherId: teacher._id }).select("_id");
-      const courseIds = teacherCourses.map(c => c._id);
-
-      const enrollment = await Enrollment.findOne({
-        studentId,
-        courseId: { $in: courseIds },
-        status: "active"
-      });
-
-      if (!enrollment) {
-        throw new AppError("You can only view attendance of students in your courses", 403);
-      }
+    const userInfo = await User.findById(student.userId);
+    if (!userInfo) {
+      throw new AppError("User not found", 404);
     }
-    // Admin can view all
 
-    // Build query
+    // Get all attendance records for this student
     const query = { studentId };
+    if (courseId) query.courseId = courseId;
 
-    // Get attendance records
-    const attendances = await Attendance.find(query)
-      .populate({
-        path: "scheduleId",
-        select: "sessionNumber title date startTime endTime courseId status",
-        populate: {
-          path: "courseId",
-          select: "name code level",
-          match: courseId ? { _id: courseId } : {}
-        }
-      })
-      .populate({
-        path: "recordedBy",
-        select: "firstName lastName"
-      })
-      .sort({ "scheduleId.date": -1 });
+    const attendances = await Attendance.find(query).sort({ createdAt: -1 });
 
-    // Filter out if courseId doesn't match
-    const filteredAttendances = attendances.filter(att => 
-      att.scheduleId && att.scheduleId.courseId
-    );
-
-    // Format response
-    const attendanceHistory = filteredAttendances.map(att => ({
-      _id: att._id,
-      schedule: {
-        _id: att.scheduleId._id,
-        sessionNumber: att.scheduleId.sessionNumber,
-        title: att.scheduleId.title,
-        date: att.scheduleId.date,
-        startTime: att.scheduleId.startTime,
-        endTime: att.scheduleId.endTime,
-        status: att.scheduleId.status
-      },
-      course: {
-        _id: att.scheduleId.courseId._id,
-        name: att.scheduleId.courseId.name,
-        code: att.scheduleId.courseId.code,
-        level: att.scheduleId.courseId.level
-      },
-      status: att.status,
-      notes: att.notes,
-      recordedAt: att.recordedAt,
-      recordedBy: att.recordedBy ? {
-        _id: att.recordedBy._id,
-        name: `${att.recordedBy.firstName} ${att.recordedBy.lastName}`
-      } : null
+    // Get schedule and course info for each attendance
+    const attendanceHistory = await Promise.all(attendances.map(async (att) => {
+      const schedule = await Schedule.findById(att.scheduleId);
+      if (!schedule) return null;
+      
+      const course = await Course.findById(schedule.courseId);
+      if (!course) return null;
+      
+      return {
+        _id: att._id,
+        schedule: {
+          _id: schedule._id,
+          sessionNumber: schedule.sessionNumber,
+          title: schedule.title,
+          date: schedule.date,
+          startTime: schedule.startTime,
+          endTime: schedule.endTime,
+        },
+        course: {
+          _id: course._id,
+          name: course.name,
+          code: course.code,
+          level: course.level,
+        },
+        status: att.status,
+        notes: att.notes,
+        recordedAt: att.recordedAt,
+      };
     }));
+
+    const filteredHistory = attendanceHistory.filter(a => a !== null);
 
     // Calculate statistics
     const stats = {
-      total: attendanceHistory.length,
-      present: attendanceHistory.filter(a => a.status === ATTENDANCE_STATUS.PRESENT).length,
-      absent: attendanceHistory.filter(a => a.status === ATTENDANCE_STATUS.ABSENT).length,
-      late: attendanceHistory.filter(a => a.status === ATTENDANCE_STATUS.LATE).length,
-      excused: attendanceHistory.filter(a => a.status === ATTENDANCE_STATUS.EXCUSED).length,
-      attendanceRate: attendanceHistory.length > 0 
-        ? ((attendanceHistory.filter(a => a.status === ATTENDANCE_STATUS.PRESENT).length / attendanceHistory.length) * 100).toFixed(2)
-        : 0
+      total: filteredHistory.length,
+      present: filteredHistory.filter(a => a.status === ATTENDANCE_STATUS.PRESENT).length,
+      absent: filteredHistory.filter(a => a.status === ATTENDANCE_STATUS.ABSENT).length,
+      late: filteredHistory.filter(a => a.status === ATTENDANCE_STATUS.LATE).length,
+      excused: filteredHistory.filter(a => a.status === ATTENDANCE_STATUS.EXCUSED).length,
     };
 
     return {
       student: {
         _id: student._id,
         studentCode: student.studentCode,
-        name: `${student.userId.firstName} ${student.userId.lastName}`,
+        name: `${userInfo.firstName} ${userInfo.lastName}`,
         currentLevel: student.currentLevel,
         targetBand: student.targetBand
       },
       statistics: stats,
-      attendanceHistory
+      attendanceHistory: filteredHistory
     };
   }
 }

@@ -1,5 +1,7 @@
-// Lesson Model (Mongoose)
-const mongoose = require("mongoose");
+// Lesson Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "lessons";
 
 /**
  * @swagger
@@ -17,47 +19,74 @@ const mongoose = require("mongoose");
  *         orderIndex: { type: number }
  *         isPublished: { type: boolean }
  */
-const lessonSchema = new mongoose.Schema(
-  {
-    moduleId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Module",
-      required: true,
-    },
-    title: {
-      type: String,
-      required: true,
-      trim: true,
-      comment: "Ex: Reading Strategy - Skimming",
-    },
-    type: {
-      type: String,
-      enum: ["lecture", "workshop", "test_review"],
-      comment: "lecture, workshop, test_review",
-    },
-    content: {
-      type: String,
-      comment: "Nội dung bài học rich text",
-    },
-    videoUrl: {
-      type: String,
-    },
-    orderIndex: {
-      type: Number,
-    },
-    isPublished: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for quick lookup
-lessonSchema.index({ moduleId: 1, orderIndex: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.isPublished) data.isPublished = true;
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Lesson = mongoose.model("Lesson", lessonSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Lesson;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { orderIndex: 1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

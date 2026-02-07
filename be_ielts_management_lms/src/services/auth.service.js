@@ -3,15 +3,10 @@ const jwt = require("jsonwebtoken");
 const User = require("../models/user.model");
 const { AppError } = require("../utils/appError");
 const { getMessages } = require("../responses");
-const eventProducer = require("../events/event.producer");
 
 class AuthService {
   /**
    * Generate JWT token
-   * @param {string} userId - User ID
-   * @param {string} email - User email
-   * @param {string} role - User role
-   * @returns {string} JWT token
    */
   generateToken(userId, email, role) {
     return jwt.sign(
@@ -23,8 +18,6 @@ class AuthService {
 
   /**
    * Verify JWT token
-   * @param {string} token - JWT token
-   * @returns {Object} Decoded token
    */
   verifyToken(token, lang = "en") {
     try {
@@ -37,9 +30,6 @@ class AuthService {
 
   /**
    * Register a new user
-   * @param {Object} userData - User registration data
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Created user
    */
   async register(userData, lang = "en") {
     const messages = getMessages(lang);
@@ -74,46 +64,20 @@ class AuthService {
       lastName,
       role,
       phone,
+      isActive: true,
     });
 
-    // Publish user registered event
-    try {
-      await eventProducer.publishUserRegistered({
-        userId: user._id.toString(),
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        role: user.role,
-      });
-    } catch (err) {
-      console.error("[Event] Failed to publish user registered:", err.message);
-    }
-
-    // Send welcome email notification
-    try {
-      await eventProducer.publishEmailNotification({
-        to: user.email,
-        subject: "Welcome to IELTS Management LMS",
-        template: "welcome",
-        data: { firstName: user.firstName, lastName: user.lastName },
-      });
-    } catch (err) {
-      console.error("[Event] Failed to publish welcome email:", err.message);
-    }
-
     // Remove password from response
-    const userResponse = user.toObject();
-    delete userResponse.password;
+    delete user.password;
 
-    return userResponse;
+    // Generate token
+    const token = this.generateToken(user._id.toString(), user.email, user.role);
+
+    return { user, token };
   }
 
   /**
    * Login user
-   * @param {string} email - User email
-   * @param {string} password - User password
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} User and token
    */
   async login(email, password, lang = "en") {
     const messages = getMessages(lang);
@@ -135,71 +99,42 @@ class AuthService {
     }
 
     // Verify password
-    const isPasswordValid = await user.comparePassword(password);
+    const isPasswordValid = await User.comparePassword(password, user.password);
     if (!isPasswordValid) {
       throw new AppError(messages.AUTH.INVALID_CREDENTIALS, 401);
     }
 
     // Update last login
-    user.lastLogin = new Date();
-    await user.save();
-
-    // Publish user logged in event
-    try {
-      await eventProducer.publishUserLoggedIn({
-        userId: user._id.toString(),
-        email: user.email,
-        role: user.role,
-        loginAt: new Date(),
-      });
-    } catch (err) {
-      console.error("[Event] Failed to publish user logged in:", err.message);
-    }
-
-    // Log analytics
-    try {
-      await eventProducer.publishAnalyticsEvent("user_login", {
-        userId: user._id.toString(),
-        metadata: { role: user.role },
-      });
-    } catch (err) {
-      console.error("[Event] Failed to publish analytics:", err.message);
-    }
+    await User.updateById(user._id.toString(), { lastLogin: new Date() });
 
     // Generate token
-    const token = this.generateToken(user._id, user.email, user.role);
+    const token = this.generateToken(user._id.toString(), user.email, user.role);
 
     // Remove password from response
-    const userResponse = user.toObject();
-    delete userResponse.password;
+    delete user.password;
 
-    return { user: userResponse, token };
+    return { user, token };
   }
 
   /**
    * Get user profile
-   * @param {string} userId - User ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} User profile
    */
   async getProfile(userId, lang = "en") {
     const messages = getMessages(lang);
-    const user = await User.findById(userId).select("-password");
+    const user = await User.findById(userId);
 
     if (!user) {
       throw new AppError(messages.AUTH.USER_NOT_FOUND, 404);
     }
+
+    // Remove password
+    delete user.password;
 
     return { user };
   }
 
   /**
    * Change user password
-   * @param {string} userId - User ID
-   * @param {string} currentPassword - Current password
-   * @param {string} newPassword - New password
-   * @param {string} lang - Language preference
-   * @returns {Promise<void>}
    */
   async changePassword(userId, currentPassword, newPassword, lang = "en") {
     const messages = getMessages(lang);
@@ -225,39 +160,32 @@ class AuthService {
     }
 
     // Verify current password
-    const isPasswordValid = await user.comparePassword(currentPassword);
+    const isPasswordValid = await User.comparePassword(currentPassword, user.password);
     if (!isPasswordValid) {
       throw new AppError(messages.AUTH.CURRENT_PASSWORD_INCORRECT, 401);
     }
 
-    // Update password (will be hashed by pre-save hook)
-    user.password = newPassword;
-    await user.save();
+    // Update password
+    await User.updateById(userId, { password: newPassword });
   }
 
   /**
    * Get user by ID
-   * @param {string} userId - User ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} User
    */
   async getUserById(userId, lang = "en") {
     const messages = getMessages(lang);
-    const user = await User.findById(userId).select("-password");
+    const user = await User.findById(userId);
     
     if (!user) {
       throw new AppError(messages.AUTH.USER_NOT_FOUND, 404);
     }
     
+    delete user.password;
     return user;
   }
 
   /**
    * Update user profile
-   * @param {string} userId - User ID
-   * @param {Object} updateData - Update data
-   * @param {string} lang - Language preference
-   * @returns {Promise<Object>} Updated user
    */
   async updateProfile(userId, updateData, lang = "en") {
     const messages = getMessages(lang);
@@ -267,32 +195,22 @@ class AuthService {
     delete updateData.email;
     delete updateData.role;
 
-    const user = await User.findByIdAndUpdate(
-      userId,
-      updateData,
-      { new: true, runValidators: true }
-    ).select("-password");
+    const user = await User.updateById(userId, updateData);
 
     if (!user) {
       throw new AppError(messages.AUTH.USER_NOT_FOUND, 404);
     }
 
+    delete user.password;
     return user;
   }
 
   /**
    * Deactivate user account
-   * @param {string} userId - User ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<void>}
    */
   async deactivateAccount(userId, lang = "en") {
     const messages = getMessages(lang);
-    const user = await User.findByIdAndUpdate(
-      userId,
-      { isActive: false },
-      { new: true }
-    );
+    const user = await User.updateById(userId, { isActive: false });
 
     if (!user) {
       throw new AppError(messages.AUTH.USER_NOT_FOUND, 404);
@@ -301,17 +219,10 @@ class AuthService {
 
   /**
    * Reactivate user account (Admin only)
-   * @param {string} userId - User ID
-   * @param {string} lang - Language preference
-   * @returns {Promise<void>}
    */
   async reactivateAccount(userId, lang = "en") {
     const messages = getMessages(lang);
-    const user = await User.findByIdAndUpdate(
-      userId,
-      { isActive: true },
-      { new: true }
-    );
+    const user = await User.updateById(userId, { isActive: true });
 
     if (!user) {
       throw new AppError(messages.AUTH.USER_NOT_FOUND, 404);
@@ -320,8 +231,6 @@ class AuthService {
 
   /**
    * Verify email exists
-   * @param {string} email - Email to check
-   * @returns {Promise<boolean>} True if exists
    */
   async emailExists(email) {
     const user = await User.findOne({ email: email.toLowerCase() });

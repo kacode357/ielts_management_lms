@@ -1,5 +1,7 @@
-// Assessment Model (Mongoose)
-const mongoose = require("mongoose");
+// Assessment Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "assessments";
 
 /**
  * @swagger
@@ -12,7 +14,7 @@ const mongoose = require("mongoose");
  *         studentId: { type: string }
  *         courseId: { type: string }
  *         type: { type: string }
- *         date: { type: string, format: date-time }
+ *         date: { type: string }
  *         listeningScore: { type: number }
  *         readingScore: { type: number }
  *         writingScore: { type: number }
@@ -22,72 +24,74 @@ const mongoose = require("mongoose");
  *         strengths: { type: string }
  *         weaknesses: { type: string }
  */
-const assessmentSchema = new mongoose.Schema(
-  {
-    studentId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Student",
-      required: true,
-    },
-    courseId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Course",
-    },
-    type: {
-      type: String,
-      required: true,
-      enum: ["placement", "mock_test", "final_exam"],
-      comment: "placement (đầu vào), mock_test (thi thử), final_exam",
-    },
-    date: {
-      type: Date,
-      default: Date.now,
-    },
-    // Điểm thành phần
-    listeningScore: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-    readingScore: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-    writingScore: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-    speakingScore: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-    overallBand: {
-      type: Number,
-      min: 0,
-      max: 9,
-    },
-    teacherFeedback: {
-      type: String,
-    },
-    strengths: {
-      type: String,
-    },
-    weaknesses: {
-      type: String,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for quick lookup
-assessmentSchema.index({ studentId: 1, date: -1 });
-assessmentSchema.index({ courseId: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.date) data.date = new Date();
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Assessment = mongoose.model("Assessment", assessmentSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Assessment;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { date: -1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

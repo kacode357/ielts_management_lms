@@ -1,5 +1,7 @@
-// Course Model (Mongoose)
-const mongoose = require("mongoose");
+// Course Model - MongoDB Driver
+const { getCollection, ObjectId } = require("../db/mongoose");
+
+const COLLECTION_NAME = "courses";
 
 /**
  * @swagger
@@ -14,8 +16,8 @@ const mongoose = require("mongoose");
  *         description: { type: string }
  *         level: { type: string }
  *         teacherId: { type: string }
- *         startDate: { type: string, format: date }
- *         endDate: { type: string, format: date }
+ *         startDate: { type: string }
+ *         endDate: { type: string }
  *         totalHours: { type: number }
  *         room: { type: string }
  *         scheduleDesc: { type: string }
@@ -24,75 +26,77 @@ const mongoose = require("mongoose");
  *         status: { type: string }
  *         isActive: { type: boolean }
  */
-const courseSchema = new mongoose.Schema(
-  {
-    name: {
-      type: String,
-      required: true,
-      trim: true,
-    },
-    code: {
-      type: String,
-      required: true,
-      unique: true,
-      trim: true,
-    },
-    description: {
-      type: String,
-    },
-    level: {
-      type: String,
-      required: true,
-      comment: "Foundation, Pre-IELTS, IELTS 6.0+",
-    },
-    teacherId: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: "Teacher",
-      comment: "Giáo viên chủ nhiệm (Main Teacher)",
-    },
-    startDate: {
-      type: Date,
-    },
-    endDate: {
-      type: Date,
-    },
-    totalHours: {
-      type: Number,
-    },
-    room: {
-      type: String,
-    },
-    scheduleDesc: {
-      type: String,
-      comment: "Mô tả lịch học: Mon-Wed-Fri 19:00",
-    },
-    currentStudents: {
-      type: Number,
-      default: 0,
-    },
-    maxStudents: {
-      type: Number,
-      default: 30,
-    },
-    status: {
-      type: String,
-      enum: ["scheduled", "ongoing", "completed", "cancelled"],
-      default: "scheduled",
-    },
-    isActive: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
 
-// Index for quick lookup
-courseSchema.index({ teacherId: 1 });
-courseSchema.index({ status: 1 });
+async function create(data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.createdAt = new Date();
+  data.updatedAt = new Date();
+  
+  if (!data.currentStudents) data.currentStudents = 0;
+  if (!data.maxStudents) data.maxStudents = 30;
+  if (!data.status) data.status = "scheduled";
+  if (!data.isActive) data.isActive = true;
+  
+  const result = await collection.insertOne(data);
+  return { ...data, _id: result.insertedId };
+}
 
-const Course = mongoose.model("Course", courseSchema);
+async function findById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne({ _id: new ObjectId(id) });
+}
 
-module.exports = Course;
+async function findOne(query) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.findOne(query);
+}
+
+async function find(query = {}, options = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const { sort = { createdAt: -1 }, limit, skip } = options;
+  
+  let cursor = collection.find(query).sort(sort);
+  
+  if (skip) cursor = cursor.skip(skip);
+  if (limit) cursor = cursor.limit(limit);
+  
+  return await cursor.toArray();
+}
+
+async function updateById(id, data) {
+  const collection = await getCollection(COLLECTION_NAME);
+  
+  data.updatedAt = new Date();
+  delete data._id;
+  
+  await collection.updateOne(
+    { _id: new ObjectId(id) },
+    { $set: data }
+  );
+  
+  return await findById(id);
+}
+
+async function deleteById(id) {
+  const collection = await getCollection(COLLECTION_NAME);
+  const result = await collection.deleteOne({ _id: new ObjectId(id) });
+  return result.deletedCount > 0;
+}
+
+async function count(query = {}) {
+  const collection = await getCollection(COLLECTION_NAME);
+  return await collection.countDocuments(query);
+}
+
+module.exports = {
+  create,
+  findById,
+  findOne,
+  find,
+  updateById,
+  deleteById,
+  count,
+  COLLECTION_NAME,
+  ObjectId
+};

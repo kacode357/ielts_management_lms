@@ -1,5 +1,5 @@
 // Validation Helper Utilities
-const mongoose = require("mongoose");
+const { ObjectId } = require("mongodb");
 const { AppError } = require("./appError");
 
 /**
@@ -13,7 +13,7 @@ const validateObjectId = (id, fieldName = "ID") => {
     throw new AppError(`${fieldName} is required`, 400);
   }
 
-  if (!mongoose.Types.ObjectId.isValid(id)) {
+  if (!ObjectId.isValid(id)) {
     throw new AppError(`Invalid ${fieldName} format. Must be a valid 24-character hex string.`, 400);
   }
 
