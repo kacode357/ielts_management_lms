@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run:*)",
+      "Bash(timeout 5)",
+      "Read(//dev/**)",
+      "Bash(node -e \"require\\(''@babel/parser''\\).parse\\(require\\(''fs''\\).readFileSync\\(''./src/pages/Home.jsx'', ''utf8''\\), {sourceType: ''module'', plugins: [''jsx'']}\\)\")",
+      "Bash(npx vite:*)",
+      "Bash(ping -n 3 127.0.0.1)",
+      "Bash(curl -s http://localhost:5173/)",
+      "Bash(curl -s \"http://localhost:5173/src/main.jsx\")",
+      "Bash(curl -s \"http://localhost:5173/src/pages/Home.jsx\")",
+      "Bash(ping -n 2 127.0.0.1)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git remote:*)"
+    ]
+  }
+}
