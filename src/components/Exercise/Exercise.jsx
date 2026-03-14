@@ -14,6 +14,8 @@ import audio4Questions from '../../data/audio4/audio_4_questions.json'
 import audio4Answers from '../../data/audio4/audio_4_answers.json'
 import audio5Questions from '../../data/audio5/audio_5_questions.json'
 import audio5Answers from '../../data/audio5/audio_5_answers.json'
+import audio6Questions from '../../data/audio6/audio_6_questions.json'
+import audio6Answers from '../../data/audio6/audio_6_answers.json'
 import audio9Questions from '../../data/audio9/audio_9_questions.json'
 import audio9Answers from '../../data/audio9/audio_9_answers.json'
 import audio13Questions from '../../data/audio13/audio_13_questions.json'
@@ -36,6 +38,7 @@ const audioData = {
   audio3: { questions: audio3Questions, answers: audio3Answers, file: '/Audio 3.mp3', title: 'Audio 3' },
   audio4: { questions: audio4Questions, answers: audio4Answers, file: '/Audio 4.mp3', title: 'Audio 4' },
   audio5: { questions: audio5Questions, answers: audio5Answers, file: '/Audio 5.mp3', title: 'Audio 5' },
+  audio6: { questions: audio6Questions, answers: audio6Answers, file: '/Audio 6.mp3', title: 'Audio 6' },
   audio9: { questions: audio9Questions, answers: audio9Answers, file: '/Audio 9.mp3', title: 'Audio 9' },
   audio13: { questions: audio13Questions, answers: audio13Answers, file: '/Audio 13.mp3', title: 'Audio 13' },
   audio17: { questions: audio17Questions, answers: audio17Answers, file: '/Audio 17.mp3', title: 'Audio 17' }
@@ -400,6 +403,14 @@ function Exercise() {
       link.click()
 
       message.success({ content: 'Image saved successfully!', key: 'export' })
+
+      // Auto-clear local storage after export
+      try {
+        const storageKey = getStorageKey()
+        localStorage.removeItem(storageKey)
+      } catch (e) {
+        console.error('Error clearing localStorage after export:', e)
+      }
     } catch (error) {
       console.error('Export error:', error)
       message.error({ content: 'Error saving image!', key: 'export' })

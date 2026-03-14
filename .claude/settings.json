@@ -14,6 +14,9 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git remote:*)"
+    ],
+    "additionalDirectories": [
+      "d:\\ielts_management_lms\\src\\data"
     ]
   }
 }

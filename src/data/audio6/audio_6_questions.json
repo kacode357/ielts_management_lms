@@ -1,0 +1,417 @@
+{
+  "title": "Confidence and Goal Setting",
+  "source_images": [
+    "Audio 6 Part 1.jpg",
+    "Audio 6 Part 2.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Hello. I'm Joe from Health Services and "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q1"
+        },
+        {
+          "type": "text",
+          "value": " talking to you today. You've come here today to learn more about gaining confidence and setting goals. How many of you "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q2"
+        },
+        {
+          "type": "text",
+          "value": "? Positive thinking is the key to confidence. "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q3"
+        },
+        {
+          "type": "text",
+          "value": " whether you are playing a sports match, facing an interview or preparing for an exam, "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q4"
+        },
+        {
+          "type": "text",
+          "value": ", you will gain confidence. This is the secret-positive thought patterns. Positivity leads to confidence "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q5"
+        },
+        {
+          "type": "text",
+          "value": " will optimise your performance."
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "What is the one simple mental strategy that all confident people "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q6"
+        },
+        {
+          "type": "text",
+          "value": "? They concentrate on success. But don't they ever fail? Don't they "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q7"
+        },
+        {
+          "type": "text",
+          "value": "? What happens when "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q8"
+        },
+        {
+          "type": "text",
+          "value": "? The crucial difference is that they don't dwell on failure. Everybody makes mistakes-I mean, "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q9"
+        },
+        {
+          "type": "text",
+          "value": "? Rather than giving up or becoming depressed, the best strategy is to register the mistake; "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q10"
+        },
+        {
+          "type": "text",
+          "value": " a better way to act or what could have been done differently in order to achieve a more successful outcome. "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q11"
+        },
+        {
+          "type": "text",
+          "value": "! Yes, erase the negative emotions; allow those memories of defeat, frustration or dissatisfaction to fade and "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q12"
+        },
+        {
+          "type": "text",
+          "value": " Negativity erodes confidence. You need to "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q13"
+        },
+        {
+          "type": "text",
+          "value": " and focus on successful outcomes."
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, it's not that easy. I can hear you saying. Well, no, "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q14"
+        },
+        {
+          "type": "text",
+          "value": " but no-one ever fails completely so congratulate yourself on the areas where you did do well. Mentally replay the best bits - even "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q15"
+        },
+        {
+          "type": "text",
+          "value": "!"
+        }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Now, there are two more things you need to do. Firstly, rehearsal-yes, you heard me-rehearsal. "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q16"
+        },
+        {
+          "type": "text",
+          "value": " their parts? No, the truth is, we all need to rehearse. This is a surefire way to "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q17"
+        },
+        {
+          "type": "text",
+          "value": ". Before the match, the presentation, the exam or whatever, imagine yourself "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q18"
+        },
+        {
+          "type": "text",
+          "value": ". And here's the second tip-look confident. That will always give you an extra physiological advantage. So you can see that "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q19"
+        },
+        {
+          "type": "text",
+          "value": " work together on this. You have to think and act positively."
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Let's talk a bit more about how to look confident. If you have to overcome a challenge, get rid of "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q20"
+        },
+        {
+          "type": "text",
+          "value": " and rigid posture, those downcast eyes and "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q21"
+        },
+        {
+          "type": "text",
+          "value": ". Even if you don't feel very self-assured, you can still give the appearance of confidence. "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q22"
+        },
+        {
+          "type": "text",
+          "value": ", make full eye contact and keep an open expression-replace the frown with a smile if you can manage it. And those hunched shoulders? "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q23"
+        },
+        {
+          "type": "text",
+          "value": ". If you need to, take a deep breath and stretch to release pent up "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q24"
+        },
+        {
+          "type": "text",
+          "value": ". What if you have to make a difficult phone call, for example? Nobody can actually see you-so does it matter what you look like? "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q25"
+        },
+        {
+          "type": "text",
+          "value": ". Practising positive body language will help you cross the threshold into a confident mood."
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "Before we move on to talk about "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q26"
+        },
+        {
+          "type": "text",
+          "value": ", it may surprise you to know that, once you have set a goal in life, the brain responds with "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q27"
+        },
+        {
+          "type": "text",
+          "value": ", which we experience as ... ?-that's right, happiness! And what happens "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q28"
+        },
+        {
+          "type": "text",
+          "value": "? Yes, there is another burst of activity ... and another feeling of happiness. As you can see, the recipe for "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q29"
+        },
+        {
+          "type": "text",
+          "value": " is to maintain a positive attitude "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q30"
+        },
+        {
+          "type": "text",
+          "value": ". So, whatever your goal, whatever it is that you're aiming for-a new job, losing weight, giving up smoking, graduation- you need an appropriate (and by 'appropriate' I mean "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q31"
+        },
+        {
+          "type": "text",
+          "value": " goal). That's the first step."
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "The next thing to consider is motivation. "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q32"
+        },
+        {
+          "type": "text",
+          "value": "? Well, it's more likely to motivate you if you think of the rewards of success rather than focus on failure, "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q33"
+        },
+        {
+          "type": "text",
+          "value": ". So you need to establish your incentives. After that you'll have to work out the various stages and phases that "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q34"
+        },
+        {
+          "type": "text",
+          "value": " along the way and prepare for each one of them. If you're not naturally motivated, "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q35"
+        },
+        {
+          "type": "text",
+          "value": " and achievable. But it really is important to ensure you collect the resources to accomplish "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q36"
+        },
+        {
+          "type": "text",
+          "value": ". If you have performed that particular task before, you may already "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q37"
+        },
+        {
+          "type": "text",
+          "value": " or at least know where to get them from. If not, ask someone "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q38"
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "Jo(e)",
+      "content": [
+        {
+          "type": "text",
+          "value": "When you have got this far, the next stage is obvious-yes, you have to "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q39"
+        },
+        {
+          "type": "text",
+          "value": ". That's not quite all there is to it though. The final thing to remember is to "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q40"
+        },
+        {
+          "type": "text",
+          "value": "; in other words, be sure to maintain a progress log. That way you can look back at your previous "
+        },
+        {
+          "type": "blank",
+          "id": "audio6_q41"
+        },
+        {
+          "type": "text",
+          "value": " and watch your progress along the way to achieving your goal."
+        }
+      ]
+    }
+  ]
+}
