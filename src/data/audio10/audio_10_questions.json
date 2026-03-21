@@ -1,0 +1,368 @@
+{
+  "title": "Welcome to the museum",
+  "source_images": [],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "text",
+          "value": "Welcome to the museum. "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q1"
+        },
+        {
+          "type": "text",
+          "value": ", I'd like to remind you of one or two things. Firstly, "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q2"
+        },
+        {
+          "type": "text",
+          "value": " admission is free to all visitors so "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q3"
+        },
+        {
+          "type": "text",
+          "value": " and, if you can't take it all in today, you can come back again and again "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q4"
+        },
+        {
+          "type": "text",
+          "value": " Opening hours are from "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q5"
+        },
+        {
+          "type": "text",
+          "value": " but the museum closes a little later on "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q6"
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "text",
+          "value": "There are new multimedia guides available in 10 languages-"
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q7"
+        },
+        {
+          "type": "text",
+          "value": " in the covered courtyard for four pounds fifty and you can have it with you all day-from opening time in the morning "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q8"
+        },
+        {
+          "type": "text",
+          "value": "-but you will need to produce ID-a passport, driver's licence or national identity card "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q9"
+        },
+        {
+          "type": "text",
+          "value": " These multimedia guides have audio commentary "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q10"
+        },
+        {
+          "type": "text",
+          "value": " and an interactive map for easy navigation. They're simple to operate and "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q11"
+        },
+        {
+          "type": "text",
+          "value": " many of the objects in the various galleries."
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio10_q12"
+        },
+        {
+          "type": "text",
+          "value": ", apart from your camera and a purse, wallet or small handbag, "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q13"
+        },
+        {
+          "type": "text",
+          "value": " such as large bags, coats and umbrellas will have to be left at the cloakroom. Please note that the museum has recently revised "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q14"
+        },
+        {
+          "type": "text",
+          "value": " and parcels that it will accept in its cloakrooms. I think the maximum size is 40 by 40 by 50 centimetres with "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q15"
+        },
+        {
+          "type": "text",
+          "value": " The only exception to this is prams and pushchairs. There is a charge of one pound per item. The main cloakroom is "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q16"
+        },
+        {
+          "type": "text",
+          "value": " and there is another one "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q17"
+        }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "text",
+          "value": "It may seem obvious but "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q18"
+        },
+        {
+          "type": "text",
+          "value": " you should set your mobile phone to silent or "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q19"
+        },
+        {
+          "type": "text",
+          "value": " while you are in the museum and not carry or consume any food or drink in the exhibition halls. If you are hungry, there is an excellent restaurant where you can "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q20"
+        },
+        {
+          "type": "text",
+          "value": "l. If it's just a hot beverage you want, then "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q21"
+        },
+        {
+          "type": "text",
+          "value": " at the Gallery Cafe~."
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio10_q22"
+        },
+        {
+          "type": "text",
+          "value": " from the south by going through the main entrance, as I said before, "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q23"
+        },
+        {
+          "type": "text",
+          "value": " and on your right is the museum shop. "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q24"
+        },
+        {
+          "type": "text",
+          "value": " postcards and souvenirs in there and "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q25"
+        },
+        {
+          "type": "text",
+          "value": " but perhaps best left "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q26"
+        },
+        {
+          "type": "text",
+          "value": " Then you'll know exactly what you want. The big room to the right of the entrance behind the shop "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q27"
+        },
+        {
+          "type": "text",
+          "value": " Straight ahead of you, yes, the huge circular room, is "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q28"
+        },
+        {
+          "type": "text",
+          "value": " If you decide to go in there, please "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q29"
+        },
+        {
+          "type": "text",
+          "value": " out of respect for the writers and scholars "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q30"
+        },
+        {
+          "type": "text",
+          "value": " The reading room is surrounded by what is known as the Great Court-indeed, "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q31"
+        },
+        {
+          "type": "text",
+          "value": "-but you will see that it is now completely covered by a magnificent glass and steel structure."
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "text",
+          "value": "If you walk around the Great Court "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q32"
+        },
+        {
+          "type": "text",
+          "value": ", on the west side, you'll see the entrance "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q33"
+        },
+        {
+          "type": "text",
+          "value": " Ancient Egypt which has an amazing collection of Egyptian antiquities. "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q34"
+        },
+        {
+          "type": "text",
+          "value": " ( directly opposite the entrance) is devoted to China and Southeast Asia. Here you'll see Chinese civilization explored chronologically from the Neolithic period "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q35"
+        },
+        {
+          "type": "text",
+          "value": " The restrooms for both men and women "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q36"
+        },
+        {
+          "type": "text",
+          "value": " but don't worry; there are others available on the floors above. Another huge gallery "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q37"
+        },
+        {
+          "type": "text",
+          "value": " the courtyard and this is given over to Greece and Rome-the sculptures in this section are absolutely spellbinding."
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Tour Guide",
+      "content": [
+        {
+          "type": "text",
+          "value": "Take your time "
+        },
+        {
+          "type": "blank",
+          "id": "audio10_q38"
+        },
+        {
+          "type": "text",
+          "value": " and when you're ready to view what's on the next floor, take the magnificent marble staircase by the entrance."
+        }
+      ]
+    }
+  ]
+}

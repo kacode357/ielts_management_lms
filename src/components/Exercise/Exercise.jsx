@@ -22,6 +22,8 @@ import audio13Questions from '../../data/audio13/audio_13_questions.json'
 import audio13Answers from '../../data/audio13/audio_13_answers.json'
 import audio17Questions from '../../data/audio17/audio_17_questions.json'
 import audio17Answers from '../../data/audio17/audio_17_answers.json'
+import audio10Questions from '../../data/audio10/audio_10_questions.json'
+import audio10Answers from '../../data/audio10/audio_10_answers.json'
 
 import ExerciseHeaderDesktop from './ExerciseHeaderDesktop'
 import ExerciseHeaderMobile from './ExerciseHeaderMobile'
@@ -40,6 +42,7 @@ const audioData = {
   audio5: { questions: audio5Questions, answers: audio5Answers, file: '/Audio 5.mp3', title: 'Audio 5' },
   audio6: { questions: audio6Questions, answers: audio6Answers, file: '/Audio 6.mp3', title: 'Audio 6' },
   audio9: { questions: audio9Questions, answers: audio9Answers, file: '/Audio 9.mp3', title: 'Audio 9' },
+  audio10: { questions: audio10Questions, answers: audio10Answers, file: '/Audio 10.mp3', title: 'Audio 10' },
   audio13: { questions: audio13Questions, answers: audio13Answers, file: '/Audio 13.mp3', title: 'Audio 13' },
   audio17: { questions: audio17Questions, answers: audio17Answers, file: '/Audio 17.mp3', title: 'Audio 17' }
 }
@@ -355,7 +358,7 @@ function Exercise() {
 
       const allElements = clone.querySelectorAll('*')
 
-      clone.style.cssText = 'position: relative; width: max-content; min-width: 100%; max-width: none; height: auto; overflow: visible; padding: 16px; background: white;'
+      clone.style.cssText = 'position: relative; width: 1440px; max-width: 1440px; height: auto; overflow: visible; padding: 16px; background: white;'
 
       allElements.forEach(el => {
         el.style.width = 'auto'
@@ -367,8 +370,8 @@ function Exercise() {
         el.style.overflow = 'visible'
 
         if (el.classList && el.classList.contains('ant-card')) {
-          el.style.width = 'auto'
-          el.style.maxWidth = '800px'
+          el.style.width = '100%'
+          el.style.maxWidth = '1408px'
         }
 
         if (el.classList && el.classList.contains('ant-layout-content')) {
