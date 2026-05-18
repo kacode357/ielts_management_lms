@@ -1,0 +1,354 @@
+{
+  "title": "Instant Messaging Addiction",
+  "source_images": [
+    "Audio 15 Part 3.png",
+    "Audio 15 Part 3 (1).png",
+    "Audio 15 Part 3 (2).png",
+    "Audio 15 Transcript.png",
+    "Audio 15 Transcript (1).png",
+    "Audio 15 Transcript (2).png"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "I'm very glad that the two of you decided to " },
+        { "type": "blank", "id": "audio15_q1" },
+        { "type": "text", "value": " because I think it's not only much needed " },
+        { "type": "blank", "id": "audio15_q2" },
+        { "type": "text", "value": " to current psychological concerns about " },
+        { "type": "blank", "id": "audio15_q3" },
+        { "type": "text", "value": " in young people. Now, tell me, " },
+        { "type": "blank", "id": "audio15_q4" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio15_q5" },
+        { "type": "text", "value": ", or perceived problems, that teenagers " },
+        { "type": "blank", "id": "audio15_q6" },
+        { "type": "text", "value": " might encounter and we came up with the extremely popular phenomenon of " },
+        { "type": "blank", "id": "audio15_q7" },
+        { "type": "text", "value": " and the implications that the use, or overuse, of this form of communication " },
+        { "type": "blank", "id": "audio15_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "Then we decided to propose the concept of instant messaging addiction. By the way, " },
+        { "type": "blank", "id": "audio15_q9" },
+        { "type": "text", "value": " we abbreviate \"instant messaging\" to IM in our discussion?" }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "Not at all. But before you go any further, tell me something about " },
+        { "type": "blank", "id": "audio15_q10" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "We chose a random sample of teenagers from Jiangsu Province, " },
+        { "type": "blank", "id": "audio15_q11" },
+        { "type": "text", "value": ", and we considered this group to be representative of " },
+        { "type": "blank", "id": "audio15_q12" },
+        { "type": "text", "value": ". We distributed 500 questionnaires and 450 were returned. The sample group " },
+        { "type": "blank", "id": "audio15_q13" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "Internet addiction, or technological addiction as it's sometimes called, " },
+        { "type": "blank", "id": "audio15_q14" },
+        { "type": "text", "value": ". What makes your research different?" }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Well, previous studies indicated that " },
+        { "type": "blank", "id": "audio15_q15" },
+        { "type": "text", "value": " are more likely to use instant communication, but we wanted to find out primarily whether IM addiction actually exists " },
+        { "type": "blank", "id": "audio15_q16" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "And secondly, we wanted to know whether IM addiction " },
+        { "type": "blank", "id": "audio15_q17" },
+        { "type": "text", "value": ", and finally, whether addiction " },
+        { "type": "blank", "id": "audio15_q18" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 9,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "Quite a large undertaking. Tell me, what IM addiction symptoms " },
+        { "type": "blank", "id": "audio15_q19" },
+        { "type": "text", "value": " among teenagers in your sample?" }
+      ]
+    },
+    {
+      "line_id": 10,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "We found four major IM addiction symptoms, " },
+        { "type": "blank", "id": "audio15_q20" },
+        { "type": "text", "value": ", although here we're looking at " },
+        { "type": "blank", "id": "audio15_q21" },
+        { "type": "text", "value": " not chemical addiction to drugs, alcohol or the like." }
+      ]
+    },
+    {
+      "line_id": 11,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Yes, loss of control was a significant factor which indicates that the addicts " },
+        { "type": "blank", "id": "audio15_q22" },
+        { "type": "text", "value": "; they could not control the amount of time they spent on IM; and " },
+        { "type": "blank", "id": "audio15_q23" },
+        { "type": "text", "value": ", as well as other responsibilities or obligations they might have. Obviously academic performance " },
+        { "type": "blank", "id": "audio15_q24" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 12,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "I'm sure " },
+        { "type": "blank", "id": "audio15_q25" },
+        { "type": "text", "value": " from family and friends not to mention teachers." }
+      ]
+    },
+    {
+      "line_id": 13,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "Yes, of course. Another symptom was, " },
+        { "type": "blank", "id": "audio15_q26" },
+        { "type": "text", "value": ", a preoccupation with instant messaging " },
+        { "type": "blank", "id": "audio15_q27" },
+        { "type": "text", "value": " when chatting online and they would " },
+        { "type": "blank", "id": "audio15_q28" },
+        { "type": "text", "value": " when they couldn't; they would go without sleep in order to chat; and when they were offline they would still be thinking about online chatting. " },
+        { "type": "blank", "id": "audio15_q29" },
+        { "type": "text", "value": ", they would need to increase the dose, in this case, of IM time, " },
+        { "type": "blank", "id": "audio15_q30" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 14,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "That sounds quite " },
+        { "type": "blank", "id": "audio15_q31" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 15,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Yes, and " },
+        { "type": "blank", "id": "audio15_q32" },
+        { "type": "text", "value": ", loss of relationships due to overuse of IM was a factor too. The addicted teenagers " },
+        { "type": "blank", "id": "audio15_q33" },
+        { "type": "text", "value": " than go out with friends or " },
+        { "type": "blank", "id": "audio15_q34" },
+        { "type": "text", "value": ", which jeopardised their social relationships and " },
+        { "type": "blank", "id": "audio15_q35" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 16,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "The fourth addictive factor we found was escape. These teenagers used IM " },
+        { "type": "blank", "id": "audio15_q36" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 17,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "And can IM addiction be predicted?" }
+      ]
+    },
+    {
+      "line_id": 18,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "Well, we found " },
+        { "type": "blank", "id": "audio15_q37" },
+        { "type": "text", "value": " shyness and IM addiction." }
+      ]
+    },
+    {
+      "line_id": 19,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Not only shyness, but also a feeling of alienation " },
+        { "type": "blank", "id": "audio15_q38" },
+        { "type": "text", "value": ": alienation from family, peers, and school." }
+      ]
+    },
+    {
+      "line_id": 20,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "So the more alienated they feel, " },
+        { "type": "blank", "id": "audio15_q39" },
+        { "type": "text", "value": ", friendship and social support through IM." }
+      ]
+    },
+    {
+      "line_id": 21,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "Exactly. But, interestingly, what we found was that alienation was a predictor for addiction " },
+        { "type": "blank", "id": "audio15_q40" },
+        { "type": "text", "value": " a high level of IM use." }
+      ]
+    },
+    {
+      "line_id": 22,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "How do you explain that?" }
+      ]
+    },
+    {
+      "line_id": 23,
+      "speaker": "KIM",
+      "content": [
+        { "type": "blank", "id": "audio15_q41" },
+        { "type": "text", "value": " we considered was that those who " },
+        { "type": "blank", "id": "audio15_q42" },
+        { "type": "text", "value": " with their friends through IM " },
+        { "type": "blank", "id": "audio15_q43" },
+        { "type": "text", "value": " probably looking for friendship through online chatting with strangers." }
+      ]
+    },
+    {
+      "line_id": 24,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "Look, " },
+        { "type": "blank", "id": "audio15_q44" },
+        { "type": "text", "value": "-I'm really looking forward to reading your paper when you've finished it-but, before I go, can you quickly " },
+        { "type": "blank", "id": "audio15_q45" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 25,
+      "speaker": "LEE",
+      "content": [
+        { "type": "blank", "id": "audio15_q46" },
+        { "type": "text", "value": " and psychological characteristics, we were able to establish that there is a difference between high levels of IM use and IM addiction as such." }
+      ]
+    },
+    {
+      "line_id": 26,
+      "speaker": "KIM",
+      "content": [
+        { "type": "text", "value": "And that there are " },
+        { "type": "blank", "id": "audio15_q47" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 27,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "And our findings showed that teenagers' level of use of IM " },
+        { "type": "blank", "id": "audio15_q48" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 28,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "So, you're saying that IM addiction detracts from the students' academic performance." }
+      ]
+    },
+    {
+      "line_id": 29,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "That's what " },
+        { "type": "blank", "id": "audio15_q49" },
+        { "type": "text", "value": "-and there's absolutely no doubt: addicted students " },
+        { "type": "blank", "id": "audio15_q50" },
+        { "type": "text", "value": "-but what we also found is that there is a correlation between the level of IM use " },
+        { "type": "blank", "id": "audio15_q51" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 30,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "So, not just the addicts " },
+        { "type": "blank", "id": "audio15_q52" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 31,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Precisely. Our results show that the higher the level of IM use, " },
+        { "type": "blank", "id": "audio15_q53" },
+        { "type": "text", "value": ", the more negative impact there is on academic performance." }
+      ]
+    },
+    {
+      "line_id": 32,
+      "speaker": "TUTOR",
+      "content": [
+        { "type": "text", "value": "Your research shows, then, that not only should teachers and parents " },
+        { "type": "blank", "id": "audio15_q54" },
+        { "type": "text", "value": " those teenagers who " },
+        { "type": "blank", "id": "audio15_q55" },
+        { "type": "text", "value": " IM addiction but that parents should pay close attention and " },
+        { "type": "blank", "id": "audio15_q56" },
+        { "type": "text", "value": " and monitor their teenagers' level of use of instant messaging." }
+      ]
+    },
+    {
+      "line_id": 33,
+      "speaker": "LEE",
+      "content": [
+        { "type": "text", "value": "Yes, that's it in a nutshell." }
+      ]
+    }
+  ]
+}

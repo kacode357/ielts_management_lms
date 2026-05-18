@@ -1,0 +1,992 @@
+{
+  "title": "Cartesian Diver Experiment",
+  "source_images": [
+    "Audio 7 Part 3.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Hi Julia."
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Hi Bob. Thought about "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q1"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Which one? The presentations are scheduled for next month!"
+        }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio7_q2"
+        },
+        {
+          "type": "text",
+          "value": " you and I are working on-to demonstrate density, buoyancy and the compression of gases."
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio7_q3"
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, it's not supposed to be. It'll be part of the 'Making Science Simple' series "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q4"
+        },
+        {
+          "type": "text",
+          "value": " And we have to be ready to demonstrate "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q5"
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, well, ...simple...you say."
+        }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, not just the concept "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q6"
+        },
+        {
+          "type": "text",
+          "value": " We have to use cheap, readily available, common items-"
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q7"
+        },
+        {
+          "type": "text",
+          "value": "!"
+        }
+      ]
+    },
+    {
+      "line_id": 9,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "I remember something about using recycled or "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q8"
+        },
+        {
+          "type": "text",
+          "value": " if possible...Anything portable that we can bring into the lab."
+        }
+      ]
+    },
+    {
+      "line_id": 10,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "That's right."
+        }
+      ]
+    },
+    {
+      "line_id": 11,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q9"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 12,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "What about the classic Cartesian diver?"
+        }
+      ]
+    },
+    {
+      "line_id": 13,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Is that the same as a Cartesian devil? "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q10"
+        },
+        {
+          "type": "text",
+          "value": " the famous French physicist-Rene Descartes?"
+        }
+      ]
+    },
+    {
+      "line_id": 14,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, a long time ago superstitious people labelled it that because they couldn't comprehend "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q11"
+        },
+        {
+          "type": "text",
+          "value": " it demonstrated; they thought it was black magic."
+        }
+      ]
+    },
+    {
+      "line_id": 15,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "How shall we do it?"
+        }
+      ]
+    },
+    {
+      "line_id": 16,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "By keeping it as "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q12"
+        },
+        {
+          "type": "text",
+          "value": " as possible."
+        }
+      ]
+    },
+    {
+      "line_id": 17,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "So, to start with...?"
+        }
+      ]
+    },
+    {
+      "line_id": 18,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Open your pencil case and "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q13"
+        },
+        {
+          "type": "text",
+          "value": " Mmm, you haven't got any..."
+        }
+      ]
+    },
+    {
+      "line_id": 19,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Any what?"
+        }
+      ]
+    },
+    {
+      "line_id": 20,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Paper clips."
+        }
+      ]
+    },
+    {
+      "line_id": 21,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, there are lots of them in "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q14"
+        },
+        {
+          "type": "text",
+          "value": " They slip off my papers and collect in the bottom. Look, here's half a dozen."
+        }
+      ]
+    },
+    {
+      "line_id": 22,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "But they're "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q15"
+        },
+        {
+          "type": "text",
+          "value": "-I want little ones-small, vinyl-covered multi-coloured ones."
+        }
+      ]
+    },
+    {
+      "line_id": 23,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, I've got one or two of them too."
+        }
+      ]
+    },
+    {
+      "line_id": 24,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Great. And...if we look around, especially on the floor, "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q16"
+        },
+        {
+          "type": "text",
+          "value": " See? Here."
+        }
+      ]
+    },
+    {
+      "line_id": 25,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "What else do we need?"
+        }
+      ]
+    },
+    {
+      "line_id": 26,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "A small rubber band."
+        }
+      ]
+    },
+    {
+      "line_id": 27,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q17"
+        }
+      ]
+    },
+    {
+      "line_id": 28,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "No, not that kind. Let's go and ask Tara."
+        }
+      ]
+    },
+    {
+      "line_id": 29,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Why?"
+        }
+      ]
+    },
+    {
+      "line_id": 30,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Those really small coloured bands "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q18"
+        }
+      ]
+    },
+    {
+      "line_id": 31,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Hey, Tara?"
+        }
+      ]
+    },
+    {
+      "line_id": 32,
+      "speaker": "Tara",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes?"
+        }
+      ]
+    },
+    {
+      "line_id": 33,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Have you got any spare rubber bands like the ones you fasten your hair with?"
+        }
+      ]
+    },
+    {
+      "line_id": 34,
+      "speaker": "Tara",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, heaps, a whole packet full-"
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q19"
+        }
+      ]
+    },
+    {
+      "line_id": 35,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Terrific....So far it hasn't "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q20"
+        },
+        {
+          "type": "text",
+          "value": " What now?"
+        }
+      ]
+    },
+    {
+      "line_id": 36,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Let's go and rummage through the recycling bins beside Joe's Mini-market."
+        }
+      ]
+    },
+    {
+      "line_id": 37,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "What for?"
+        }
+      ]
+    },
+    {
+      "line_id": 38,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "We want a 2-litre "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q21"
+        },
+        {
+          "type": "text",
+          "value": " with lid."
+        }
+      ]
+    },
+    {
+      "line_id": 39,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Hey, I draw the line at "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q22"
+        },
+        {
+          "type": "text",
+          "value": " and we're also not likely to find one with a lid."
+        }
+      ]
+    },
+    {
+      "line_id": 40,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, go into the store and buy 2 litres of soft drink."
+        }
+      ]
+    },
+    {
+      "line_id": 41,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "What flavour?"
+        }
+      ]
+    },
+    {
+      "line_id": 42,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "It doesn't matter "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q23"
+        },
+        {
+          "type": "text",
+          "value": ", just make sure it comes in a clear P. E. T. bottle."
+        }
+      ]
+    },
+    {
+      "line_id": 43,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Where are you going?"
+        }
+      ]
+    },
+    {
+      "line_id": 44,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "To the cafeteria behind the Resource Centre."
+        }
+      ]
+    },
+    {
+      "line_id": 45,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "What for?"
+        }
+      ]
+    },
+    {
+      "line_id": 46,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio7_q24"
+        }
+      ]
+    },
+    {
+      "line_id": 47,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "I can get them from the shop when I buy the drink."
+        }
+      ]
+    },
+    {
+      "line_id": 48,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "No, I've seen theirs. They're the waxed paper ones. We need clear plastic and I know "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q25"
+        },
+        {
+          "type": "text",
+          "value": " I'll also see if I can get a tall plastic cup from there."
+        }
+      ]
+    },
+    {
+      "line_id": 49,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Good luck. Meet you back here in 5 minutes."
+        }
+      ]
+    },
+    {
+      "line_id": 50,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Maybe longer because I want to go over to my locker and get a wire "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q26"
+        }
+      ]
+    },
+    {
+      "line_id": 51,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Right. Have we got everything now?"
+        }
+      ]
+    },
+    {
+      "line_id": 52,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "I think so. "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q27"
+        },
+        {
+          "type": "text",
+          "value": " for most things so don't worry if this doesn't work the first time."
+        }
+      ]
+    },
+    {
+      "line_id": 53,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Okay. Assembly. Step 1."
+        }
+      ]
+    },
+    {
+      "line_id": 54,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Take a straw and fold it in two. No, not like that these plastic ones are quite hard to fold-try pinching it in the middle-that should make it easier to bend. You may even have to bite it"
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q28"
+        },
+        {
+          "type": "text",
+          "value": " you want a sharp crease but you don't want to break it."
+        }
+      ]
+    },
+    {
+      "line_id": 55,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "How's this?"
+        }
+      ]
+    },
+    {
+      "line_id": 56,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Good; now, second step. Wrap a rubber band several times "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q29"
+        },
+        {
+          "type": "text",
+          "value": " to hold them together."
+        }
+      ]
+    },
+    {
+      "line_id": 57,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Then?"
+        }
+      ]
+    },
+    {
+      "line_id": 58,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Add weight to the diver."
+        }
+      ]
+    },
+    {
+      "line_id": 59,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "So, this straw "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q30"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 60,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes. See how I'm pulling the outside end of "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q31"
+        },
+        {
+          "type": "text",
+          "value": " out a bit? Now, hook the part I bent out into the rubber band that's holding the straw together. No, not that way-"
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q32"
+        },
+        {
+          "type": "text",
+          "value": " That's right, "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q33"
+        },
+        {
+          "type": "text",
+          "value": " Now, hook two or three more paper clips on. "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q34"
+        },
+        {
+          "type": "text",
+          "value": " The idea is to get the diver to be almost all the way submerged, but not quite. We can put it in "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q35"
+        },
+        {
+          "type": "text",
+          "value": " to test it."
+        }
+      ]
+    },
+    {
+      "line_id": 61,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Mmm ...What do you think? Too buoyant? Add another paper clip?"
+        }
+      ]
+    },
+    {
+      "line_id": 62,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "I think so. Okay, onto the next step. Have you "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q36"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 63,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Not quite."
+        }
+      ]
+    },
+    {
+      "line_id": 64,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "What do you mean?"
+        }
+      ]
+    },
+    {
+      "line_id": 65,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, it's not quite empty."
+        }
+      ]
+    },
+    {
+      "line_id": 66,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Pour some into this cup "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q37"
+        },
+        {
+          "type": "text",
+          "value": " Good. Now fill the bottle with water "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q38"
+        },
+        {
+          "type": "text",
+          "value": " and we'll gently lower the diver in. Great-now "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q39"
+        }
+      ]
+    },
+    {
+      "line_id": 67,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "And then?"
+        }
+      ]
+    },
+    {
+      "line_id": 68,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "The final step is the demonstration of our experiment-you will see that when I squeeze the bottle, the diver... sinks and when I let it go, the diver...rises."
+        }
+      ]
+    },
+    {
+      "line_id": 69,
+      "speaker": "Bob",
+      "content": [
+        {
+          "type": "text",
+          "value": "When you squeeze, the air bubble trapped in the straw compresses and the water rushes in making it heavier "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q40"
+        },
+        {
+          "type": "text",
+          "value": " And the reverse happens when you release the bottle. "
+        },
+        {
+          "type": "blank",
+          "id": "audio7_q41"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 70,
+      "speaker": "Julia",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, that? If our experiment didn't work the first time and our diver stayed on the bottom, we'd have had to fish it out with a piece of wire or a hook of some kind. It's best to be prepared."
+        }
+      ]
+    }
+  ]
+}

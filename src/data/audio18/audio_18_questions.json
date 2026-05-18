@@ -1,0 +1,150 @@
+{
+  "title": "State Investment Society",
+  "source_images": [
+    "Audio 18 Part 2.png",
+    "Audio 18 Part 2 (1).png",
+    "Audio 18 Part 2 (2).png",
+    "Audio 18 Transcript.png",
+    "Audio 18 Transcript (1).png"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "Welcome to the information line of the State Investment Society. " },
+        { "type": "blank", "id": "audio18_q1" },
+        { "type": "text", "value": " put your money into an investment society and not a bank? Well, SIS offers everything " },
+        { "type": "blank", "id": "audio18_q2" },
+        { "type": "text", "value": " but the difference is we're a cooperative. We're 100% owned " },
+        { "type": "blank", "id": "audio18_q3" },
+        { "type": "text", "value": "-people like you-and that means we always " },
+        { "type": "blank", "id": "audio18_q4" },
+        { "type": "text", "value": ". You won't see our profits going into large foreign-owned finance corporations. No, you'll see them " },
+        { "type": "blank", "id": "audio18_q5" },
+        { "type": "text", "value": " and your local community." }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "As a co-operative, " },
+        { "type": "blank", "id": "audio18_q6" },
+        { "type": "text", "value": " and absolutely minimal. Even better, " },
+        { "type": "blank", "id": "audio18_q7" },
+        { "type": "text", "value": " ways to avoid fees. Here are some suggestions: firstly, we recommend you " },
+        { "type": "blank", "id": "audio18_q8" },
+        { "type": "text", "value": " as possible with us. We won't charge account fees unless " },
+        { "type": "blank", "id": "audio18_q9" },
+        { "type": "text", "value": " for some reason. See? No unnecessary fees. Secondly, " },
+        { "type": "blank", "id": "audio18_q10" },
+        { "type": "text", "value": ", you won't have to pay any transaction charges " },
+        { "type": "blank", "id": "audio18_q11" },
+        { "type": "text", "value": " between any accounts that " },
+        { "type": "blank", "id": "audio18_q12" },
+        { "type": "text", "value": ", although there may be " },
+        { "type": "blank", "id": "audio18_q13" },
+        { "type": "text", "value": " that apply such as the establishment of " },
+        { "type": "blank", "id": "audio18_q14" },
+        { "type": "text", "value": ". So, how can we help you?" }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "Let's look first at Savings Options. " },
+        { "type": "blank", "id": "audio18_q15" },
+        { "type": "text", "value": " Our Internet Account earns you interest from your very first dollar deposited. You don't have to maintain a minimum balance and " },
+        { "type": "blank", "id": "audio18_q16" },
+        { "type": "text", "value": " from the start. Interest calculated daily and paid into your account monthly. " },
+        { "type": "blank", "id": "audio18_q17" },
+        { "type": "text", "value": " by using the Internet, Text, or Telephone banking. What's more there are no account or transaction fees." }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "With our Stairs Saver scheme, the more you save " },
+        { "type": "blank", "id": "audio18_q18" },
+        { "type": "text", "value": " Again, there is no minimum balance but as your balance grows, " },
+        { "type": "blank", "id": "audio18_q19" },
+        { "type": "text", "value": " There are three interest tiers or steps plus bonus interest. Interest is calculated " },
+        { "type": "blank", "id": "audio18_q20" },
+        { "type": "text", "value": " Now, what about access to your money? You are free to make " },
+        { "type": "blank", "id": "audio18_q21" },
+        { "type": "text", "value": " but if you restrict them to one a month and " },
+        { "type": "blank", "id": "audio18_q22" },
+        { "type": "text", "value": ", then you'll earn that bonus interest." }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "With our Simple Saver scheme, " },
+        { "type": "blank", "id": "audio18_q23" },
+        { "type": "text", "value": " and we don't impose penalties for withdrawals. This scheme has one interest rate, no minimum balance and interest is calculated daily and " },
+        { "type": "blank", "id": "audio18_q24" },
+        { "type": "text", "value": " at the end of the financial year-" },
+        { "type": "blank", "id": "audio18_q25" },
+        { "type": "text", "value": " So, you can see that savings accounts " },
+        { "type": "blank", "id": "audio18_q26" },
+        { "type": "text", "value": " if you're starting from scratch. Do you know you can open a savings account " },
+        { "type": "blank", "id": "audio18_q27" },
+        { "type": "text", "value": "? They're usually the best choice for short-term financial goals." }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "blank", "id": "audio18_q28" },
+        { "type": "text", "value": " we recommend some kind of " },
+        { "type": "blank", "id": "audio18_q29" },
+        { "type": "text", "value": " Let's take a look at our investment options. Starting with the safest" },
+        { "type": "blank", "id": "audio18_q30" },
+        { "type": "text", "value": " is a basic Term Deposit, starting with a minimum " },
+        { "type": "blank", "id": "audio18_q31" },
+        { "type": "text", "value": " Interest is calculated daily " },
+        { "type": "blank", "id": "audio18_q32" },
+        { "type": "text", "value": " whether to have it paid out " },
+        { "type": "blank", "id": "audio18_q33" },
+        { "type": "text", "value": " What we recommend, if you really want to see money grow, is having interest compounded quarterly. " },
+        { "type": "blank", "id": "audio18_q34" },
+        { "type": "text", "value": " when your Term Deposit matures so be sure to think carefully about " },
+        { "type": "blank", "id": "audio18_q35" },
+        { "type": "text", "value": "-it could be anything from 6 months to 5 years." }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "text", "value": "Bonds are generally a longer commitment but they may " },
+        { "type": "blank", "id": "audio18_q36" },
+        { "type": "text", "value": " There is a minimum deposit of $5,000 and interest is calculated daily. You may choose to have interest compounded quarterly or paid out quarterly. And, of course, you'll have access to your money when your Bond reaches maturity." }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "Speaker",
+      "content": [
+        { "type": "blank", "id": "audio18_q37" },
+        { "type": "text", "value": ", there is our Retirement Fund " },
+        { "type": "blank", "id": "audio18_q38" },
+        { "type": "text", "value": " There is no minimum deposit" },
+        { "type": "blank", "id": "audio18_q39" },
+        { "type": "text", "value": " that you can choose to contribute " },
+        { "type": "blank", "id": "audio18_q40" },
+        { "type": "text", "value": " before tax is paid on it. As for interest, well, " },
+        { "type": "blank", "id": "audio18_q41" },
+        { "type": "text", "value": ", which has a different level of return " },
+        { "type": "blank", "id": "audio18_q42" },
+        { "type": "text", "value": ". And access? Well, not before you turn 60 years old. As I said, it's a retirement scheme." }
+      ]
+    }
+  ]
+}

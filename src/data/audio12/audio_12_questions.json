@@ -1,0 +1,102 @@
+{
+  "title": "Agricultural Economics",
+  "source_images": [
+    "Audio 12 Part 4.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Good morning and welcome to our inaugural lecture on Agricultural Economics. Today's topic is the world's " },
+        { "type": "blank", "id": "audio12_q1" }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "As you are all well aware rice " },
+        { "type": "blank", "id": "audio12_q2" },
+        { "type": "text", "value": " much of the world's population. Its importance as a food cereal in the human diet " },
+        { "type": "blank", "id": "audio12_q3" },
+        { "type": "text", "value": " In fact, it's a close second to wheat-about 560 million metric tons of rice " },
+        { "type": "blank", "id": "audio12_q4" },
+        { "type": "text", "value": " compared with about 600 million metric tons of wheat. Coarse grains, " },
+        { "type": "blank", "id": "audio12_q5" },
+        { "type": "text", "value": ", sorghum, barley, oats, rye, and millet mostly " },
+        { "type": "blank", "id": "audio12_q6" },
+        { "type": "text", "value": " which, by the way, is seen by many as a wasteful and inefficient use of " },
+        { "type": "blank", "id": "audio12_q7" },
+        { "type": "text", "value": " because around 4 kilos of grain " },
+        { "type": "blank", "id": "audio12_q8" },
+        { "type": "text", "value": " Some 900 million metric tons of coarse grains " },
+        { "type": "blank", "id": "audio12_q9" },
+        { "type": "text", "value": " and a further 300 million metric tons of grain is produced " },
+        { "type": "blank", "id": "audio12_q10" },
+        { "type": "text", "value": "...Now, I'll return to the subject of rice production..." }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "What do we know about rice production? Well, firstly, " },
+        { "type": "blank", "id": "audio12_q11" },
+        { "type": "text", "value": " per hectare than any other cereal grain and almost as much protein per hectare as wheat. Secondly, the production of rice " },
+        { "type": "blank", "id": "audio12_q12" },
+        { "type": "text", "value": " in the last 40 years. How has this increase in production " },
+        { "type": "blank", "id": "audio12_q13" },
+        { "type": "text", "value": "? Mainly as a result of improved field yields-" },
+        { "type": "blank", "id": "audio12_q14" },
+        { "type": "text", "value": " planted in rice " },
+        { "type": "blank", "id": "audio12_q15" },
+        { "type": "text", "value": " As you know, rice is primarily grown in flooded fields and therefore " },
+        { "type": "blank", "id": "audio12_q16" },
+        { "type": "text", "value": " by the sort of soil and the availability of water." }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Although rice " },
+        { "type": "blank", "id": "audio12_q17" },
+        { "type": "text", "value": "-it is essentially after all a type of grass-the yields and quality in this case are much lower and other grasses and weeds " },
+        { "type": "blank", "id": "audio12_q18" },
+        { "type": "text", "value": " As yet there are no herbicides that can " },
+        { "type": "blank", "id": "audio12_q19" },
+        { "type": "text", "value": " Much of the world's rice is still grown and cultivated " },
+        { "type": "blank", "id": "audio12_q20" },
+        { "type": "text", "value": " because for mechanized farming the land must be able to be " },
+        { "type": "blank", "id": "audio12_q21" }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Of the total rice production, " },
+        { "type": "blank", "id": "audio12_q22" },
+        { "type": "text", "value": " the greatest proportion by far is grown and consumed in Asia. You will see from the chart that " },
+        { "type": "blank", "id": "audio12_q23" },
+        { "type": "text", "value": " China at around 39% followed by India with a quarter of the total. " },
+        { "type": "blank", "id": "audio12_q24" },
+        { "type": "text", "value": " and other countries, like Bangladesh, Vietnam, Thailand, Japan and Brazil, " },
+        { "type": "blank", "id": "audio12_q25" },
+        { "type": "text", "value": " of the total." }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "As I said before, " },
+        { "type": "blank", "id": "audio12_q26" },
+        { "type": "text", "value": " in the countries where it is grown. That means that " },
+        { "type": "blank", "id": "audio12_q27" },
+        { "type": "text", "value": " actually traded and for this reason the market price is very volatile." }
+      ]
+    }
+  ]
+}

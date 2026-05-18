@@ -1,0 +1,343 @@
+{
+  "title": "Psychology Experiment Assignment",
+  "source_images": [
+    "Audio 11 Part 3.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Good morning. Now, " },
+        { "type": "blank", "id": "audio11_q1" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Good morning, Dr Reed. This assignment you've given us " },
+        { "type": "blank", "id": "audio11_q2" },
+        { "type": "text", "value": " I've had to do and I'm not sure " },
+        { "type": "blank", "id": "audio11_q3" }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Well, conducting your first psychology experiment " },
+        { "type": "blank", "id": "audio11_q4" },
+        { "type": "text", "value": " but just remember that like other sciences, psychology " },
+        { "type": "blank", "id": "audio11_q5" },
+        { "type": "text", "value": " and bases its conclusions upon empirical evidence." }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Student",
+      "content": [
+        { "type": "blank", "id": "audio11_q6" },
+        { "type": "text", "value": " \"empirical\" evidence?" }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Ah, well, empirical evidence is established " },
+        { "type": "blank", "id": "audio11_q7" },
+        { "type": "text", "value": " rather than theory." }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Student",
+      "content": [
+        { "type": "blank", "id": "audio11_q8" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Oh, yes, when conducting an experiment you need to " },
+        { "type": "blank", "id": "audio11_q9" }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "I know the first step is to come up with a research question or problem." }
+      ]
+    },
+    {
+      "line_id": 9,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Yes, a question " },
+        { "type": "blank", "id": "audio11_q10" }
+      ]
+    },
+    {
+      "line_id": 10,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "How do I find an appropriate question?" }
+      ]
+    },
+    {
+      "line_id": 11,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "I would suggest one of three methods. Firstly, you can investigate " },
+        { "type": "blank", "id": "audio11_q11" },
+        { "type": "text", "value": " or what we call \"folk\" psychology." }
+      ]
+    },
+    {
+      "line_id": 12,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "I see. So, I could examine the belief that staying up all night to study for an important exam can " },
+        { "type": "blank", "id": "audio11_q12" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 13,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "That's right. In that case you would compare the scores of students who stayed up all night " },
+        { "type": "blank", "id": "audio11_q13" }
+      ]
+    },
+    {
+      "line_id": 14,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "I think I could do that." }
+      ]
+    },
+    {
+      "line_id": 15,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Well, alternatively, " },
+        { "type": "blank", "id": "audio11_q14" },
+        { "type": "text", "value": " the literature on psychology. You know, published studies can be a good source of " },
+        { "type": "blank", "id": "audio11_q15" },
+        { "type": "text", "value": " I'm sure you've read papers where the authors note the need for further research." }
+      ]
+    },
+    {
+      "line_id": 16,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "So I would come up with some questions " },
+        { "type": "blank", "id": "audio11_q16" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 17,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Correct. But there is a third source of ideas: " },
+        { "type": "blank", "id": "audio11_q17" },
+        { "type": "text", "value": " and then consider how you could investigate potential solutions." }
+      ]
+    },
+    {
+      "line_id": 18,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Okay...perhaps I could study various memorisation strategies to find out " },
+        { "type": "blank", "id": "audio11_q18" }
+      ]
+    },
+    {
+      "line_id": 19,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "That's the idea. Next, you need to define the variables-you know, anything " },
+        { "type": "blank", "id": "audio11_q19" },
+        { "type": "text", "value": " the outcome of your research." }
+      ]
+    },
+    {
+      "line_id": 20,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Yes, I remember " },
+        { "type": "blank", "id": "audio11_q20" }
+      ]
+    },
+    {
+      "line_id": 21,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Yes. That's right. Then you have to develop a testable hypothesis that predicts " },
+        { "type": "blank", "id": "audio11_q21" }
+      ]
+    },
+    {
+      "line_id": 22,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "For example: \"Students who are sleep deprived will " },
+        { "type": "blank", "id": "audio11_q22" },
+        { "type": "text", "value": " than students who are not sleep deprived\"?" }
+      ]
+    },
+    {
+      "line_id": 23,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Exactly. Once you have developed a hypothesis " },
+        { "type": "blank", "id": "audio11_q23" }
+      ]
+    },
+    {
+      "line_id": 24,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "I can use books, journals, online databases and websites?" }
+      ]
+    },
+    {
+      "line_id": 25,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Yes, all of those. I covered the reasons " },
+        { "type": "blank", "id": "audio11_q24" },
+        { "type": "text", "value": " in last Friday's lecture, didn't I? What you have to remember at this stage " },
+        { "type": "blank", "id": "audio11_q25" },
+        { "type": "text", "value": " and generate a bibliography of your sources." }
+      ]
+    },
+    {
+      "line_id": 26,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Okay, I've got that...then, I'm ready to develop an experimental design?" }
+      ]
+    },
+    {
+      "line_id": 27,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio11_q26" },
+        { "type": "text", "value": " There are three basic designs and each has its own strengths and weaknesses. " },
+        { "type": "blank", "id": "audio11_q27" },
+        { "type": "text", "value": " does not include a control group so there is no comparison. What we call a quasi-experimental design " },
+        { "type": "blank", "id": "audio11_q28" },
+        { "type": "text", "value": " but there is no randomisation whereas a true experimental design has both control groups and random assignment to groups." }
+      ]
+    },
+    {
+      "line_id": 28,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "You've also told us about standardisation of procedures- " },
+        { "type": "blank", "id": "audio11_q29" },
+        { "type": "text", "value": "?-being sure to compare apples to apples..." }
+      ]
+    },
+    {
+      "line_id": 29,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Absolutely. Going back to your sleep deprivation example...the same exam would have to be " },
+        { "type": "blank", "id": "audio11_q30" },
+        { "type": "text", "value": " in the same way at the same time, etcetera." }
+      ]
+    },
+    {
+      "line_id": 30,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Got it." }
+      ]
+    },
+    {
+      "line_id": 31,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "When selecting subjects, you need to " },
+        { "type": "blank", "id": "audio11_q31" },
+        { "type": "text", "value": ". If you were to go through with your sleep deprivation experiment, you would need to ensure that your experimental and control groups were standardised, " },
+        { "type": "blank", "id": "audio11_q32" },
+        { "type": "text", "value": ", all third year accounting students, for instance. A simple random sample involves choosing a number of participants " },
+        { "type": "blank", "id": "audio11_q33" },
+        { "type": "text", "value": ". On the other hand, a different kind of study might involve a stratified random sample where participants are " },
+        { "type": "blank", "id": "audio11_q34" },
+        { "type": "text", "value": " from different subsets of the population." }
+      ]
+    },
+    {
+      "line_id": 32,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "You mean...subsets " },
+        { "type": "blank", "id": "audio11_q35" },
+        { "type": "text", "value": " like age, gender, race, socioeconomic status and so on." }
+      ]
+    },
+    {
+      "line_id": 33,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "blank", "id": "audio11_q36" },
+        { "type": "text", "value": ". Then the next step is to actually conduct the experiment and " },
+        { "type": "blank", "id": "audio11_q37" }
+      ]
+    },
+    {
+      "line_id": 34,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Then I have to analyse the data." }
+      ]
+    },
+    {
+      "line_id": 35,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "blank", "id": "audio11_q38" },
+        { "type": "text", "value": " for analysing data in next week's lecture." }
+      ]
+    },
+    {
+      "line_id": 36,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Oh good. I guess all that's left then is " },
+        { "type": "blank", "id": "audio11_q39" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "line_id": 37,
+      "speaker": "Lecturer",
+      "content": [
+        { "type": "text", "value": "Yes, communicating your results is important and " },
+        { "type": "blank", "id": "audio11_q40" },
+        { "type": "text", "value": " I'll be covering the format and structure of a psychology paper and " },
+        { "type": "blank", "id": "audio11_q41" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 38,
+      "speaker": "Student",
+      "content": [
+        { "type": "text", "value": "Thank you, Dr Reed. I feel much more confident in getting started now. Thank you for taking the time to see me." }
+      ]
+    }
+  ]
+}

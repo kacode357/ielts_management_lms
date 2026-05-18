@@ -35,12 +35,12 @@ function Header() {
 
   const getPageTitle = () => {
     const path = location.pathname
-    if (path === '/') return 'English Practice'
+    if (path === '/') return 'Practice IELTS'
     if (path === '/listening') return 'Listening'
     if (path.startsWith('/listening/')) {
       return 'Exercise'
     }
-    return 'English Practice'
+    return 'Practice IELTS'
   }
 
   const getSubtitle = () => {
@@ -104,19 +104,18 @@ function Header() {
         }}
       >
         <Link to="/" style={{ textDecoration: 'none', color: 'inherit', display: 'flex', alignItems: 'center', gap: 12 }}>
-          <div style={{
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            width: 40,
-            height: 40,
-            borderRadius: '12px',
-            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)'
-          }}>
-            <SoundOutlined style={{ fontSize: 20, color: '#fff' }} />
-          </div>
-          <Title level={4} style={{ margin: 0, color: '#333', fontWeight: 600 }}>English Practice</Title>
+          <img 
+            src="/Gemini_Generated_Image_8bu6ie8bu6ie8bu6.png" 
+            alt="Logo" 
+            style={{ 
+              width: 44, 
+              height: 44, 
+              borderRadius: '12px', 
+              objectFit: 'cover',
+              boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+            }} 
+          />
+          <Title level={4} style={{ margin: 0, color: '#333', fontWeight: 600 }}>Practice IELTS</Title>
         </Link>
 
         <div style={{ display: 'flex', gap: 8, alignItems: 'center', height: '100%' }}>
@@ -244,18 +243,11 @@ function Header() {
       <Drawer
         title={
           <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-            <div style={{
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              width: 36,
-              height: 36,
-              borderRadius: '10px',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              boxShadow: '0 2px 8px rgba(102, 126, 234, 0.4)'
-            }}>
-              <SoundOutlined style={{ color: '#fff', fontSize: 18 }} />
-            </div>
+            <img 
+              src="/Gemini_Generated_Image_8bu6ie8bu6ie8bu6.png" 
+              alt="Logo" 
+              style={{ width: 36, height: 36, borderRadius: '10px', objectFit: 'cover' }} 
+            />
             <span style={{ fontWeight: 600, fontSize: 16 }}>Menu</span>
           </div>
         }

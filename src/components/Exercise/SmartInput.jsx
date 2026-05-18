@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect, useRef } from 'react'
+import { CheckOutlined } from '@ant-design/icons'
 
 // Helper function to check if user word is a "prefix match" of answer word
 // Returns { isMatch: boolean, missingPart: string, matchedPart: string }
@@ -77,12 +78,13 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
       return (
         <span ref={wrapperRef} style={{
           color: '#52c41a',
-          fontWeight: 500,
-          padding: '2px 8px',
-          borderRadius: 4,
+          fontWeight: 600,
+          padding: '4px 12px',
+          borderRadius: 8,
           display: 'inline-block',
-          fontSize: 18,
-          border: '2px solid #52c41a'
+          fontSize: 17,
+          background: 'rgba(82, 196, 26, 0.1)',
+          border: '1px solid rgba(82, 196, 26, 0.3)'
         }}>
           {answer}
         </span>
@@ -191,9 +193,7 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
                 {prefixMatch.missingPart && (
                   <span style={{
                     color: '#ff4d4f',
-                    fontWeight: 400,
-                    textDecoration: 'underline',
-                    textDecorationColor: '#ff4d4f'
+                    fontWeight: 400
                   }}>
                     {prefixMatch.missingPart}
                   </span>
@@ -216,9 +216,7 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
             elements.push(
               <span key={`missing-${i}`} style={{
                 color: '#ff4d4f',
-                fontWeight: 400,
-                textDecoration: 'underline',
-                textDecorationColor: '#ff4d4f'
+                fontWeight: 400
               }}>
                 {ansWord}{' '}
               </span>
@@ -232,14 +230,15 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
 
       return (
         <span ref={wrapperRef} style={{
-          padding: '2px 8px',
-          borderRadius: 4,
-          fontSize: 18,
+          padding: '4px 12px',
+          borderRadius: 8,
+          fontSize: 17,
           display: 'inline-flex',
           flexWrap: 'wrap',
           alignItems: 'baseline',
-          gap: 2,
-          border: '2px solid #ff4d4f'
+          gap: 4,
+          background: 'rgba(255, 77, 79, 0.05)',
+          border: '1px solid rgba(255, 77, 79, 0.3)'
         }}>
           {elements}
         </span>
@@ -248,7 +247,7 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
   }
 
   return (
-    <span ref={wrapperRef} style={{ display: 'inline-flex', alignItems: 'center' }}>
+    <span ref={wrapperRef} style={{ display: 'inline-flex', alignItems: 'center', position: 'relative' }}>
       <input
         ref={inputRef}
         type="text"
@@ -264,20 +263,32 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
           }
         }}
         disabled={disabled}
-        placeholder="..."
+        placeholder="Type here..."
+        className="smart-input-modern"
         style={{
-          padding: '4px 12px',
-          borderRadius: 6,
-          fontSize: 18,
+          padding: '6px 40px 6px 12px',
+          borderRadius: 8,
+          fontSize: 17,
           lineHeight: '1.5',
           outline: 'none',
-          border: '1.5px solid #d9d9d9',
-          width: isMobile ? 120 : 300,
-          minWidth: isMobile ? 120 : 300,
+          border: '1px solid #d9d9d9',
+          width: isMobile ? 140 : 300,
+          minWidth: isMobile ? 140 : 300,
           maxWidth: isMobile ? 'calc(100vw - 80px)' : 500,
           textAlign: 'left',
-          background: 'white',
-          verticalAlign: 'middle'
+          background: '#fff',
+          verticalAlign: 'middle',
+          color: '#2b3648',
+          transition: 'all 0.3s ease',
+          boxShadow: 'inset 0 1px 2px rgba(0,0,0,0.02)'
+        }}
+        onFocus={(e) => {
+          e.target.style.borderColor = '#667eea'
+          e.target.style.boxShadow = '0 0 0 3px rgba(102, 126, 234, 0.2)'
+        }}
+        onBlur={(e) => {
+          e.target.style.borderColor = '#d9d9d9'
+          e.target.style.boxShadow = 'inset 0 1px 2px rgba(0,0,0,0.02)'
         }}
       />
       {value && !hasChecked && (
@@ -287,21 +298,26 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
             onCheck()
           }}
           style={{
-            marginLeft: 6,
-            padding: '4px 14px',
-            background: '#1677ff',
+            position: 'absolute',
+            right: 6,
+            padding: 0,
+            width: 28,
+            height: 28,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
             color: 'white',
             border: 'none',
             borderRadius: 6,
             cursor: 'pointer',
-            fontSize: 14,
-            fontWeight: 500,
-            whiteSpace: 'nowrap',
-            verticalAlign: 'middle',
-            lineHeight: '1.5'
+            boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)',
+            transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
           }}
+          onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.1)'}
+          onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
         >
-          Check
+          <CheckOutlined style={{ fontSize: 14 }} />
         </button>
       )}
     </span>

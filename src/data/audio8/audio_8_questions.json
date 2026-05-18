@@ -1,0 +1,332 @@
+{
+  "title": "Mount Pinatubo Eruption",
+  "source_images": [
+    "Audio 8 Part 4.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "Good morning, everyone. "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q1"
+        },
+        {
+          "type": "text",
+          "value": " I guess you're all used to hearing about global warming-well, I'm here today to talk to you about "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q2"
+        },
+        {
+          "type": "text",
+          "value": " and its effect of global cooling. I'll begin by "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q3"
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "Towards the middle of 1991, the second largest volcanic eruption of last century occurred in the Philippines, "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q4"
+        },
+        {
+          "type": "text",
+          "value": ", Manila, on the island of Luzon."
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "Mount Pinatubo belongs to a chain of volcanoes in the area and "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q5"
+        },
+        {
+          "type": "text",
+          "value": " There is evidence of eruptions from approximately 500, 3,000 and 5,500 years ago."
+        }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "The events of the 1991 Mount Pinatubo eruption began in July 1990, when a magnitude 7.8 earthquake occurred 100 kilometers "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q6"
+        },
+        {
+          "type": "text",
+          "value": " the Pinatubo region. The sleeping giant was re-awakened but few people had any idea of what was in store for them. "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q7"
+        },
+        {
+          "type": "text",
+          "value": ", many earthquakes were experienced around Mount Pinatubo and this is when volcano scientists (or volcanologists as they are called) "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q8"
+        },
+        {
+          "type": "text",
+          "value": " Before the disaster, thousands of people lived in very close proximity to the mountain and, on April 2nd, small explosions from vents "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q9"
+        },
+        {
+          "type": "text",
+          "value": " dusted their villages with ash. This resulted in "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q10"
+        },
+        {
+          "type": "text",
+          "value": " later that month."
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "Earthquakes and explosions "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q11"
+        },
+        {
+          "type": "text",
+          "value": " the residents and, on June 5th, a Level 3 alert was issued for two weeks because of the possibility of "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q12"
+        },
+        {
+          "type": "text",
+          "value": " However, the appearance of a large amount of lava protruding from the mountain on June 7th led to the announcement of a Level 5 alert on June 9th, "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q13"
+        },
+        {
+          "type": "text",
+          "value": " An evacuation area within 20 kilometers of the volcano was established and this time 25,000 people "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q14"
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "On the following day, Clark Air Base was evacuated and "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q15"
+        },
+        {
+          "type": "text",
+          "value": " was extended to 30 kilometers from the volcano resulting in the total evacuation of 58,000 people."
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "On June 15th, "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q16"
+        },
+        {
+          "type": "text",
+          "value": ", the eruption of Mount Pinatubo commenced and "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q17"
+        },
+        {
+          "type": "text",
+          "value": " causing numerous major earthquakes "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q18"
+        },
+        {
+          "type": "text",
+          "value": " at the top of the mountain and the creation of a huge caldera. 'What's a caldera?' I hear you say. Well, it's obvious really-with a huge eruption such as this where enormous amounts of material "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q19"
+        },
+        {
+          "type": "text",
+          "value": ", the summit falls into what is now an empty chamber and thus forms a large crater. "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q20"
+        },
+        {
+          "type": "text",
+          "value": ", as the eruption was taking place, a tropical storm was passing just to the northeast of Mount Pinatubo, "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q21"
+        },
+        {
+          "type": "text",
+          "value": " The dust and cinders that had been thrown up into the atmosphere "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q22"
+        },
+        {
+          "type": "text",
+          "value": " the water vapor from the storm to cause a rainfall of tephra that fell across the whole island of Luzon. Most of the people who perished during the eruption did so "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q23"
+        },
+        {
+          "type": "text",
+          "value": " collapsing roofs and killing the occupants of the houses. "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q24"
+        },
+        {
+          "type": "text",
+          "value": ", the death toll would certainly have been much lower."
+        }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "But that's not all, besides the ash, Mount Pinatubo expelled between 15 and 30 million tons of sulphur dioxide gas. "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q25"
+        },
+        {
+          "type": "text",
+          "value": "? Yes, the sulphur dioxide mixed with water and oxygen in the atmosphere to become sulphuric acid, which is a major contributor to "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q26"
+        }
+      ]
+    },
+    {
+      "line_id": 9,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "The eruption plume from Mount Pinatubo "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q27"
+        },
+        {
+          "type": "text",
+          "value": ", attaining an altitude of 34 kilometres and the resulting aerosol cloud spread around the earth in two weeks and "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q28"
+        },
+        {
+          "type": "text",
+          "value": " within a year. During the years 1992 and 1993, the ozone hole situated over Antarctica "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q29"
+        }
+      ]
+    },
+    {
+      "line_id": 10,
+      "speaker": "Lecturer",
+      "content": [
+        {
+          "type": "text",
+          "value": "The cooling effects of this cloud over the earth "
+        },
+        {
+          "type": "blank",
+          "id": "audio8_q30"
+        },
+        {
+          "type": "text",
+          "value": " It reduced global temperatures considerably. In the United States, for example, we experienced our third coldest and third wettest summer in 77 years during 1992."
+        }
+      ]
+    }
+  ]
+}

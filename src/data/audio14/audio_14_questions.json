@@ -1,0 +1,90 @@
+{
+  "title": "Advice About Further Study",
+  "source_images": [
+    "Audio 14 Part 2.png",
+    "Audio 14 Part 2 (1).png",
+    "Audio 14 Transcript.png"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "Counsellor",
+      "content": [
+        { "type": "text", "value": "Are you thinking about " },
+        { "type": "blank", "id": "audio14_q1" },
+        { "type": "text", "value": "? Well, listen to this before you make a decision. " },
+        { "type": "blank", "id": "audio14_q2" },
+        { "type": "text", "value": " if going on to tertiary study is right for you and it will " },
+        { "type": "blank", "id": "audio14_q3" },
+        { "type": "text", "value": " for the right reasons. It includes information about student life, what it will cost and the different ways " },
+        { "type": "blank", "id": "audio14_q4" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "Counsellor",
+      "content": [
+        { "type": "text", "value": "What should you think about first? Well, " },
+        { "type": "blank", "id": "audio14_q5" },
+        { "type": "text", "value": " and it's one of the biggest decisions you'll make in your life. What you decide now will " },
+        { "type": "blank", "id": "audio14_q6" },
+        { "type": "text", "value": ". It's the last year of high school for most of you and " },
+        { "type": "blank", "id": "audio14_q7" },
+        { "type": "text", "value": ". Perhaps you're thinking of going abroad, getting a job, or working for just a year or two to save some money " },
+        { "type": "blank", "id": "audio14_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "Counsellor",
+      "content": [
+        { "type": "text", "value": "Let's assume you're choosing to continue studying next year. " },
+        { "type": "blank", "id": "audio14_q9" },
+        { "type": "text", "value": " and plan how you're going to achieve them. First off, " },
+        { "type": "blank", "id": "audio14_q10" },
+        { "type": "text", "value": ": What career do you want to pursue or " },
+        { "type": "blank", "id": "audio14_q11" },
+        { "type": "text", "value": "? Then, you need to think about " },
+        { "type": "blank", "id": "audio14_q12" },
+        { "type": "text", "value": ". Will your qualification assist you in finding a rewarding job? Thirdly, course selection-exactly " },
+        { "type": "blank", "id": "audio14_q13" },
+        { "type": "text", "value": ": for instance, a degree, a diploma or something else? Now, we're down to study goals-the number of papers you can study at a time and what sort of grades " },
+        { "type": "blank", "id": "audio14_q14" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "Counsellor",
+      "content": [
+        { "type": "text", "value": "Now, how do you make all that happen? " },
+        { "type": "blank", "id": "audio14_q15" },
+        { "type": "text", "value": " by all the choices but there are people and agencies to help: Career Services is a great website with lots of useful information and a search tool for finding " },
+        { "type": "blank", "id": "audio14_q16" },
+        { "type": "text", "value": ". Then there are the tertiary education institutions themselves-universities and institutes of technology, for example, " },
+        { "type": "blank", "id": "audio14_q17" },
+        { "type": "text", "value": " their particular websites. You can find out most anything there. Many campuses have a Student Support Association and they can tell you a lot about " },
+        { "type": "blank", "id": "audio14_q18" },
+        { "type": "text", "value": ". Don't be afraid to ask them anything-I'm sure they've heard it all before. " },
+        { "type": "blank", "id": "audio14_q19" },
+        { "type": "text", "value": " make enquiries with potential employers to see if they will fund, " },
+        { "type": "blank", "id": "audio14_q20" },
+        { "type": "text", "value": ". If it is a trade you want to learn, the Apprenticeship Scheme " },
+        { "type": "blank", "id": "audio14_q21" },
+        { "type": "text", "value": ". That way you'll get valuable work experience while you're studying. If you're still at school, then search out your School Careers Advisor who will " },
+        { "type": "blank", "id": "audio14_q22" },
+        { "type": "text", "value": " and resources at hand and be able to give you the kind of guidance you need to " },
+        { "type": "blank", "id": "audio14_q23" },
+        { "type": "text", "value": "; and last but not least, don't forget your parents and other family members! " },
+        { "type": "blank", "id": "audio14_q24" },
+        { "type": "text", "value": ". Oh, one last thing that might help you make up your mind: have you thought of " },
+        { "type": "blank", "id": "audio14_q25" },
+        { "type": "text", "value": "? Some embassies, governments and individual institutions offer scholarships to " },
+        { "type": "blank", "id": "audio14_q26" },
+        { "type": "text", "value": ". Most large libraries have a comprehensive catalogue of the various grants, awards and scholarships that are available." }
+      ]
+    }
+  ]
+}

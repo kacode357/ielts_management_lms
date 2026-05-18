@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Typography, Progress } from 'antd'
-import { ArrowLeftOutlined, CameraOutlined, ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons'
+import { ArrowLeftOutlined, CameraOutlined, ExclamationCircleOutlined, CheckCircleOutlined, FilePdfOutlined } from '@ant-design/icons'
 import CustomAudioPlayer from './CustomAudioPlayer'
 
 const { Title, Text } = Typography
@@ -16,6 +16,7 @@ export default function ExerciseHeaderMobile({
   userAnswers,
   handleClearSaved,
   handleExportImage,
+  handleExportPDF,
   isExporting,
   scrollToFirstUnanswered
 }) {
@@ -26,12 +27,12 @@ export default function ExerciseHeaderMobile({
       position: 'sticky',
       top: 0,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.98)',
-      backdropFilter: 'blur(10px)',
+      background: 'rgba(255, 255, 255, 0.7)',
+      backdropFilter: 'blur(20px)',
       margin: '0 -12px',
-      padding: '12px',
-      borderBottom: '1px solid #f0f0f0',
-      boxShadow: '0 2px 12px rgba(0,0,0,0.06)'
+      padding: '16px 12px',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.4)',
+      boxShadow: '0 4px 30px rgba(0,0,0,0.05)'
     }}>
       {/* Mobile Header Row 1: Back + Title | Progress */}
       <div style={{
@@ -53,20 +54,21 @@ export default function ExerciseHeaderMobile({
               height: 36,
               borderRadius: 10,
               border: 'none',
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+              background: 'rgba(255, 255, 255, 0.8)',
               cursor: 'pointer',
-              boxShadow: '0 2px 8px rgba(102, 126, 234, 0.4)'
+              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
           >
-            <ArrowLeftOutlined style={{ fontSize: 14, color: '#fff' }} />
+            <ArrowLeftOutlined style={{ fontSize: 16, color: '#4a5a75' }} />
           </button>
           <div style={{
-            padding: '6px 12px',
-            borderRadius: 8,
+            padding: '8px 14px',
+            borderRadius: 10,
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+            boxShadow: '0 4px 16px rgba(102, 126, 234, 0.3)'
           }}>
-            <span style={{ fontSize: 14, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
+            <span style={{ fontSize: 15, fontWeight: 600, color: '#fff', whiteSpace: 'nowrap' }}>
               {audioInfo.title}
             </span>
           </div>
@@ -76,11 +78,12 @@ export default function ExerciseHeaderMobile({
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: 8,
-          padding: '6px 10px',
-          borderRadius: 10,
-          background: '#f8fafc',
-          border: '1px solid #e8e8e8'
+          gap: 10,
+          padding: '6px 12px',
+          borderRadius: 12,
+          background: 'rgba(255, 255, 255, 0.8)',
+          border: '1px solid rgba(255, 255, 255, 0.5)',
+          boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
         }}>
           <Progress
             type="circle"
@@ -89,12 +92,13 @@ export default function ExerciseHeaderMobile({
               '0%': '#667eea',
               '100%': '#764ba2'
             }}
-            trailColor="#e8e8e8"
-            size={36}
+            trailColor="rgba(0,0,0,0.05)"
+            size={38}
+            strokeWidth={8}
             format={(percent) => (
               <span style={{
-                fontSize: 10,
-                fontWeight: 600,
+                fontSize: 11,
+                fontWeight: 700,
                 background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
@@ -104,11 +108,11 @@ export default function ExerciseHeaderMobile({
               </span>
             )}
           />
-          <Text style={{ fontSize: 12, color: '#666', whiteSpace: 'nowrap' }}>
+          <Text style={{ fontSize: 13, color: '#4a5a75', fontWeight: 500, whiteSpace: 'nowrap' }}>
             {remaining > 0 ? `${remaining} left` : 'Done'}
           </Text>
           {remaining === 0 && (
-            <CheckCircleOutlined style={{ color: '#52c41a', fontSize: 14 }} />
+            <CheckCircleOutlined style={{ color: '#52c41a', fontSize: 16 }} />
           )}
         </div>
       </div>
@@ -123,33 +127,35 @@ export default function ExerciseHeaderMobile({
         {!isSubmitted && remaining > 0 && allBlanks.length > 0 && (
           <Button
             type="primary"
-            size="small"
+            size="middle"
+            className="jump-btn"
             onClick={scrollToFirstUnanswered}
             style={{
               background: 'linear-gradient(135deg, #F0AD4E 0%, #ed8936 100%)',
               border: 'none',
-              height: 38,
-              borderRadius: 10,
-              fontSize: 13,
-              fontWeight: 500,
-              boxShadow: '0 2px 10px rgba(240, 173, 78, 0.4)'
+              height: 40,
+              borderRadius: 12,
+              fontSize: 14,
+              fontWeight: 600,
+              boxShadow: '0 4px 12px rgba(240, 173, 78, 0.4)'
             }}
           >
-            Go to Unanswered
+            Go to Blank
           </Button>
         )}
 
         {!isSubmitted && Object.keys(userAnswers).length > 0 && (
           <Button
-            size="small"
+            size="middle"
             onClick={handleClearSaved}
             icon={<ExclamationCircleOutlined />}
             style={{
               borderColor: '#ffccc7',
               color: '#ff4d4f',
-              height: 34,
-              borderRadius: 10,
-              fontSize: 13
+              height: 40,
+              borderRadius: 12,
+              fontSize: 14,
+              background: 'rgba(255,255,255,0.8)'
             }}
           >
             Clear Saved
@@ -157,24 +163,47 @@ export default function ExerciseHeaderMobile({
         )}
 
         {isSubmitted && (
-          <Button
-            type="primary"
-            size="small"
-            onClick={handleExportImage}
-            loading={isExporting}
-            icon={<CameraOutlined />}
-            style={{
-              background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-              border: 'none',
-              height: 38,
-              borderRadius: 10,
-              fontSize: 13,
-              fontWeight: 500,
-              boxShadow: '0 2px 10px rgba(102, 126, 234, 0.4)'
-            }}
-          >
-            Save Image
-          </Button>
+          <div style={{ display: 'flex', gap: 8 }}>
+            <Button
+              onClick={handleExportPDF}
+              icon={<FilePdfOutlined />}
+              size="middle"
+              className="export-btn"
+              style={{
+                background: '#fff',
+                border: '1px solid #ff4d4f',
+                color: '#ff4d4f',
+                height: 40,
+                borderRadius: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                flex: 1,
+                boxShadow: '0 4px 12px rgba(255, 77, 79, 0.2)'
+              }}
+            >
+              Save PDF
+            </Button>
+            <Button
+              type="primary"
+              size="middle"
+              onClick={handleExportImage}
+              loading={isExporting}
+              icon={<CameraOutlined />}
+              className="export-btn"
+              style={{
+                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                border: 'none',
+                height: 40,
+                borderRadius: 12,
+                fontSize: 14,
+                fontWeight: 600,
+                flex: 1,
+                boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)'
+              }}
+            >
+              Save Image
+            </Button>
+          </div>
         )}
       </div>
     </div>

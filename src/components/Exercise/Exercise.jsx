@@ -16,6 +16,10 @@ import audio5Questions from '../../data/audio5/audio_5_questions.json'
 import audio5Answers from '../../data/audio5/audio_5_answers.json'
 import audio6Questions from '../../data/audio6/audio_6_questions.json'
 import audio6Answers from '../../data/audio6/audio_6_answers.json'
+import audio7Questions from '../../data/audio7/audio_7_questions.json'
+import audio7Answers from '../../data/audio7/audio_7_answers.json'
+import audio8Questions from '../../data/audio8/audio_8_questions.json'
+import audio8Answers from '../../data/audio8/audio_8_answers.json'
 import audio9Questions from '../../data/audio9/audio_9_questions.json'
 import audio9Answers from '../../data/audio9/audio_9_answers.json'
 import audio13Questions from '../../data/audio13/audio_13_questions.json'
@@ -24,6 +28,16 @@ import audio17Questions from '../../data/audio17/audio_17_questions.json'
 import audio17Answers from '../../data/audio17/audio_17_answers.json'
 import audio10Questions from '../../data/audio10/audio_10_questions.json'
 import audio10Answers from '../../data/audio10/audio_10_answers.json'
+import audio11Questions from '../../data/audio11/audio_11_questions.json'
+import audio11Answers from '../../data/audio11/audio_11_answers.json'
+import audio12Questions from '../../data/audio12/audio_12_questions.json'
+import audio12Answers from '../../data/audio12/audio_12_answers.json'
+import audio14Questions from '../../data/audio14/audio_14_questions.json'
+import audio14Answers from '../../data/audio14/audio_14_answers.json'
+import audio15Questions from '../../data/audio15/audio_15_questions.json'
+import audio15Answers from '../../data/audio15/audio_15_answers.json'
+import audio18Questions from '../../data/audio18/audio_18_questions.json'
+import audio18Answers from '../../data/audio18/audio_18_answers.json'
 
 import ExerciseHeaderDesktop from './ExerciseHeaderDesktop'
 import ExerciseHeaderMobile from './ExerciseHeaderMobile'
@@ -33,6 +47,41 @@ import SmartInput from './SmartInput'
 const { Content } = Layout
 const { Text } = Typography
 
+const EXPIRY_MS = 24 * 60 * 60 * 1000
+
+export const cleanupStaleStorage = () => {
+  try {
+    const keysToRemove = []
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i)
+      if (key && key.startsWith('exercise_')) {
+        const savedData = localStorage.getItem(key)
+        if (savedData) {
+          try {
+            const parsed = JSON.parse(savedData)
+            if (parsed && parsed.timestamp) {
+              const age = Date.now() - parsed.timestamp
+              if (age >= EXPIRY_MS) {
+                keysToRemove.push(key)
+              }
+            } else {
+              keysToRemove.push(key)
+            }
+          } catch(e) {
+            keysToRemove.push(key)
+          }
+        }
+      }
+    }
+    keysToRemove.forEach(k => localStorage.removeItem(k))
+    if (keysToRemove.length > 0) {
+      console.log(`Cleaned up ${keysToRemove.length} stale exercise data entries.`)
+    }
+  } catch (error) {
+    console.error('Error during cleanup:', error)
+  }
+}
+
 // Audio data mapping
 const audioData = {
   audio1: { questions: audio1Questions, answers: audio1Answers, file: '/Audio 1.mp3', title: 'Audio 1' },
@@ -41,10 +90,17 @@ const audioData = {
   audio4: { questions: audio4Questions, answers: audio4Answers, file: '/Audio 4.mp3', title: 'Audio 4' },
   audio5: { questions: audio5Questions, answers: audio5Answers, file: '/Audio 5.mp3', title: 'Audio 5' },
   audio6: { questions: audio6Questions, answers: audio6Answers, file: '/Audio 6.mp3', title: 'Audio 6' },
+  audio7: { questions: audio7Questions, answers: audio7Answers, file: '/Audio 7.mp3', title: 'Audio 7' },
+  audio8: { questions: audio8Questions, answers: audio8Answers, file: '/Audio 8.mp3', title: 'Audio 8' },
   audio9: { questions: audio9Questions, answers: audio9Answers, file: '/Audio 9.mp3', title: 'Audio 9' },
   audio10: { questions: audio10Questions, answers: audio10Answers, file: '/Audio 10.mp3', title: 'Audio 10' },
+  audio11: { questions: audio11Questions, answers: audio11Answers, file: '/Audio 11.mp3', title: 'Audio 11' },
+  audio12: { questions: audio12Questions, answers: audio12Answers, file: '/Audio 12.mp3', title: 'Audio 12' },
   audio13: { questions: audio13Questions, answers: audio13Answers, file: '/Audio 13.mp3', title: 'Audio 13' },
-  audio17: { questions: audio17Questions, answers: audio17Answers, file: '/Audio 17.mp3', title: 'Audio 17' }
+  audio14: { questions: audio14Questions, answers: audio14Answers, file: '/Audio 14.mp3', title: 'Audio 14' },
+  audio15: { questions: audio15Questions, answers: audio15Answers, file: '/Audio 15.mp3', title: 'Audio 15' },
+  audio17: { questions: audio17Questions, answers: audio17Answers, file: '/Audio 17.mp3', title: 'Audio 17' },
+  audio18: { questions: audio18Questions, answers: audio18Answers, file: '/Audio 18.mp3', title: 'Audio 18' }
 }
 
 // Submit Button Component
@@ -54,21 +110,23 @@ function SubmitButton({ onClick, isMobile }) {
       <Button
         type="primary"
         size="large"
+        className="submit-btn"
         onClick={onClick}
         style={{
-          background: 'linear-gradient(135deg, #4A90E2 0%, #357ABD 100%)',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           border: 'none',
-          boxShadow: '0 4px 12px rgba(74, 144, 226, 0.5)',
+          boxShadow: '0 8px 24px rgba(102, 126, 234, 0.4)',
           width: '100%',
-          height: 48,
+          height: 52,
           fontSize: 16,
-          fontWeight: 500,
-          borderRadius: 10,
-          marginTop: 16
+          fontWeight: 600,
+          borderRadius: 16,
+          marginTop: 24,
+          letterSpacing: '0.5px'
         }}
-        icon={<DownloadOutlined />}
+        icon={<DownloadOutlined style={{ fontSize: 18 }} />}
       >
-        Submit
+        Submit Answers
       </Button>
     )
   }
@@ -76,22 +134,29 @@ function SubmitButton({ onClick, isMobile }) {
   return (
     <div style={{
       position: 'fixed',
-      bottom: 24,
-      right: 24,
+      bottom: 32,
+      right: 32,
       zIndex: 99
     }}>
       <Button
         type="primary"
         size="large"
+        className="submit-btn"
         onClick={onClick}
         style={{
-          background: 'linear-gradient(135deg, #4A90E2 0%, #357ABD 100%)',
+          background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           border: 'none',
-          boxShadow: '0 4px 12px rgba(74, 144, 226, 0.5)'
+          boxShadow: '0 10px 30px rgba(102, 126, 234, 0.4)',
+          height: 56,
+          padding: '0 32px',
+          fontSize: 16,
+          fontWeight: 600,
+          borderRadius: 28,
+          letterSpacing: '0.5px'
         }}
-        icon={<DownloadOutlined />}
+        icon={<DownloadOutlined style={{ fontSize: 20 }} />}
       >
-        Submit
+        Submit Answers
       </Button>
     </div>
   )
@@ -183,10 +248,12 @@ function Exercise() {
   const remaining = allBlanks.length - filled
 
   const getStorageKey = () => `exercise_${audioId}`
-  const EXPIRY_MS = 24 * 60 * 60 * 1000
 
-  // Load saved answers and check results
+  // Cleanup and load saved answers
   useEffect(() => {
+    // Run global cleanup first
+    cleanupStaleStorage()
+
     try {
       const storageKey = getStorageKey()
       const savedData = localStorage.getItem(storageKey)
@@ -422,6 +489,18 @@ function Exercise() {
     }
   }
 
+  const handleExportPDF = () => {
+    // Temporarily change document title to suggest a nice file name for the PDF
+    const originalTitle = document.title
+    document.title = `${audioInfo.title}_Transcript`
+    
+    // Trigger browser print dialog which can be saved to PDF
+    window.print()
+    
+    // Restore original title
+    document.title = originalTitle
+  }
+
   const handleClearSaved = () => {
     try {
       const storageKey = getStorageKey()
@@ -449,21 +528,32 @@ function Exercise() {
           userAnswers={userAnswers}
           handleClearSaved={handleClearSaved}
           handleExportImage={handleExportImage}
+          handleExportPDF={handleExportPDF}
           isExporting={isExporting}
           scrollToFirstUnanswered={scrollToFirstUnanswered}
         />
 
-        <Content style={{ padding: 0 }}>
-          <div style={{ marginTop: 16 }}>
-            <Card size="small" style={{ marginBottom: 12, border: 'none' }}>
+        <Content style={{ padding: '0 0 40px 0' }}>
+          <div style={{ marginTop: 24, maxWidth: 1000, margin: '24px auto 0 auto' }}>
+            <Card size="large" style={{ marginBottom: 12, border: 'none', borderRadius: 24, background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.04)' }}>
               {data.dialogue.map((item, idx) => (
-                <div key={idx} style={{ marginBottom: 12 }}>
+                <div key={idx} style={{ marginBottom: 24, paddingBottom: 16, borderBottom: idx !== data.dialogue.length - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
                   {item.speaker && (
-                    <Tag color={item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? 'blue' : 'purple'}>
+                    <Tag 
+                      color={item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? '#e6f4ff' : '#f9f0ff'}
+                      style={{ 
+                        color: item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? '#1677ff' : '#722ed1',
+                        border: 'none',
+                        padding: '4px 12px',
+                        borderRadius: '8px',
+                        fontSize: 14,
+                        fontWeight: 600
+                      }}
+                    >
                       {item.speaker}
                     </Tag>
                   )}
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '4px 6px', marginTop: 8, alignItems: 'baseline', lineHeight: '2.2' }}>
+                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px', marginTop: 12, alignItems: 'center', lineHeight: '2.4' }}>
                     {(item.text || item.content || []).map((part, i) => {
                       if (part.type === 'text') return <span key={i} className="dialogue-text">{part.value}</span>
                       if (part.type === 'blank') {
@@ -509,7 +599,7 @@ function Exercise() {
 
   // Mobile layout
   return (
-    <div className="audio-exercise exercise-page" ref={exerciseRef} style={{ padding: '0 12px', overflow: 'visible' }}>
+    <div className="audio-exercise exercise-page mobile-exercise-wrapper" ref={exerciseRef} style={{ padding: '0', overflow: 'visible' }}>
       <ExerciseHeaderMobile
         audioInfo={audioInfo}
         navigate={navigate}
@@ -520,22 +610,30 @@ function Exercise() {
         userAnswers={userAnswers}
         handleClearSaved={handleClearSaved}
         handleExportImage={handleExportImage}
+        handleExportPDF={handleExportPDF}
         isExporting={isExporting}
         scrollToFirstUnanswered={scrollToFirstUnanswered}
       />
 
-      <Content style={{ padding: 0 }}>
+      <Content style={{ padding: '0 12px 24px 12px' }}>
         <Card
           size="small"
-          style={{ marginBottom: 8, border: 'none', borderRadius: 8 }}
-          bodyStyle={{ padding: 12 }}
+          style={{ marginBottom: 8, border: 'none', borderRadius: 16, background: 'rgba(255, 255, 255, 0.8)', backdropFilter: 'blur(10px)', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}
+          bodyStyle={{ padding: 16 }}
         >
           {data.dialogue.map((item, idx) => (
-            <div key={idx} style={{ marginBottom: 12 }}>
+            <div key={idx} style={{ marginBottom: 20, paddingBottom: 16, borderBottom: idx !== data.dialogue.length - 1 ? '1px solid rgba(0,0,0,0.05)' : 'none' }}>
               {item.speaker && (
                 <Tag
-                  color={item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? 'blue' : 'purple'}
-                  style={{ fontSize: 12 }}
+                  color={item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? '#e6f4ff' : '#f9f0ff'}
+                  style={{ 
+                    color: item.speaker === 'Agent' || item.speaker === 'Advisor' || item.speaker === 'Speaker' ? '#1677ff' : '#722ed1',
+                    border: 'none',
+                    padding: '2px 10px',
+                    borderRadius: '6px',
+                    fontSize: 13,
+                    fontWeight: 600
+                  }}
                 >
                   {item.speaker}
                 </Tag>
@@ -543,10 +641,10 @@ function Exercise() {
               <div style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '4px 6px',
-                marginTop: 8,
-                alignItems: 'baseline',
-                lineHeight: '2.2'
+                gap: '8px',
+                marginTop: 12,
+                alignItems: 'center',
+                lineHeight: '2.4'
               }}>
                 {(item.text || item.content || []).map((part, i) => {
                   if (part.type === 'text') return <span key={i} className="dialogue-text">{part.value}</span>

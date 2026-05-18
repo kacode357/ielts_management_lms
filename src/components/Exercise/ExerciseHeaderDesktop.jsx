@@ -1,6 +1,6 @@
 import React from 'react'
 import { Button, Typography, Progress } from 'antd'
-import { LeftOutlined, CameraOutlined, ExclamationCircleOutlined, CheckCircleOutlined } from '@ant-design/icons'
+import { LeftOutlined, CameraOutlined, ExclamationCircleOutlined, CheckCircleOutlined, FilePdfOutlined } from '@ant-design/icons'
 import CustomAudioPlayer from './CustomAudioPlayer'
 
 const { Title, Text } = Typography
@@ -16,6 +16,7 @@ export default function ExerciseHeaderDesktop({
   userAnswers,
   handleClearSaved,
   handleExportImage,
+  handleExportPDF,
   isExporting,
   scrollToFirstUnanswered
 }) {
@@ -24,14 +25,13 @@ export default function ExerciseHeaderDesktop({
   return (
     <div className="exercise-header-sticky" style={{
       position: 'sticky',
-      top: 0,
+      top: 70,
       zIndex: 100,
-      background: 'rgba(255, 255, 255, 0.95)',
-      backdropFilter: 'blur(10px)',
+      background: 'rgba(255, 255, 255, 0.7)',
+      backdropFilter: 'blur(20px)',
       margin: '0 -24px',
-      padding: '12px 20px',
-      borderBottom: '1px solid #f0f0f0',
-      boxShadow: '0 2px 12px rgba(0,0,0,0.06)'
+      padding: '16px 24px',
+      boxShadow: '0 4px 30px rgba(0,0,0,0.05)'
     }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 16, flexWrap: 'nowrap' }}>
         {/* Left: Back & Title */}
@@ -41,22 +41,28 @@ export default function ExerciseHeaderDesktop({
             icon={<LeftOutlined />}
             onClick={() => navigate('/listening')}
             style={{
-              color: '#666',
-              fontSize: 14,
-              borderRadius: 8,
-              transition: 'all 0.2s'
+              color: '#4a5a75',
+              fontSize: 16,
+              width: 40,
+              height: 40,
+              borderRadius: 12,
+              background: 'rgba(255, 255, 255, 0.8)',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.04)',
+              transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)'
             }}
+            onMouseOver={(e) => { e.currentTarget.style.transform = 'scale(0.95)'; e.currentTarget.style.background = '#fff' }}
+            onMouseOut={(e) => { e.currentTarget.style.transform = 'scale(1)'; e.currentTarget.style.background = 'rgba(255, 255, 255, 0.8)' }}
           />
           <div style={{
             display: 'flex',
             alignItems: 'center',
             gap: 8,
-            padding: '6px 14px',
-            borderRadius: 10,
+            padding: '8px 16px',
+            borderRadius: 12,
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            boxShadow: '0 2px 8px rgba(102, 126, 234, 0.3)'
+            boxShadow: '0 4px 16px rgba(102, 126, 234, 0.3)'
           }}>
-            <Title level={5} style={{ margin: 0, color: '#fff', whiteSpace: 'nowrap', fontSize: 15 }}>
+            <Title level={5} style={{ margin: 0, color: '#fff', whiteSpace: 'nowrap', fontSize: 16, fontWeight: 600 }}>
               {audioInfo.title}
             </Title>
           </div>
@@ -72,11 +78,12 @@ export default function ExerciseHeaderDesktop({
           <div style={{
             display: 'flex',
             alignItems: 'center',
-            gap: 10,
-            padding: '6px 12px',
-            borderRadius: 10,
-            background: '#f8fafc',
-            border: '1px solid #e8e8e8'
+            gap: 12,
+            padding: '8px 16px',
+            borderRadius: 16,
+            background: 'rgba(255, 255, 255, 0.8)',
+            border: '1px solid rgba(255, 255, 255, 0.5)',
+            boxShadow: '0 2px 10px rgba(0,0,0,0.02)'
           }}>
             <Progress
               type="circle"
@@ -85,12 +92,13 @@ export default function ExerciseHeaderDesktop({
                 '0%': '#667eea',
                 '100%': '#764ba2'
               }}
-              trailColor="#e8e8e8"
-              size={42}
+              trailColor="rgba(0,0,0,0.05)"
+              size={48}
+              strokeWidth={8}
               format={(percent) => (
                 <span style={{
-                  fontSize: 11,
-                  fontWeight: 600,
+                  fontSize: 13,
+                  fontWeight: 700,
                   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
                   WebkitBackgroundClip: 'text',
                   WebkitTextFillColor: 'transparent',
@@ -100,41 +108,47 @@ export default function ExerciseHeaderDesktop({
                 </span>
               )}
             />
-            <Text style={{ fontSize: 12, color: '#666', whiteSpace: 'nowrap' }}>
+            <Text style={{ fontSize: 14, color: '#4a5a75', fontWeight: 500, whiteSpace: 'nowrap' }}>
               {remaining > 0 ? `${remaining} remain` : 'Complete'}
             </Text>
             {remaining === 0 && (
-              <CheckCircleOutlined style={{ color: '#52c41a', fontSize: 14 }} />
+              <CheckCircleOutlined style={{ color: '#52c41a', fontSize: 18 }} />
             )}
           </div>
 
           {!isSubmitted && remaining > 0 && allBlanks.length > 0 && (
             <Button
-              size="small"
+              className="jump-btn"
+              size="middle"
               type="primary"
               onClick={scrollToFirstUnanswered}
               style={{
                 background: 'linear-gradient(135deg, #F0AD4E 0%, #ed8936 100%)',
                 border: 'none',
-                fontSize: 12,
-                borderRadius: 8,
-                boxShadow: '0 2px 8px rgba(240, 173, 78, 0.4)'
+                fontSize: 14,
+                fontWeight: 600,
+                borderRadius: 12,
+                boxShadow: '0 4px 12px rgba(240, 173, 78, 0.4)',
+                height: 40,
+                padding: '0 20px'
               }}
             >
-              Go
+              Go to Blank
             </Button>
           )}
 
           {!isSubmitted && Object.keys(userAnswers).length > 0 && (
             <Button
-              size="small"
+              size="middle"
               onClick={handleClearSaved}
               icon={<ExclamationCircleOutlined />}
               style={{
                 borderColor: '#ffccc7',
                 color: '#ff4d4f',
-                fontSize: 12,
-                borderRadius: 8
+                fontSize: 14,
+                borderRadius: 12,
+                height: 40,
+                background: 'rgba(255,255,255,0.8)'
               }}
             >
               Clear
@@ -142,21 +156,43 @@ export default function ExerciseHeaderDesktop({
           )}
 
           {isSubmitted && (
-            <Button
-              type="primary"
-              onClick={handleExportImage}
-              loading={isExporting}
-              icon={<CameraOutlined />}
-              size="small"
-              style={{
-                background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                border: 'none',
-                borderRadius: 8,
-                boxShadow: '0 2px 8px rgba(102, 126, 234, 0.4)'
-              }}
-            >
-              Save
-            </Button>
+            <div style={{ display: 'flex', gap: 8 }}>
+              <Button
+                onClick={handleExportPDF}
+                icon={<FilePdfOutlined />}
+                size="middle"
+                className="export-btn"
+                style={{
+                  background: '#fff',
+                  border: '1px solid #ff4d4f',
+                  color: '#ff4d4f',
+                  borderRadius: 12,
+                  boxShadow: '0 4px 12px rgba(255, 77, 79, 0.2)',
+                  height: 40,
+                  fontWeight: 500
+                }}
+              >
+                PDF
+              </Button>
+              <Button
+                type="primary"
+                onClick={handleExportImage}
+                loading={isExporting}
+                icon={<CameraOutlined />}
+                size="middle"
+                className="export-btn"
+                style={{
+                  background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+                  border: 'none',
+                  borderRadius: 12,
+                  boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)',
+                  height: 40,
+                  fontWeight: 500
+                }}
+              >
+                Save
+              </Button>
+            </div>
           )}
         </div>
       </div>

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Layout, Typography, Card, Row, Col, Button } from 'antd'
 import { SoundOutlined, ArrowLeftOutlined, PlayCircleOutlined } from '@ant-design/icons'
 import { Link, useNavigate } from 'react-router-dom'
+import { cleanupStaleStorage } from '../components/Exercise/Exercise'
 
 const { Content } = Layout
 const { Title, Text } = Typography
@@ -13,10 +14,17 @@ const audioList = [
   { id: 'audio4', title: 'Audio 4', questions: 46 },
   { id: 'audio5', title: 'Audio 5', questions: 41 },
   { id: 'audio6', title: 'Audio 6', questions: 41 },
+  { id: 'audio7', title: 'Audio 7', questions: 41 },
+  { id: 'audio8', title: 'Audio 8', questions: 30 },
   { id: 'audio9', title: 'Audio 9', questions: 43 },
   { id: 'audio10', title: 'Audio 10', questions: 38 },
+  { id: 'audio11', title: 'Audio 11', questions: 41 },
+  { id: 'audio12', title: 'Audio 12', questions: 27 },
   { id: 'audio13', title: 'Audio 13', questions: 54 },
-  { id: 'audio17', title: 'Audio 17', questions: 46 }
+  { id: 'audio14', title: 'Audio 14', questions: 26 },
+  { id: 'audio15', title: 'Audio 15', questions: 56 },
+  { id: 'audio17', title: 'Audio 17', questions: 46 },
+  { id: 'audio18', title: 'Audio 18', questions: 42 }
 ]
 
 function Listening() {
@@ -26,6 +34,9 @@ function Listening() {
 
   // Detect mobile viewport
   useEffect(() => {
+    // Run storage cleanup when visiting the index page
+    cleanupStaleStorage()
+
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
@@ -46,7 +57,7 @@ function Listening() {
       style={{
         padding: isMobile ? '16px' : '32px',
         minHeight: 'calc(100vh - 64px)',
-        background: 'linear-gradient(180deg, #f8fafc 0%, #f0f4f8 100%)'
+        background: 'transparent'
       }}
     >
       <div style={{ maxWidth: 1000, margin: '0 auto' }}>
@@ -63,38 +74,44 @@ function Listening() {
         </button>
 
         <div style={{
-          marginBottom: isMobile ? 24 : 32,
+          marginBottom: isMobile ? 32 : 48,
           opacity: animated ? 1 : 0,
           transform: animated ? 'translateY(0)' : 'translateY(20px)',
-          transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
+          transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+          textAlign: 'center',
+          position: 'relative'
         }}>
           <div style={{
             display: 'inline-flex',
             alignItems: 'center',
             justifyContent: 'center',
-            width: isMobile ? 56 : 64,
-            height: isMobile ? 56 : 64,
-            borderRadius: '16px',
+            width: isMobile ? 64 : 80,
+            height: isMobile ? 64 : 80,
+            borderRadius: '24px',
             background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-            marginBottom: 16,
-            boxShadow: '0 8px 24px rgba(102, 126, 234, 0.4)'
+            marginBottom: 20,
+            boxShadow: '0 12px 32px rgba(102, 126, 234, 0.4)'
           }}>
-            <SoundOutlined style={{ fontSize: isMobile ? 24 : 32, color: '#fff' }} />
+            <SoundOutlined style={{ fontSize: isMobile ? 28 : 36, color: '#fff' }} />
           </div>
 
           <Title
-            level={3}
+            level={1}
             style={{
-              marginBottom: 8,
-              fontSize: isMobile ? 22 : 28,
-              fontWeight: 700,
-              color: '#333'
+              marginBottom: 12,
+              fontSize: isMobile ? 28 : 42,
+              fontWeight: 800,
+              letterSpacing: '-0.5px',
+              background: 'linear-gradient(135deg, #2b3648 0%, #4a5a75 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text'
             }}
           >
             Listening Exercises
           </Title>
-          <Text type="secondary" style={{ fontSize: isMobile ? 13 : 15 }}>
-            Choose an audio to start practicing
+          <Text type="secondary" style={{ fontSize: isMobile ? 15 : 18, color: '#6b7280', maxWidth: 500, margin: '0 auto', display: 'block', lineHeight: 1.6 }}>
+            Master your listening skills with our curated collection of interactive audio practices.
           </Text>
         </div>
 
@@ -107,36 +124,37 @@ function Listening() {
                   className="audio-card-modern"
                   style={{
                     height: '100%',
-                    borderRadius: 16,
-                    border: 'none',
-                    boxShadow: '0 4px 16px rgba(0,0,0,0.08)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    borderRadius: 20,
+                    background: 'rgba(255, 255, 255, 0.6)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(255, 255, 255, 0.8)',
+                    boxShadow: '0 8px 24px rgba(0,0,0,0.04)',
+                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                     opacity: animated ? 1 : 0,
                     transform: animated ? 'translateY(0)' : 'translateY(20px)',
-                    transitionDelay: `${index * 0.08}s`
+                    transitionDelay: `${index * 0.05}s`
                   }}
                   bodyStyle={{
-                    padding: isMobile ? 16 : 24,
+                    padding: isMobile ? 20 : 28,
                     display: 'flex',
                     flexDirection: 'column',
                     alignItems: 'center'
                   }}
                 >
                   <div className="audio-icon-wrapper" style={{
-                    background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-                    width: isMobile ? 56 : 72,
-                    height: isMobile ? 56 : 72,
-                    borderRadius: '50%',
+                    background: 'linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%)',
+                    width: isMobile ? 64 : 80,
+                    height: isMobile ? 64 : 80,
+                    borderRadius: '24px',
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    marginBottom: isMobile ? 12 : 16,
-                    boxShadow: '0 6px 20px rgba(102, 126, 234, 0.4)',
-                    transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
+                    marginBottom: isMobile ? 16 : 20,
+                    transition: 'all 0.4s cubic-bezier(0.16, 1, 0.3, 1)',
                     position: 'relative',
                     overflow: 'hidden'
                   }}>
-                    <SoundOutlined style={{ fontSize: isMobile ? 24 : 32, color: '#fff' }} />
+                    <SoundOutlined className="audio-icon-svg" style={{ fontSize: isMobile ? 28 : 36, color: '#667eea', transition: 'all 0.4s ease' }} />
                     <div style={{
                       position: 'absolute',
                       top: '50%',
@@ -187,13 +205,20 @@ function Listening() {
 
       <style>{`
         .audio-card-modern:hover {
-          transform: translateY(-6px) !important;
-          box-shadow: 0 12px 32px rgba(102, 126, 234, 0.3) !important;
+          transform: translateY(-8px) scale(1.02) !important;
+          box-shadow: 0 20px 40px rgba(102, 126, 234, 0.15) !important;
+          background: rgba(255, 255, 255, 0.9) !important;
+          border-color: #667eea !important;
         }
 
         .audio-card-modern:hover .audio-icon-wrapper {
-          transform: scale(1.1);
-          box-shadow: 0 8px 28px rgba(102, 126, 234, 0.5) !important;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+          transform: scale(1.05);
+          box-shadow: 0 12px 28px rgba(102, 126, 234, 0.4) !important;
+        }
+
+        .audio-card-modern:hover .audio-icon-svg {
+          color: #fff !important;
         }
 
         .audio-card-modern:hover .audio-icon-overlay {
