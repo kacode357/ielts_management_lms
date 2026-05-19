@@ -96,137 +96,115 @@ export default function SmartInput({ value, answer, onChange, onCheck, disabled,
       const wordsAnswer = (answer || '').split(/\s+/).filter(w => w)
 
       // Track which user words have been used
-      const usedUserIndices = new Set()
-      const elements = []
-      let lastMatchedUserIdx = -1
+      const dp = Array(wordsAnswer.length + 1).fill(null).map(() => Array(wordsUser.length + 1).fill(0))
+      const choice = Array(wordsAnswer.length + 1).fill(null).map(() => Array(wordsUser.length + 1).fill(0))
 
-      // Helper to render extra user words between matched indices
-      const renderExtraWordsUpTo = (endIdx) => {
-        for (let k = lastMatchedUserIdx + 1; k < endIdx; k++) {
-          if (usedUserIndices.has(k)) continue
-
-          const userWord = wordsUser[k]
-          // Check if it's just a slight typo of some answer word
-          let isSimilarToAnswer = false
-          for (const ansWord of wordsAnswer) {
+      for (let i = 1; i <= wordsAnswer.length; i++) {
+        for (let j = 1; j <= wordsUser.length; j++) {
+          const ansWord = wordsAnswer[i - 1]
+          const userWord = wordsUser[j - 1]
+          let score = 0
+          
+          if (ansWord.toLowerCase() === userWord.toLowerCase()) {
+            score = 2
+          } else {
             const match = isPrefixMatch(userWord, ansWord)
-            if (match.isMatch && match.matchedPart.length >= 3) {
-              isSimilarToAnswer = true
-              break
+            if (match.isMatch) {
+              score = 1
             }
           }
 
-          if (!isSimilarToAnswer) {
-            elements.push(
-              <span key={`extra-${k}`} style={{
-                color: '#ff4d4f',
-                fontWeight: 400,
-                textDecoration: 'line-through',
-                textDecorationColor: '#ff4d4f'
-              }}>
-                {userWord}{' '}
-              </span>
-            )
+          const matchScore = dp[i - 1][j - 1] + score
+          const skipAnsScore = dp[i - 1][j]
+          const skipUserScore = dp[i][j - 1]
+
+          if (score > 0 && matchScore >= skipAnsScore && matchScore >= skipUserScore) {
+            dp[i][j] = matchScore
+            choice[i][j] = 1
+          } else if (skipAnsScore >= skipUserScore) {
+            dp[i][j] = skipAnsScore
+            choice[i][j] = 2
+          } else {
+            dp[i][j] = skipUserScore
+            choice[i][j] = 3
           }
-          usedUserIndices.add(k)
-        }
-        if (endIdx > lastMatchedUserIdx) {
-          lastMatchedUserIdx = endIdx
         }
       }
 
-      // For each answer word, find the best matching user word
-      for (let i = 0; i < wordsAnswer.length; i++) {
-        const ansWord = wordsAnswer[i]
-        const ansWordLower = ansWord.toLowerCase()
+      let i = wordsAnswer.length
+      let j = wordsUser.length
+      const alignment = []
 
-        // First, look for exact case-insensitive match among unused user words
-        let bestMatchIdx = -1
-        for (let j = 0; j < wordsUser.length; j++) {
-          if (usedUserIndices.has(j)) continue
-          if (wordsUser[j].toLowerCase() === ansWordLower) {
-            bestMatchIdx = j
-            break
-          }
-        }
-
-        if (bestMatchIdx !== -1) {
-          // Found exact match
-          renderExtraWordsUpTo(bestMatchIdx) // Render any extra words before this match
-          usedUserIndices.add(bestMatchIdx)
-
-          elements.push(
-            <span key={`user-${bestMatchIdx}`} style={{
-              color: '#52c41a',
-              fontWeight: 500
-            }}>
-              {wordsUser[bestMatchIdx]}{' '}
-            </span>
-          )
+      while (i > 0 || j > 0) {
+        if (i > 0 && j > 0 && choice[i][j] === 1) {
+          alignment.unshift({ type: 'match', ansIdx: i - 1, userIdx: j - 1 })
+          i--
+          j--
+        } else if (i > 0 && (j === 0 || choice[i][j] === 2)) {
+          alignment.unshift({ type: 'missing', ansIdx: i - 1, userIdx: -1 })
+          i--
         } else {
-          // No exact match - look for prefix match
-          let prefixMatchIdx = -1
-          let prefixMatch = null
+          alignment.unshift({ type: 'extra', ansIdx: -1, userIdx: j - 1 })
+          j--
+        }
+      }
 
-          for (let j = 0; j < wordsUser.length; j++) {
-            if (usedUserIndices.has(j)) continue
-            const match = isPrefixMatch(wordsUser[j], ansWord)
-            if (match.isMatch && !match.exact) {
-              // Found prefix match - prefer longer matches
-              if (prefixMatch === null || match.matchedPart.length > prefixMatch.matchedPart.length) {
-                prefixMatchIdx = j
-                prefixMatch = match
-              }
-            }
-          }
-
-          if (prefixMatchIdx !== -1 && prefixMatch) {
-            // Found prefix match
-            renderExtraWordsUpTo(prefixMatchIdx) // Render any extra words before this match
-            usedUserIndices.add(prefixMatchIdx)
-
+      const elements = []
+      alignment.forEach((item, index) => {
+        if (item.type === 'match') {
+          const ansWord = wordsAnswer[item.ansIdx]
+          const userWord = wordsUser[item.userIdx]
+          if (ansWord.toLowerCase() === userWord.toLowerCase()) {
             elements.push(
-              <span key={`prefix-${prefixMatchIdx}`}>
+              <span key={`match-${index}`} style={{ color: '#52c41a', fontWeight: 500 }}>
+                {userWord}{' '}
+              </span>
+            )
+          } else {
+            const match = isPrefixMatch(userWord, ansWord)
+            elements.push(
+              <span key={`prefix-${index}`}>
                 <span style={{ color: '#52c41a', fontWeight: 500 }}>
-                  {prefixMatch.matchedPart}
+                  {match.matchedPart}
                 </span>
-                {prefixMatch.missingPart && (
-                  <span style={{
-                    color: '#ff4d4f',
-                    fontWeight: 400
-                  }}>
-                    {prefixMatch.missingPart}
+                {match.missingPart && (
+                  <span style={{ color: '#ff4d4f', fontWeight: 400 }}>
+                    {match.missingPart}
                   </span>
                 )}
-                {prefixMatch.extraPart && (
+                {match.extraPart && (
                   <span style={{
                     color: '#ff4d4f',
                     fontWeight: 400,
                     textDecoration: 'line-through',
                     textDecorationColor: '#ff4d4f'
                   }}>
-                    {prefixMatch.extraPart}
+                    {match.extraPart}
                   </span>
                 )}
-              </span>
-            )
-            elements.push(<span key={`space-${i}`}>&nbsp;</span>)
-          } else {
-            // No match at all - user forgot this word
-            elements.push(
-              <span key={`missing-${i}`} style={{
-                color: '#ff4d4f',
-                fontWeight: 400
-              }}>
-                {ansWord}{' '}
+                {' '}
               </span>
             )
           }
+        } else if (item.type === 'missing') {
+          elements.push(
+            <span key={`missing-${index}`} style={{ color: '#ff4d4f', fontWeight: 400 }}>
+              {wordsAnswer[item.ansIdx]}{' '}
+            </span>
+          )
+        } else if (item.type === 'extra') {
+          elements.push(
+            <span key={`extra-${index}`} style={{
+              color: '#ff4d4f',
+              fontWeight: 400,
+              textDecoration: 'line-through',
+              textDecorationColor: '#ff4d4f'
+            }}>
+              {wordsUser[item.userIdx]}{' '}
+            </span>
+          )
         }
-      }
-
-      // Render any remaining extra user words at the very end
-      renderExtraWordsUpTo(wordsUser.length)
+      })
 
       return (
         <span ref={wrapperRef} style={{
