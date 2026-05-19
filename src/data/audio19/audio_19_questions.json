@@ -1,0 +1,844 @@
+{
+  "title": "Panel Discussion Preparation",
+  "source_images": [
+    "Audio 19 Part 3.jpg"
+  ],
+  "dialogue": [
+    {
+      "line_id": 1,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Come in and sit down, Louise ... Stuart. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q1"
+        },
+        {
+          "type": "text",
+          "value": " I've asked you both to come here today?"
+        }
+      ]
+    },
+    {
+      "line_id": 2,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, w"
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q2"
+        }
+      ]
+    },
+    {
+      "line_id": 3,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Forget the rumours. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q3"
+        },
+        {
+          "type": "text",
+          "value": " You know that I'm organising "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q4"
+        },
+        {
+          "type": "text",
+          "value": " 17th Century English Literature..."
+        }
+      ]
+    },
+    {
+      "line_id": 4,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, but..."
+        }
+      ]
+    },
+    {
+      "line_id": 5,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, I've arranged for "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q5"
+        },
+        {
+          "type": "text",
+          "value": " and I've invited 25 panellists so that we can have five panel discussions and I want you two to organise one of the panel discussions. But we haven't done that before. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q6"
+        },
+        {
+          "type": "text",
+          "value": "?"
+        }
+      ]
+    },
+    {
+      "line_id": 6,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "No, the purpose is quite different. In a team presentation "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q7"
+        },
+        {
+          "type": "text",
+          "value": " -as you have both done at the end of a group project."
+        }
+      ]
+    },
+    {
+      "line_id": 7,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes..."
+        }
+      ]
+    },
+    {
+      "line_id": 8,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, in a panel discussion "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q8"
+        },
+        {
+          "type": "text",
+          "value": " We want to expose the audience to several different viewpoints at the same session. It can help the audience evaluate their own positions "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q9"
+        },
+        {
+          "type": "text",
+          "value": " And, if it's well conducted, it's usually more interesting than a single-speaker forum."
+        }
+      ]
+    },
+    {
+      "line_id": 9,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "And, what exactly do we have to do?"
+        }
+      ]
+    },
+    {
+      "line_id": 10,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q10"
+        },
+        {
+          "type": "text",
+          "value": " or moderator and assistant."
+        }
+      ]
+    },
+    {
+      "line_id": 11,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Is that like the role of chairman?"
+        }
+      ]
+    },
+    {
+      "line_id": 12,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, that's it."
+        }
+      ]
+    },
+    {
+      "line_id": 13,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Sounds daunting."
+        }
+      ]
+    },
+    {
+      "line_id": 14,
+      "speaker": "",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio19_q11"
+        },
+        {
+          "type": "text",
+          "value": " I've already done a great deal of the preparation myself. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q12"
+        },
+        {
+          "type": "text",
+          "value": " I've singled out an issue that will "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q13"
+        },
+        {
+          "type": "text",
+          "value": " I've selected panellists "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q14"
+        },
+        {
+          "type": "text",
+          "value": " and will probably "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q15"
+        },
+        {
+          "type": "text",
+          "value": " That's very important, you know."
+        }
+      ]
+    },
+    {
+      "line_id": 15,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Actually, I feel a bit nervous-how many panellists will there be?"
+        }
+      ]
+    },
+    {
+      "line_id": 16,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, I've invited five panellists for each panel because that's probably the maximum number "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q16"
+        },
+        {
+          "type": "text",
+          "value": " But don't worry, I always invite more than we need because you can be sure "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q17"
+        },
+        {
+          "type": "text",
+          "value": " - so you'll probably just end up with four, "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q18"
+        }
+      ]
+    },
+    {
+      "line_id": 17,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, I see."
+        }
+      ]
+    },
+    {
+      "line_id": 18,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "And I've chosen a moderator-"
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q19"
+        }
+      ]
+    },
+    {
+      "line_id": 19,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Ah ...but. ..Stuart will help, right?"
+        }
+      ]
+    },
+    {
+      "line_id": 20,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes. I'll get onto time-keeping "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q20"
+        },
+        {
+          "type": "text",
+          "value": " That's where an assistant is indispensable. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q21"
+        },
+        {
+          "type": "text",
+          "value": " to conduct the panel discussion?"
+        }
+      ]
+    },
+    {
+      "line_id": 21,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Don't worry. I was just about to say. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q22"
+        }
+      ]
+    },
+    {
+      "line_id": 22,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "What is it?"
+        }
+      ]
+    },
+    {
+      "line_id": 23,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "There are various formats that can be followed but I've always found this one "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q23"
+        }
+      ]
+    },
+    {
+      "line_id": 24,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes?"
+        }
+      ]
+    },
+    {
+      "line_id": 25,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Okay, "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q24"
+        },
+        {
+          "type": "text",
+          "value": " on these guidelines as I run through them and "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q25"
+        },
+        {
+          "type": "text",
+          "value": " about anything you don't understand."
+        }
+      ]
+    },
+    {
+      "line_id": 26,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "We're ready."
+        }
+      ]
+    },
+    {
+      "line_id": 27,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Firstly, the moderator introduces "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q26"
+        }
+      ]
+    },
+    {
+      "line_id": 28,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "But we don't know who the panellists are."
+        }
+      ]
+    },
+    {
+      "line_id": 29,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Don't worry-I've prepared a short biographical introduction for each one of them and "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q27"
+        }
+      ]
+    },
+    {
+      "line_id": 30,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, good."
+        }
+      ]
+    },
+    {
+      "line_id": 31,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Next, the panellists are given a set amount of time to "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q28"
+        },
+        {
+          "type": "text",
+          "value": " I'd say, about two minutes each "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q29"
+        },
+        {
+          "type": "text",
+          "value": " Now, this is where Stuart's time-keeping "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q30"
+        },
+        {
+          "type": "text",
+          "value": " You have to keep to the schedule "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q31"
+        },
+        {
+          "type": "text",
+          "value": " because the lecture room "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q32"
+        }
+      ]
+    },
+    {
+      "line_id": 32,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "How do I indicate when the time is up?"
+        }
+      ]
+    },
+    {
+      "line_id": 33,
+      "speaker": "",
+      "content": [
+        {
+          "type": "blank",
+          "id": "audio19_q33"
+        },
+        {
+          "type": "text",
+          "value": " either with your back to the audience or hidden from the audience but in full view of the panel and moderator. "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q34"
+        },
+        {
+          "type": "text",
+          "value": " and you hold up the appropriate number of fingers to "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q35"
+        },
+        {
+          "type": "text",
+          "value": " When the time is up, you "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q36"
+        },
+        {
+          "type": "text",
+          "value": " with your hand."
+        }
+      ]
+    },
+    {
+      "line_id": 34,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Ah...but...what if the panellists keep talking?"
+        }
+      ]
+    },
+    {
+      "line_id": 35,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Then, that's your job to "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q37"
+        },
+        {
+          "type": "text",
+          "value": " and move on to the next segment which is the discussion itself. Panellists discuss, ask questions "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q38"
+        },
+        {
+          "type": "text",
+          "value": " other panel members. This, of course, is their primary function and should "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q39"
+        }
+      ]
+    },
+    {
+      "line_id": 36,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Stuart will "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q40"
+        },
+        {
+          "type": "text",
+          "value": ", right?"
+        }
+      ]
+    },
+    {
+      "line_id": 37,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, because you'll be "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q41"
+        }
+      ]
+    },
+    {
+      "line_id": 38,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Why?"
+        }
+      ]
+    },
+    {
+      "line_id": 39,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q42"
+        },
+        {
+          "type": "text",
+          "value": ", the moderator "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q43"
+        },
+        {
+          "type": "text",
+          "value": " the debate and provides a summary of the discussion."
+        }
+      ]
+    },
+    {
+      "line_id": 40,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q44"
+        }
+      ]
+    },
+    {
+      "line_id": 41,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Well, no, the secondary function of the panel is to "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q45"
+        },
+        {
+          "type": "text",
+          "value": " and that should take up "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q46"
+        },
+        {
+          "type": "text",
+          "value": " It's the leader's role to recognise appropriate questions and "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q47"
+        },
+        {
+          "type": "text",
+          "value": " During the question period you must maintain strict control and this will most likely "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q48"
+        }
+      ]
+    },
+    {
+      "line_id": 42,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Oh, dear."
+        }
+      ]
+    },
+    {
+      "line_id": 43,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Stuart will of course help you here by ensuring that as many people as possible "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q49"
+        },
+        {
+          "type": "text",
+          "value": " ....and that no one member of the audience "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q50"
+        }
+      ]
+    },
+    {
+      "line_id": 44,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "With about 5 minutes to go, he'll announce that there's time for only a couple more questions, then announce \"last question\"."
+        }
+      ]
+    },
+    {
+      "line_id": 45,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "And then it's over?"
+        }
+      ]
+    },
+    {
+      "line_id": 46,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Not quite. You still have to "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q51"
+        },
+        {
+          "type": "text",
+          "value": " of the panellists and "
+        },
+        {
+          "type": "blank",
+          "id": "audio19_q52"
+        },
+        {
+          "type": "text",
+          "value": " with a round of applause."
+        }
+      ]
+    },
+    {
+      "line_id": 47,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Should I clap too?"
+        }
+      ]
+    },
+    {
+      "line_id": 48,
+      "speaker": "",
+      "content": [
+        {
+          "type": "text",
+          "value": "Yes, you should both take part in the applause."
+        }
+      ]
+    }
+  ]
+}
