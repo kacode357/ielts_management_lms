@@ -1,0 +1,112 @@
+{
+  "dialogue": [
+    {
+      "content": [
+        { "type": "text", "value": "Welcome to our " },
+        { "type": "blank", "id": "audio20_q1" },
+        { "type": "text", "value": " The topic today is hydropower. As you most probably know, 'hydro' means water-so we are talking about using water to " },
+        { "type": "blank", "id": "audio20_q2" },
+        { "type": "text", "value": ". Of course, there are many ways to generate electricity but hydropower is " },
+        { "type": "blank", "id": "audio20_q3" },
+        { "type": "text", "value": ", firstly and obviously, because " },
+        { "type": "blank", "id": "audio20_q4" },
+        { "type": "text", "value": ". The earth's hydrologic cycle of constant evaporation and transpiration " },
+        { "type": "blank", "id": "audio20_q5" },
+        { "type": "text", "value": " from rainfall and snowmelt. " },
+        { "type": "blank", "id": "audio20_q6" },
+        { "type": "text", "value": " Hydro power plants are able to convert approximately 90% of the energy from the falling water into electric energy whereas many fossil-fuelled plants " },
+        { "type": "blank", "id": "audio20_q7" },
+        { "type": "text", "value": " their fuel by way of waste heat and gases. For this reason they are very efficient." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Hydropower " },
+        { "type": "blank", "id": "audio20_q8" },
+        { "type": "text", "value": " It doesn't emit " },
+        { "type": "blank", "id": "audio20_q9" },
+        { "type": "text", "value": " that contribute to air pollution, acid rain, and global warming. No trucks, trains or pipelines are needed to bring fuel to the site and " },
+        { "type": "blank", "id": "audio20_q10" },
+        { "type": "text", "value": ". Furthermore, hydropower plant machinery is fairly simple and " },
+        { "type": "blank", "id": "audio20_q11" },
+        { "type": "text", "value": ", which makes it reliable and durable. And, hydropower units are flexible also-they have the ability to " },
+        { "type": "blank", "id": "audio20_q12" },
+        { "type": "text", "value": " to changes in demand for electricity, thus enabling them to " },
+        { "type": "blank", "id": "audio20_q13" },
+        { "type": "text", "value": ". But this also allows them to serve as reserve capacity and " },
+        { "type": "blank", "id": "audio20_q14" },
+        { "type": "text", "value": " the power system overall." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "The dams that provide hydroelectric power also have other uses such as navigation, flood damage reduction, water supply, recreation, irrigation and low flow augmentation but " },
+        { "type": "blank", "id": "audio20_q15" },
+        { "type": "text", "value": " to go into those details." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "How do the hydropower plants work? Well, " },
+        { "type": "blank", "id": "audio20_q16" },
+        { "type": "text", "value": " which captures water to form a reservoir and " },
+        { "type": "blank", "id": "audio20_q17" },
+        { "type": "text", "value": " to create 'head'. Think of 'head' as the vertical distance that the water falls as it passes through the dam, in other words, the difference in water level between the reservoir " },
+        { "type": "blank", "id": "audio20_q18" },
+        { "type": "text", "value": ". Water from the reservoir flows through an intake gate into a penstock- " },
+        { "type": "blank", "id": "audio20_q19" },
+        { "type": "text", "value": " which leads to the turbine below. The force of the water " },
+        { "type": "blank", "id": "audio20_q20" },
+        { "type": "text", "value": " which, in turn, drives the generator to spin and produce electricity. The electricity is carried the long distances " },
+        { "type": "blank", "id": "audio20_q21" },
+        { "type": "text", "value": " substations on the outskirts of cities " },
+        { "type": "blank", "id": "audio20_q22" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Can you build a hydropower unit " },
+        { "type": "blank", "id": "audio20_q23" },
+        { "type": "text", "value": "? Well, no, just having water in a river isn't enough. A good dam site must " },
+        { "type": "blank", "id": "audio20_q24" },
+        { "type": "text", "value": " as well as enough head. " },
+        { "type": "blank", "id": "audio20_q25" },
+        { "type": "text", "value": " on the plains is probably not suitable because a dam couldn't be built high enough to provide the head needed " },
+        { "type": "blank", "id": "audio20_q26" },
+        { "type": "text", "value": ". On the other hand, dams in arid high country " },
+        { "type": "blank", "id": "audio20_q27" },
+        { "type": "text", "value": " head but insufficient stream flow. The perfect spot for a hydropower plant is where the right combination of stream flow and head exists." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "blank", "id": "audio20_q28" },
+        { "type": "text", "value": "? Surely the construction of large dams " },
+        { "type": "blank", "id": "audio20_q29" },
+        { "type": "text", "value": "? Well, yes it does. Certainly dams and reservoirs " },
+        { "type": "blank", "id": "audio20_q30" },
+        { "type": "text", "value": ", farming communities and cities. But there must be a balance between development and preserving the natural environment. " },
+        { "type": "blank", "id": "audio20_q31" },
+        { "type": "text", "value": ", the natural river environment is changed which leads to changes in river ecology and " },
+        { "type": "blank", "id": "audio20_q32" },
+        { "type": "text", "value": ". Sometimes, for example, dissolved oxygen levels below dams " },
+        { "type": "blank", "id": "audio20_q33" },
+        { "type": "text", "value": " there is a negative impact on aquatic life. These levels can be improved, however, by using special aerating turbines and /or injecting oxygen directly into the stream flow. " },
+        { "type": "blank", "id": "audio20_q34" },
+        { "type": "text", "value": " for endangered and other species of birds, fish and water life, there needs to be a thorough review of operating plans to see if " },
+        { "type": "blank", "id": "audio20_q35" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Hydropower plant design and operation " },
+        { "type": "blank", "id": "audio20_q36" },
+        { "type": "text", "value": " for electricity but " },
+        { "type": "blank", "id": "audio20_q37" },
+        { "type": "text", "value": " agencies whose concern is for the fish and wildlife, water quality and water supply." }
+      ]
+    }
+  ]
+}

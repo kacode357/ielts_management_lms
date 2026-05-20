@@ -40,6 +40,8 @@ import audio18Questions from '../../data/audio18/audio_18_questions.json'
 import audio18Answers from '../../data/audio18/audio_18_answers.json'
 import audio19Questions from '../../data/audio19/audio_19_questions.json'
 import audio19Answers from '../../data/audio19/audio_19_answers.json'
+import audio20Questions from '../../data/audio20/audio_20_questions.json'
+import audio20Answers from '../../data/audio20/audio_20_answers.json'
 
 import ExerciseHeaderDesktop from './ExerciseHeaderDesktop'
 import ExerciseHeaderMobile from './ExerciseHeaderMobile'
@@ -103,7 +105,8 @@ const audioData = {
   audio15: { questions: audio15Questions, answers: audio15Answers, file: '/Audio 15.mp3', title: 'Audio 15' },
   audio17: { questions: audio17Questions, answers: audio17Answers, file: '/Audio 17.mp3', title: 'Audio 17' },
   audio18: { questions: audio18Questions, answers: audio18Answers, file: '/Audio 18.mp3', title: 'Audio 18' },
-  audio19: { questions: audio19Questions, answers: audio19Answers, file: '/Audio 19.mp3', title: 'Audio 19' }
+  audio19: { questions: audio19Questions, answers: audio19Answers, file: '/Audio 19.mp3', title: 'Audio 19' },
+  audio20: { questions: audio20Questions, answers: audio20Answers, file: '/Audio 20.mp3', title: 'Audio 20' }
 }
 
 // Submit Button Component
