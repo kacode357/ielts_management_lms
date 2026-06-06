@@ -1,0 +1,148 @@
+{
+  "dialogue": [
+    {
+      "content": [
+        { "type": "text", "value": "Prevention is better than cure! You all know that, don't you? " },
+        { "type": "blank", "id": "audio22_q1" },
+        { "type": "text", "value": " some help and guidance " },
+        { "type": "blank", "id": "audio22_q2" },
+        { "type": "text", "value": "? Well, today I want to tell you all about " },
+        { "type": "blank", "id": "audio22_q3" },
+        { "type": "text", "value": " called BeWell-BeWell Online actually. This is an " },
+        { "type": "blank", "id": "audio22_q4" },
+        { "type": "text", "value": " packed with resources to assist you in " },
+        { "type": "blank", "id": "audio22_q5" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "On this website you'll find " },
+        { "type": "blank", "id": "audio22_q6" },
+        { "type": "text", "value": " you can trust. It has a register " },
+        { "type": "blank", "id": "audio22_q7" },
+        { "type": "text", "value": " a quick online check to assess your health and " },
+        { "type": "blank", "id": "audio22_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "What do you want to do? " },
+        { "type": "blank", "id": "audio22_q9" },
+        { "type": "text", "value": "? Give up smoking? Manage your blood glucose levels or just " },
+        { "type": "blank", "id": "audio22_q10" },
+        { "type": "text", "value": "? Use the simple online assessment tool and receive " },
+        { "type": "blank", "id": "audio22_q11" },
+        { "type": "text", "value": " your current state of health. This is what we call your Wellness Register. After you've completed this, " },
+        { "type": "blank", "id": "audio22_q12" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Now, the Active Health Agenda is where our team of experts has created a series of interactive, 8-week programmes for " },
+        { "type": "blank", "id": "audio22_q13" },
+        { "type": "text", "value": ". These are aimed at differing ages and lifestyles and include " },
+        { "type": "blank", "id": "audio22_q14" },
+        { "type": "text", "value": ", plans for losing weight, stress management, longevity (or how to age gracefully by maintaining your health) and express workouts for " },
+        { "type": "blank", "id": "audio22_q15" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "If you join up to BeWell Online, you'll not only be able to use a whole suite of " },
+        { "type": "blank", "id": "audio22_q16" },
+        { "type": "text", "value": " and calculators but you'll also " },
+        { "type": "blank", "id": "audio22_q17" },
+        { "type": "text", "value": " an extensive library of health articles, delicious, " },
+        { "type": "blank", "id": "audio22_q18" },
+        { "type": "text", "value": " and illustrated exercise descriptions." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Let's look first at the Active Sport component. " },
+        { "type": "blank", "id": "audio22_q19" },
+        { "type": "text", "value": "-in fact, it's a virtual personal trainer. " },
+        { "type": "blank", "id": "audio22_q20" },
+        { "type": "text", "value": " have developed programmes that will enable you " },
+        { "type": "blank", "id": "audio22_q21" },
+        { "type": "text", "value": " or fitness goal adapted to your particular ambition and skill level. Detailed daily warm-ups and workout plans and " },
+        { "type": "blank", "id": "audio22_q22" },
+        { "type": "text", "value": " will help you prepare for any upcoming event of " },
+        { "type": "blank", "id": "audio22_q23" },
+        { "type": "text", "value": ". Marathons, triathlons, open water swims, cycling or fun runs are just " },
+        { "type": "blank", "id": "audio22_q24" },
+        { "type": "text", "value": " you could enter with confidence when " },
+        { "type": "blank", "id": "audio22_q25" },
+        { "type": "text", "value": " an Active Sport programme." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "BeWell Online also features an Active Care project. This caters for individuals who want to " },
+        { "type": "blank", "id": "audio22_q26" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "The four courses in most demand are: Stop Smoking, which will " },
+        { "type": "blank", "id": "audio22_q27" },
+        { "type": "text", "value": ", email support and reliable tools and resources to help you quit smoking forever. Then there is Glucose Management, " },
+        { "type": "blank", "id": "audio22_q28" },
+        { "type": "text", "value": " designed for people " },
+        { "type": "blank", "id": "audio22_q29" },
+        { "type": "text", "value": ", which will help you " },
+        { "type": "blank", "id": "audio22_q30" },
+        { "type": "text", "value": " and improve your overall health. Obviously, Heart Health " },
+        { "type": "blank", "id": "audio22_q31" },
+        { "type": "text", "value": "-it's basically all about lifestyle modification " },
+        { "type": "blank", "id": "audio22_q32" },
+        { "type": "text", "value": " with the aim of improving " },
+        { "type": "blank", "id": "audio22_q33" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Those of you who suffer from neck and/or back pain will benefit from the Back Care programme- " },
+        { "type": "blank", "id": "audio22_q34" },
+        { "type": "text", "value": "-anything major should be attended to by " },
+        { "type": "blank", "id": "audio22_q35" },
+        { "type": "text", "value": " in person. So, what are you waiting for? Register today at BeWell4Life.com." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Okay, I can hear some of you saying that " },
+        { "type": "blank", "id": "audio22_q36" },
+        { "type": "text", "value": " to go through with our online programme. Well, just for people like you, we offer BeWell Coaching. What is it? " },
+        { "type": "blank", "id": "audio22_q37" },
+        { "type": "text", "value": " that will give you the extra support, motivation and " },
+        { "type": "blank", "id": "audio22_q38" },
+        { "type": "text", "value": " that will provide the impetus for you to bring about " },
+        { "type": "blank", "id": "audio22_q39" },
+        { "type": "text", "value": ". Who runs it? The course is delivered " },
+        { "type": "blank", "id": "audio22_q40" },
+        { "type": "text", "value": " as well as qualified exercise physiologists, dieticians and nurses. Who can use it? Well, this service is really for those of you " },
+        { "type": "blank", "id": "audio22_q41" },
+        { "type": "text", "value": " like diabetes, arthritis or high blood pressure. I know there are many of you out there " },
+        { "type": "blank", "id": "audio22_q42" },
+        { "type": "text", "value": ". How does it work? Your health coach will " },
+        { "type": "blank", "id": "audio22_q43" },
+        { "type": "text", "value": " as you develop a plan and maintain regular contact over a period of six months to " },
+        { "type": "blank", "id": "audio22_q44" },
+        { "type": "text", "value": ". You'll also get access to a phone " },
+        { "type": "blank", "id": "audio22_q45" },
+        { "type": "text", "value": " if you need it and " },
+        { "type": "blank", "id": "audio22_q46" },
+        { "type": "text", "value": " health information specifically " },
+        { "type": "blank", "id": "audio22_q47" },
+        { "type": "text", "value": " your individual problem. Now, what could be better than that?" }
+      ]
+    }
+  ]
+}

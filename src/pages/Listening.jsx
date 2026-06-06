@@ -26,7 +26,11 @@ const audioList = [
   { id: 'audio17', title: 'Audio 17', questions: 46 },
   { id: 'audio18', title: 'Audio 18', questions: 42 },
   { id: 'audio19', title: 'Audio 19', questions: 52 },
-  { id: 'audio20', title: 'Audio 20', questions: 37 }
+  { id: 'audio20', title: 'Audio 20', questions: 37 },
+  { id: 'audio21', title: 'Audio 21', questions: 48 },
+  { id: 'audio22', title: 'Audio 22', questions: 47 },
+  { id: 'audio23', title: 'Audio 23', questions: 39 },
+  { id: 'audio24', title: 'Audio 24', questions: 53 }
 ]
 
 function Listening() {
@@ -38,6 +42,9 @@ function Listening() {
   useEffect(() => {
     // Run storage cleanup when visiting the index page
     cleanupStaleStorage()
+
+    // Reset scroll to top on mount
+    window.scrollTo(0, 0)
 
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)

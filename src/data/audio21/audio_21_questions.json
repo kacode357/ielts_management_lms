@@ -1,0 +1,418 @@
+{
+  "dialogue": [
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Good morning. " },
+        { "type": "blank", "id": "audio21_q1" },
+        { "type": "text", "value": " the Children's Section, is that right?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Yes. " },
+        { "type": "blank", "id": "audio21_q2" },
+        { "type": "text", "value": " on the phone yesterday." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "That's right. Tessa, isn't it?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Yes, Tessa Bridges." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Thank you for coming in today, Tessa. " },
+        { "type": "blank", "id": "audio21_q3" },
+        { "type": "text", "value": " what a volunteer does in the library, I'll need to " },
+        { "type": "blank", "id": "audio21_q4" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "No problem—" },
+        { "type": "blank", "id": "audio21_q5" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Where do you live, Tessa?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "I still live with my family in Northwood, 51 Matthew Drive." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "M-A-T-H-E-W? Matthew Drive?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Actually, " },
+        { "type": "blank", "id": "audio21_q6" },
+        { "type": "text", "value": ": M-A-DOUBLE T-H-E-W." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Oh, thank you. And " },
+        { "type": "blank", "id": "audio21_q7" },
+        { "type": "text", "value": " is ... ?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Oh, I'm still confused about that. " },
+        { "type": "blank", "id": "audio21_q8" },
+        { "type": "text", "value": "-which of course I still remember-but the post office has recently changed it to...4126." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "So, 4126. Now, " },
+        { "type": "blank", "id": "audio21_q9" },
+        { "type": "text", "value": ", aren't you?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Not exactly. I go to Northwood Polytechnic. " },
+        { "type": "blank", "id": "audio21_q10" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "In your final year... so what are you studying-I mean your main subject?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Oh, " },
+        { "type": "blank", "id": "audio21_q11" },
+        { "type": "text", "value": " Creative Writing." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "And are you enjoying that?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Very much so. I love it. " },
+        { "type": "blank", "id": "audio21_q12" },
+        { "type": "text", "value": " I want to write children's books." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "That's great. Now, I can see why " },
+        { "type": "blank", "id": "audio21_q13" },
+        { "type": "text", "value": " volunteer at the library. We're always " },
+        { "type": "blank", "id": "audio21_q14" },
+        { "type": "text", "value": " but I still have to ask you some more questions-about " },
+        { "type": "blank", "id": "audio21_q15" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "That's fine, but I haven't " },
+        { "type": "blank", "id": "audio21_q16" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Not to worry-part-time work or voluntary work gives you the experience " },
+        { "type": "blank", "id": "audio21_q17" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Well, to start with, when I was 16, " },
+        { "type": "blank", "id": "audio21_q18" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "And who did you work for?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Oh, just family friends." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "How long did you babysit " },
+        { "type": "blank", "id": "audio21_q19" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Oh, about 2 years-" },
+        { "type": "blank", "id": "audio21_q20" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "After those two years " },
+        { "type": "blank", "id": "audio21_q21" },
+        { "type": "text", "value": ", what did you do then?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Well, I was still working as a babysitter on the occasional evening and weekend, " },
+        { "type": "blank", "id": "audio21_q22" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "I did that for one year-my last year " },
+        { "type": "blank", "id": "audio21_q23" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "And what does being a peer tutor " },
+        { "type": "blank", "id": "audio21_q24" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Mostly it means " },
+        { "type": "blank", "id": "audio21_q25" },
+        { "type": "text", "value": " one or two afternoons a week to help fellow students in the subject that " },
+        { "type": "blank", "id": "audio21_q26" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "And what subject did you tutor in?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "English, actually." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "I see... do you have any other experience?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "I worked at the Ace Sports Academy " },
+        { "type": "blank", "id": "audio21_q27" },
+        { "type": "text", "value": " but that was only for about 12 weeks " },
+        { "type": "blank", "id": "audio21_q28" },
+        { "type": "text", "value": " before I enrolled at the Polytechnic." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "So, " },
+        { "type": "blank", "id": "audio21_q29" },
+        { "type": "text", "value": "? Not everything, just tennis." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "And are you currently working?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Yes, well, " },
+        { "type": "blank", "id": "audio21_q30" },
+        { "type": "text", "value": " that is. I'm a volunteer " },
+        { "type": "blank", "id": "audio21_q31" },
+        { "type": "text", "value": " where I visit sick children who would otherwise " },
+        { "type": "blank", "id": "audio21_q32" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Well, it certainly seems " },
+        { "type": "blank", "id": "audio21_q33" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Yes, I do." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Well, Tessa, what I need to know now is " },
+        { "type": "blank", "id": "audio21_q34" },
+        { "type": "text", "value": " so that we can fit you into the roster here. Can I assume that you're not able to work Monday to Friday " },
+        { "type": "blank", "id": "audio21_q35" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Right. I'm very busy with " },
+        { "type": "blank", "id": "audio21_q36" },
+        { "type": "text", "value": " during the week." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "How about " },
+        { "type": "blank", "id": "audio21_q37" },
+        { "type": "text", "value": "? Say five to seven in the evening? That's a very busy time in the Children's Section." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio21_q38" },
+        { "type": "text", "value": " a week and even then it would " },
+        { "type": "blank", "id": "audio21_q39" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Yes, I understand. If possible, we could " },
+        { "type": "blank", "id": "audio21_q40" },
+        { "type": "text", "value": " a week in advance, would that help?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Yes. " },
+        { "type": "blank", "id": "audio21_q41" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Are weekends okay?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Well, Sundays are out...actually, " },
+        { "type": "blank", "id": "audio21_q42" },
+        { "type": "text", "value": ", because that's " },
+        { "type": "blank", "id": "audio21_q43" },
+        { "type": "text", "value": " at the hospital. But I'm free " },
+        { "type": "blank", "id": "audio21_q44" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "All right, we could roster you for the odd weekend then. What about school holidays?" }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Definitely, " },
+        { "type": "blank", "id": "audio21_q45" },
+        { "type": "text", "value": ". I don't have any other commitments during the holidays." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "That's good to hear. We have droves of children here in the holidays " },
+        { "type": "blank", "id": "audio21_q46" },
+        { "type": "text", "value": ". Thank you. Well, Tessa, we'll send you " },
+        { "type": "blank", "id": "audio21_q47" },
+        { "type": "text", "value": " in the mail and we " },
+        { "type": "blank", "id": "audio21_q48" },
+        { "type": "text", "value": " as a volunteer." }
+      ]
+    },
+    {
+      "speaker": "Tessa",
+      "content": [
+        { "type": "text", "value": "Thanks very much." }
+      ]
+    },
+    {
+      "speaker": "Librarian",
+      "content": [
+        { "type": "text", "value": "Now, as for your duties..." }
+      ]
+    }
+  ]
+}

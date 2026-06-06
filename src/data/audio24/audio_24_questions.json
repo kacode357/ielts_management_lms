@@ -1,0 +1,155 @@
+{
+  "dialogue": [
+    {
+      "content": [
+        { "type": "text", "value": "Welcome to this lecture on Agriculture and the Environment. I hope it is enough to make some of you decide on a career " },
+        { "type": "blank", "id": "audio24_q1" },
+        { "type": "text", "value": ". As you all know, food is " },
+        { "type": "blank", "id": "audio24_q2" },
+        { "type": "text", "value": " and producing enough of it is the single greatest challenge " },
+        { "type": "blank", "id": "audio24_q3" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Developing nations have rapidly expanding populations so agriculture " },
+        { "type": "blank", "id": "audio24_q4" },
+        { "type": "text", "value": " any development agenda for those countries. " },
+        { "type": "blank", "id": "audio24_q5" },
+        { "type": "text", "value": ", 75% of people in the developing world " },
+        { "type": "blank", "id": "audio24_q6" },
+        { "type": "text", "value": " agriculture for their livelihood. And, for many " },
+        { "type": "blank", "id": "audio24_q7" },
+        { "type": "text", "value": ", it's the most important sector of the economy accounting for 50% of GDP and sometimes it's the primary, if not only, " },
+        { "type": "blank", "id": "audio24_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Now, of course, when I talk about 'agriculture', I am using " },
+        { "type": "blank", "id": "audio24_q9" },
+        { "type": "text", "value": "encompass more than just growing food crops. Of course " },
+        { "type": "blank", "id": "audio24_q10" },
+        { "type": "text", "value": ", fishing and forestry are included. In order to combat " },
+        { "type": "blank", "id": "audio24_q11" },
+        { "type": "text", "value": " agricultural research programmes are underway in many areas. Using science is one way to " },
+        { "type": "blank", "id": "audio24_q12" },
+        { "type": "text", "value": "; but, a word of warning: agriculture must " },
+        { "type": "blank", "id": "audio24_q13" },
+        { "type": "text", "value": ". Let's look at approaches that are not sustainable. Firstly, overgrazing and " },
+        { "type": "blank", "id": "audio24_q14" },
+        { "type": "text", "value": "are two ancient but destructive practices " },
+        { "type": "blank", "id": "audio24_q15" },
+        { "type": "text", "value": ". Secondly, the modern idea of liberal application of chemical pesticides and herbicides has " },
+        { "type": "blank", "id": "audio24_q16" },
+        { "type": "text", "value": " the health of the land, ranging from the pollution of water sources to " },
+        { "type": "blank", "id": "audio24_q17" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "These practices have ignored the mechanisms " },
+        { "type": "blank", "id": "audio24_q18" },
+        { "type": "text", "value": ". Ignorance has led to the destruction of the very " },
+        { "type": "blank", "id": "audio24_q19" },
+        { "type": "text", "value": " that is essential for sustainable " },
+        { "type": "blank", "id": "audio24_q20" },
+        { "type": "text", "value": ". However, introducing new " },
+        { "type": "blank", "id": "audio24_q21" },
+        { "type": "text", "value": ", especially things like " },
+        { "type": "blank", "id": "audio24_q22" },
+        { "type": "text", "value": ", can be difficult because many " },
+        { "type": "blank", "id": "audio24_q23" },
+        { "type": "text", "value": " the fact that plants have had their genetic material modified by scientists." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Biotechnology " },
+        { "type": "blank", "id": "audio24_q24" },
+        { "type": "text", "value": " the dubious practice of bio-prospecting, " },
+        { "type": "blank", "id": "audio24_q25" },
+        { "type": "text", "value": ", bio-piracy. Foreign multinational companies " },
+        { "type": "blank", "id": "audio24_q26" },
+        { "type": "text", "value": "illegally obtaining samples of " },
+        { "type": "blank", "id": "audio24_q27" },
+        { "type": "text", "value": " of other countries " },
+        { "type": "blank", "id": "audio24_q28" },
+        { "type": "text", "value": " genetic material to improve " },
+        { "type": "blank", "id": "audio24_q29" },
+        { "type": "text", "value": " their own crops." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "We must put aside " },
+        { "type": "blank", "id": "audio24_q30" },
+        { "type": "text", "value": " the field of agricultural biotechnology " },
+        { "type": "blank", "id": "audio24_q31" },
+        { "type": "text", "value": " the biggest threat to food production on this planet...which is... ? Yes, climate change. " },
+        { "type": "blank", "id": "audio24_q32" },
+        { "type": "text", "value": " have been to shrink the food supply " },
+        { "type": "blank", "id": "audio24_q33" },
+        { "type": "text", "value": " and making, even the most basic necessities, unaffordable." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "As I see it, " },
+        { "type": "blank", "id": "audio24_q34" },
+        { "type": "text", "value": "must address this, and other challenges to " },
+        { "type": "blank", "id": "audio24_q35" },
+        { "type": "text", "value": ", with urgency. Concrete scientific and technological achievements " },
+        { "type": "blank", "id": "audio24_q36" },
+        { "type": "text", "value": "for farmers to evaluate and learn to use but, " },
+        { "type": "blank", "id": "audio24_q37" },
+        { "type": "text", "value": " governments need to address " },
+        { "type": "blank", "id": "audio24_q38" },
+        { "type": "text", "value": "if the world's hungry " },
+        { "type": "blank", "id": "audio24_q39" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Environmental policies " },
+        { "type": "blank", "id": "audio24_q40" },
+        { "type": "text", "value": " to protect ecosystems " },
+        { "type": "blank", "id": "audio24_q41" },
+        { "type": "text", "value": " where possible. Countries cannot " },
+        { "type": "blank", "id": "audio24_q42" },
+        { "type": "text", "value": " whilst ignoring the consequences. In fact, I'd like to see " },
+        { "type": "blank", "id": "audio24_q43" },
+        { "type": "text", "value": "and environment experts making up " },
+        { "type": "blank", "id": "audio24_q44" },
+        { "type": "text", "value": "which would monitor " },
+        { "type": "blank", "id": "audio24_q45" },
+        { "type": "text", "value": ". Different farming systems should be studied not only with " },
+        { "type": "blank", "id": "audio24_q46" },
+        { "type": "text", "value": "analyzing the environmental effects, but the social and economic effects as well. The studies would be carried out with a view to " },
+        { "type": "blank", "id": "audio24_q47" },
+        { "type": "text", "value": " and promoting " },
+        { "type": "blank", "id": "audio24_q48" },
+        { "type": "text", "value": "that will guarantee " },
+        { "type": "blank", "id": "audio24_q49" },
+        { "type": "text", "value": " in the future." }
+      ]
+    },
+    {
+      "content": [
+        { "type": "text", "value": "Monitoring sites would need to be set up " },
+        { "type": "blank", "id": "audio24_q50" },
+        { "type": "text", "value": "and data collected in a systematic way. Of course, building the online infrastructure for such a project would " },
+        { "type": "blank", "id": "audio24_q51" },
+        { "type": "text", "value": "and there would be ongoing costs involved with the monitoring system but the information gathered would " },
+        { "type": "blank", "id": "audio24_q52" },
+        { "type": "text", "value": " solving the problem of feeding " },
+        { "type": "blank", "id": "audio24_q53" },
+        { "type": "text", "value": "and ensuring millions of people don't face a hungry future." }
+      ]
+    }
+  ]
+}

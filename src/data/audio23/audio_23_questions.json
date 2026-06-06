@@ -1,0 +1,343 @@
+{
+  "dialogue": [
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Hi, Grant. What sort of competition do you think " },
+        { "type": "blank", "id": "audio23_q1" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Well, Clare, the Open Day Committee " },
+        { "type": "blank", "id": "audio23_q2" },
+        { "type": "text", "value": " it must be something with youth appeal." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "blank", "id": "audio23_q3" },
+        { "type": "text", "value": "-after all, most of the visitors will have just left high school." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Yeah, so I was thinking-technology." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Do you mean something " },
+        { "type": "blank", "id": "audio23_q4" },
+        { "type": "text", "value": "-like an iPod?" }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Something like that " },
+        { "type": "blank", "id": "audio23_q5" },
+        { "type": "text", "value": " maybe." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "What about the latest iPhone? " },
+        { "type": "blank", "id": "audio23_q6" },
+        { "type": "text", "value": " for one right now." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Let's make it an iPad-I wish I'd had a tablet computer when I started university. Yeah ... that's a great idea. That should " },
+        { "type": "blank", "id": "audio23_q7" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Right...let's " },
+        { "type": "blank", "id": "audio23_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Fine. We could go into town now and buy it. I saw " },
+        { "type": "blank", "id": "audio23_q9" },
+        { "type": "text", "value": " the Rick Smith store." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Oh, I don't think " },
+        { "type": "blank", "id": "audio23_q10" },
+        { "type": "text", "value": " A university purchase order will probably " },
+        { "type": "blank", "id": "audio23_q11" },
+        { "type": "text", "value": " through the Resources and Supplies Section." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio23_q12" },
+        { "type": "text", "value": " What about the competition-is it going to be a game of skill " },
+        { "type": "blank", "id": "audio23_q13" },
+        { "type": "text", "value": " or something else?" }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "What do you think " },
+        { "type": "blank", "id": "audio23_q14" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Good question. I don't think it should be anything too hard or anything that will " },
+        { "type": "blank", "id": "audio23_q15" },
+        { "type": "text", "value": "-some of them have such fragile egos." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "True. So ... something that anyone can do? Nothing competitive skill or intelligence " },
+        { "type": "blank", "id": "audio23_q16" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "That's right. But the main thing is that the contestants " },
+        { "type": "blank", "id": "audio23_q17" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "How do we do that?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Well, I was thinking of a popular TV series: " },
+        { "type": "blank", "id": "audio23_q18" },
+        { "type": "text", "value": "-I don't actually know the difference." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Go on." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "It's a series " },
+        { "type": "blank", "id": "audio23_q19" },
+        { "type": "text", "value": " the main characters step through a portal " },
+        { "type": "blank", "id": "audio23_q20" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "What's a portal?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "It's like a gateway or entrance to something..." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Okay, I get it-" },
+        { "type": "blank", "id": "audio23_q21" },
+        { "type": "text", "value": " the new world of tertiary learning-so somehow we encourage people to step through this 'portal' then what?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "blank", "id": "audio23_q22" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Is that all?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Not exactly-let me think." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "I can't see " },
+        { "type": "blank", "id": "audio23_q23" },
+        { "type": "text", "value": " ...unless we pick " },
+        { "type": "blank", "id": "audio23_q24" },
+        { "type": "text", "value": " but there's not much excitement or involvement in that for the participants!" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Mmm. Wait. " },
+        { "type": "blank", "id": "audio23_q25" },
+        { "type": "text", "value": "...I mean no one person does... we get them, " },
+        { "type": "blank", "id": "audio23_q26" },
+        { "type": "text", "value": ", to do it." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "How?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Put all the photos on Facebook-and " },
+        { "type": "blank", "id": "audio23_q27" },
+        { "type": "text", "value": " wins." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "I agree... good idea. But there's just one more " },
+        { "type": "blank", "id": "audio23_q28" },
+        { "type": "text", "value": "-how do we get hold of a portal?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "I was thinking " },
+        { "type": "blank", "id": "audio23_q29" },
+        { "type": "text", "value": " of the Engineering Department " },
+        { "type": "blank", "id": "audio23_q30" },
+        { "type": "text", "value": " as part of their contribution to Open Day." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "blank", "id": "audio23_q31" },
+        { "type": "text", "value": " the competition on Open Day?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Well, firstly, they have to make their way to the 'portal photo booth' " },
+        { "type": "blank", "id": "audio23_q32" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "Okay-a bit " },
+        { "type": "blank", "id": "audio23_q33" },
+        { "type": "text", "value": " to start with." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Yes, and then they get their photo taken stepping through the portal. And they'll have to " },
+        { "type": "blank", "id": "audio23_q34" },
+        { "type": "text", "value": "-you know, name, phone number, email..." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "No, hang on... let's keep it simple-just name and email address " },
+        { "type": "blank", "id": "audio23_q35" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Then after, say, the thirtieth of July, people can visit the university Facebook page and " },
+        { "type": "blank", "id": "audio23_q36" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "So the photo with the most votes wins." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Yes, I think that should " },
+        { "type": "blank", "id": "audio23_q37" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "What about a cut-off date?" }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "Of course... maybe, uh... the most popular photo as of 5 pm " },
+        { "type": "blank", "id": "audio23_q38" },
+        { "type": "text", "value": " will collect the iPad." }
+      ]
+    },
+    {
+      "speaker": "Grant",
+      "content": [
+        { "type": "text", "value": "And the winner " },
+        { "type": "blank", "id": "audio23_q39" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "speaker": "Clare",
+      "content": [
+        { "type": "text", "value": "And...the winning photo will be enlarged and published in full colour on the university Facebook page." }
+      ]
+    }
+  ]
+}
