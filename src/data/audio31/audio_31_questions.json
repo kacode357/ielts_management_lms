@@ -1,0 +1,471 @@
+{
+  "title": "Hydroculture Discussion",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Good morning Annie, Tony. How are you?" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Fine, thanks." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Well, tell me " },
+        { "type": "blank", "id": "audio31_q1" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "We thought " },
+        { "type": "blank", "id": "audio31_q2" },
+        { "type": "text", "value": " hydroculture." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Uh huh." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "In the true hydroponics method " },
+        { "type": "blank", "id": "audio31_q3" },
+        { "type": "text", "value": " water and nutrient solution while " },
+        { "type": "blank", "id": "audio31_q4" },
+        { "type": "text", "value": " must be provided above the container." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "And... " },
+        { "type": "blank", "id": "audio31_q5" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Alternatively, the plants " },
+        { "type": "blank", "id": "audio31_q6" },
+        { "type": "text", "value": " in a substratum such as sand, vermiculite or LECA granules." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "LECA " },
+        { "type": "blank", "id": "audio31_q7" },
+        { "type": "text", "value": " Lightweight Expanded Clay Aggregate and vermiculite is..." }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Thank you Tony, I know what vermiculite is...but you should " },
+        { "type": "blank", "id": "audio31_q8" },
+        { "type": "text", "value": " all these things to the visitors. Can you explain what the advantage of LECA is " },
+        { "type": "blank", "id": "audio31_q9" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "It's a natural product... " },
+        { "type": "blank", "id": "audio31_q10" },
+        { "type": "text", "value": "...it's colourful, " },
+        { "type": "blank", "id": "audio31_q11" },
+        { "type": "text", "value": " and... perfect for " },
+        { "type": "blank", "id": "audio31_q12" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "That's right. Now tell me why." }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Because it's clean and hygienic, bacteria and soil diseases " },
+        { "type": "blank", "id": "audio31_q13" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Well, you could say that on this chart here... \"Ideal for household plants\"." }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "And we'll point out that the growing medium itself " },
+        { "type": "blank", "id": "audio31_q14" },
+        { "type": "text", "value": " feeding, which is provided in solution with the water." }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Good, now tell me " },
+        { "type": "blank", "id": "audio31_q15" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "This is a simple version of the first method, using a wide-necked jar " },
+        { "type": "blank", "id": "audio31_q16" },
+        { "type": "text", "value": " and nutrients, leaving space at the top. As the roots need to be in darkness " },
+        { "type": "blank", "id": "audio31_q17" },
+        { "type": "text", "value": " with brown paper later." }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "How did you " },
+        { "type": "blank", "id": "audio31_q18" },
+        { "type": "text", "value": " the cork?" }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "We made a hole through the centre and cut the cork in half so we could fit it around the plant stem and we padded the hole with " },
+        { "type": "blank", "id": "audio31_q19" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "That's a good demonstration of " },
+        { "type": "blank", "id": "audio31_q20" },
+        { "type": "text", "value": ", and ideal for a house plant but many people will want to see " },
+        { "type": "blank", "id": "audio31_q21" },
+        { "type": "text", "value": "—what about more plants?" }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "We " },
+        { "type": "blank", "id": "audio31_q22" },
+        { "type": "text", "value": ", but over here you can see " },
+        { "type": "blank", "id": "audio31_q23" },
+        { "type": "text", "value": "—in fact, any wide container can be used—with the nutrient solution in the bottom, " },
+        { "type": "blank", "id": "audio31_q24" },
+        { "type": "text", "value": "...and then we've made a rigid lid and " },
+        { "type": "blank", "id": "audio31_q25" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "What have you used for litter?" }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "We've used wood shavings..." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "blank", "id": "audio31_q26" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Definitely. That's most important—you can use " },
+        { "type": "blank", "id": "audio31_q27" },
+        { "type": "text", "value": " for litter but obviously " },
+        { "type": "blank", "id": "audio31_q28" },
+        { "type": "text", "value": " and treated timber contains some nasty chemicals so, if you're using sawdust or wood shavings, they have to be " },
+        { "type": "blank", "id": "audio31_q29" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "A good point..." }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "Yes, we'll make a note of that when we list " },
+        { "type": "blank", "id": "audio31_q30" },
+        { "type": "text", "value": " for litter." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Be sure to explain " },
+        { "type": "blank", "id": "audio31_q31" },
+        { "type": "text", "value": " the rigid lid—it's wire mesh, isn't it?—and " },
+        { "type": "blank", "id": "audio31_q32" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Well, the mesh is " },
+        { "type": "blank", "id": "audio31_q33" },
+        { "type": "text", "value": " keep the litter out of the water and the primary function of the litter is to " },
+        { "type": "blank", "id": "audio31_q34" },
+        { "type": "text", "value": " the root space..." }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Mmm. What you have so far is ideal for the home or office but " },
+        { "type": "blank", "id": "audio31_q35" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "Well, we're going to demonstrate the nutrient film technique which is popular with some " },
+        { "type": "blank", "id": "audio31_q36" },
+        { "type": "text", "value": ", particularly for the cultivation of crops such as runner beans and tomatoes. Producers would " },
+        { "type": "blank", "id": "audio31_q37" },
+        { "type": "text", "value": " some innovation in the cultivation of potatoes and yams too but obviously " },
+        { "type": "blank", "id": "audio31_q38" },
+        { "type": "text", "value": " those crops which grow above ground." }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "What about peas?" }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "Well, we found peas were " },
+        { "type": "blank", "id": "audio31_q39" },
+        { "type": "text", "value": " grow using this method although " },
+        { "type": "blank", "id": "audio31_q40" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Where's the exhibit? I don't see it anywhere." }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Well, that's because we haven't finished it yet because we're going to have to procure " },
+        { "type": "blank", "id": "audio31_q41" },
+        { "type": "text", "value": " first. We didn't think far enough ahead to " },
+        { "type": "blank", "id": "audio31_q42" },
+        { "type": "text", "value": ". And when we do get them, we'll have to handle them carefully." }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "Yes, because when " },
+        { "type": "blank", "id": "audio31_q43" },
+        { "type": "text", "value": ", you'll see " },
+        { "type": "blank", "id": "audio31_q44" },
+        { "type": "text", "value": " by a plastic tube which almost encloses them completely and is quite loosely fastened around the stems." }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Ye..es, and the feeding or " },
+        { "type": "blank", "id": "audio31_q45" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Well, it's a bit different—" },
+        { "type": "blank", "id": "audio31_q46" },
+        { "type": "text", "value": " like this, you need to have the food solution " },
+        { "type": "blank", "id": "audio31_q47" },
+        { "type": "text", "value": " the tubes..." }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "Yes, but the solution must also be " },
+        { "type": "blank", "id": "audio31_q48" },
+        { "type": "text", "value": " oxygen..." }
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "And what—it just bathes the roots? That's one way of doing it." }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "What's the other way?" }
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "You can have the solution moistening a substratum of rock wool " },
+        { "type": "blank", "id": "audio31_q49" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Rock wool?" }
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "It's the same as mineral wool—you know a lightweight, fibrous material—the kind of thing " },
+        { "type": "blank", "id": "audio31_q50" },
+        { "type": "text", "value": ". Or, you can use a layer of paper fibre." }
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Oh, yes...something that has the capacity to absorb the solution, right?" }
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "Well, you do need to " },
+        { "type": "blank", "id": "audio31_q51" },
+        { "type": "text", "value": ". For example, we tried coconut fibre... But it just didn't " },
+        { "type": "blank", "id": "audio31_q52" },
+        { "type": "text", "value": " we were looking for..." }
+      ]
+    },
+    {
+      "id": 47,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "I see." }
+      ]
+    },
+    {
+      "id": 48,
+      "speaker": "Tony",
+      "text": [
+        { "type": "text", "value": "In our display you'll only see the basics—the kind of thing that can be done at home " },
+        { "type": "blank", "id": "audio31_q53" },
+        { "type": "text", "value": ", but commercial enterprises " },
+        { "type": "blank", "id": "audio31_q54" },
+        { "type": "text", "value": " and the media used in substrata are constantly changing as " },
+        { "type": "blank", "id": "audio31_q55" },
+        { "type": "text", "value": ". The cost of upgrading is ongoing." }
+      ]
+    },
+    {
+      "id": 49,
+      "speaker": "Annie",
+      "text": [
+        { "type": "text", "value": "And there's always the potential of " },
+        { "type": "blank", "id": "audio31_q56" },
+        { "type": "text", "value": " when changing systems from one you know and understand " },
+        { "type": "blank", "id": "audio31_q57" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 50,
+      "speaker": "Lecturer",
+      "text": [
+        { "type": "text", "value": "Of course. " },
+        { "type": "blank", "id": "audio31_q58" },
+        { "type": "text", "value": " in business—you have to try to get everything right first time." }
+      ]
+    }
+  ]
+}

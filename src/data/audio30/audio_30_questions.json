@@ -1,0 +1,205 @@
+{
+  "title": "Summerland Tourist Attraction",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Welcome to Summerland; " },
+        { "type": "blank", "id": "audio30_q1" },
+        { "type": "text", "value": ", Jacquie, and I'm going to tell you a little bit about what we do and have here before " },
+        { "type": "blank", "id": "audio30_q2" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "In our air-conditioned restaurant we can cater for anyone " },
+        { "type": "blank", "id": "audio30_q3" },
+        { "type": "text", "value": " to families and tour groups but we also do functions such as weddings, conferences, birthday parties " },
+        { "type": "blank", "id": "audio30_q4" },
+        { "type": "text", "value": ". We have a " },
+        { "type": "blank", "id": "audio30_q5" },
+        { "type": "text", "value": " in the restaurant—or perhaps you'd prefer to sit outside in the courtyard " },
+        { "type": "blank", "id": "audio30_q6" },
+        { "type": "text", "value": " the lush, tropical gardens—and, for those booking a function, we devise an interesting set menu " },
+        { "type": "blank", "id": "audio30_q7" },
+        { "type": "text", "value": " the type of celebration and the client's budget." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio30_q8" },
+        { "type": "text", "value": ", we operate a take-away food bar " },
+        { "type": "blank", "id": "audio30_q9" },
+        { "type": "text", "value": " light snacks and refreshments—just the thing if you're supervising children in the playground. The playground and picnic area " },
+        { "type": "blank", "id": "audio30_q10" },
+        { "type": "text", "value": " the beach—if you've remembered to bring " },
+        { "type": "blank", "id": "audio30_q11" },
+        { "type": "text", "value": ", you can cool off in the water spray park. Parents can " },
+        { "type": "blank", "id": "audio30_q12" },
+        { "type": "text", "value": ", relax and enjoy a coffee while the kids have fun in our fully-fenced, shady " },
+        { "type": "blank", "id": "audio30_q13" },
+        { "type": "text", "value": ". What a way to make the most of the warmth and sunshine " },
+        { "type": "blank", "id": "audio30_q14" },
+        { "type": "text", "value": "!" }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "The older children will love to visit the Historic Cottage with their parents. This was the original homestead " },
+        { "type": "blank", "id": "audio30_q15" },
+        { "type": "text", "value": " and is now preserved as a museum " },
+        { "type": "blank", "id": "audio30_q16" },
+        { "type": "text", "value": ". You'll find the information centre here also and you'll be able to " },
+        { "type": "blank", "id": "audio30_q17" },
+        { "type": "text", "value": " some glossy brochures to take home with you and show your friends." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Don't worry—we have " },
+        { "type": "blank", "id": "audio30_q18" },
+        { "type": "text", "value": " leaflets for you to take home. Visit the Gift Shop and " },
+        { "type": "blank", "id": "audio30_q19" },
+        { "type": "text", "value": " local products, fine foods and handicrafts " },
+        { "type": "blank", "id": "audio30_q20" },
+        { "type": "text", "value": ". Some say that this is " },
+        { "type": "blank", "id": "audio30_q21" },
+        { "type": "text", "value": " in the region. There is more to be admired (and purchased) in the Garden Nursery which " },
+        { "type": "blank", "id": "audio30_q22" },
+        { "type": "text", "value": ", indoor and outdoor plants, statues " },
+        { "type": "blank", "id": "audio30_q23" },
+        { "type": "text", "value": " to adorn any home or garden." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "While we're on the topic of gifts and such, I must mention the Wood Crafting Shed and urge you to " },
+        { "type": "blank", "id": "audio30_q24" },
+        { "type": "text", "value": " the amazing products that the wood crafting team produces there. " },
+        { "type": "blank", "id": "audio30_q25" },
+        { "type": "text", "value": " and buy anything they've made. The toys they produce are not only original but some of the finest craftwork " },
+        { "type": "blank", "id": "audio30_q26" },
+        { "type": "text", "value": ". Take your little ones " },
+        { "type": "blank", "id": "audio30_q27" },
+        { "type": "text", "value": " and keep an eye on them because they'll want to play with these but they can't be played with " },
+        { "type": "blank", "id": "audio30_q28" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio30_q29" },
+        { "type": "text", "value": " are the orchards. The Summerland Tourist Attraction is actually " },
+        { "type": "blank", "id": "audio30_q30" },
+        { "type": "text", "value": " with over 40 hectares of macadamia and avocado trees. The macadamia nuts are picked by machine " },
+        { "type": "blank", "id": "audio30_q31" },
+        { "type": "text", "value": ". The avocados are grown, hand harvested, packed and marketed on site." }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Now, " },
+        { "type": "blank", "id": "audio30_q32" },
+        { "type": "text", "value": "? We'll leave the car park and " },
+        { "type": "blank", "id": "audio30_q33" },
+        { "type": "text", "value": " towards the administration building with the parking spaces outside. We won't go into the admin building because " },
+        { "type": "blank", "id": "audio30_q34" },
+        { "type": "text", "value": "; instead, we'll " },
+        { "type": "blank", "id": "audio30_q35" },
+        { "type": "text", "value": " towards the museum but before we get to it " },
+        { "type": "blank", "id": "audio30_q36" },
+        { "type": "text", "value": ", walk past it, and go into that enormous building to watch how the avocados are graded and " },
+        { "type": "blank", "id": "audio30_q37" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Well, what did you think of that? Those packers have to " },
+        { "type": "blank", "id": "audio30_q38" },
+        { "type": "text", "value": " as you can see. Now as we " },
+        { "type": "blank", "id": "audio30_q39" },
+        { "type": "text", "value": " we'll go to our left and " },
+        { "type": "blank", "id": "audio30_q40" },
+        { "type": "text", "value": " towards the cool room. Of course this is where " },
+        { "type": "blank", "id": "audio30_q41" },
+        { "type": "text", "value": " after packing—there are a lot of boxes of fruit in there—nothing very interesting to look at, but we will stop at the other building to see " },
+        { "type": "blank", "id": "audio30_q42" },
+        { "type": "text", "value": ". See how everything is mechanized " },
+        { "type": "blank", "id": "audio30_q43" },
+        { "type": "text", "value": "? I'm intrigued by how those machines " },
+        { "type": "blank", "id": "audio30_q44" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "It does get very hot in there, though, doesn't it, which makes " },
+        { "type": "blank", "id": "audio30_q45" },
+        { "type": "text", "value": " quite attractive. But, no, we'll skip that and make towards the building " },
+        { "type": "blank", "id": "audio30_q46" },
+        { "type": "text", "value": " where they take the husks off the macadamia nuts. It's quite noisy but absolutely fascinating." }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Now, " },
+        { "type": "blank", "id": "audio30_q47" },
+        { "type": "text", "value": " through the orchard to the woodcrafters' workroom and shop and " },
+        { "type": "blank", "id": "audio30_q48" },
+        { "type": "text", "value": ". Take note of where this is because I'm sure " },
+        { "type": "blank", "id": "audio30_q49" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Is everyone still with us? Right, let's go south now " },
+        { "type": "blank", "id": "audio30_q50" },
+        { "type": "text", "value": " through the picnic and playground area with the water feature but we want to end up over at the garden shop " },
+        { "type": "blank", "id": "audio30_q51" },
+        { "type": "text", "value": ". We'll have to walk through the little gift shop first to " },
+        { "type": "blank", "id": "audio30_q52" },
+        { "type": "text", "value": " the garden shop and I'm sure you won't be able to resist getting some " },
+        { "type": "blank", "id": "audio30_q53" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Are you ready for lunch now? I know it's been a whirlwind tour but " },
+        { "type": "blank", "id": "audio30_q54" },
+        { "type": "text", "value": " for 12.30 and after that you're free to take your time " },
+        { "type": "blank", "id": "audio30_q55" },
+        { "type": "text", "value": " until the bus leaves at 3 p.m." }
+      ]
+    }
+  ]
+}

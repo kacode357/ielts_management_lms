@@ -1,0 +1,439 @@
+{
+  "title": "Membership Application",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Good morning, my name is Dawn Buffet; how can I help you?" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Good morning, Dawn. " },
+        { "type": "blank", "id": "audio29_q1" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Wonderful. Now, have you ever been a member before?" }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Yes, I joined " },
+        { "type": "blank", "id": "audio29_q2" },
+        { "type": "text", "value": " and I was a member for seven years before I let my membership lapse " },
+        { "type": "blank", "id": "audio29_q3" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Do you have your old membership card?" }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "No, sorry. " },
+        { "type": "blank", "id": "audio29_q4" },
+        { "type": "text", "value": " when I moved." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Have you got any other form of " },
+        { "type": "blank", "id": "audio29_q5" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "I've got my driver's licence and my passport and " },
+        { "type": "blank", "id": "audio29_q6" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "blank", "id": "audio29_q7" },
+        { "type": "text", "value": " will be perfect." }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Here you are." }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Thank you. Oh, the photo " },
+        { "type": "blank", "id": "audio29_q8" },
+        { "type": "text", "value": ", is it?" }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "No, I've shaved off " },
+        { "type": "blank", "id": "audio29_q9" },
+        { "type": "text", "value": " and cut my hair since that was taken." }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "I'm going to have to make a note of some of these details and I'd like you to correct me " },
+        { "type": "blank", "id": "audio29_q10" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Obviously, the number here will be the same: AY916310." }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Look, " },
+        { "type": "blank", "id": "audio29_q11" },
+        { "type": "text", "value": "—it's AY196310." }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Thank you. I'm glad " },
+        { "type": "blank", "id": "audio29_q12" },
+        { "type": "text", "value": "; now....Family name...Black; and other names...Gavin Raymond." }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Yes." }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "And you were born " },
+        { "type": "blank", "id": "audio29_q13" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "That's correct." }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Can I just remind you that you'll need to renew your licence " },
+        { "type": "blank", "id": "audio29_q14" },
+        { "type": "text", "value": " — you wouldn't believe the number of people who get caught out " },
+        { "type": "blank", "id": "audio29_q15" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Thank you. I must admit, although I carry it around " },
+        { "type": "blank", "id": "audio29_q16" },
+        { "type": "text", "value": ", I wasn't really aware of that." }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Not many people are. " },
+        { "type": "blank", "id": "audio29_q17" },
+        { "type": "text", "value": " Now, I can see that " },
+        { "type": "blank", "id": "audio29_q18" },
+        { "type": "text", "value": " has opted out of having an address printed on the card...and I can understand that. Personally, " },
+        { "type": "blank", "id": "audio29_q19" },
+        { "type": "text", "value": " not to have it—in case your wallet gets stolen, for example." }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "I agree." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Can you give me " },
+        { "type": "blank", "id": "audio29_q20" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Yes, of course. I live at 29 Sunset Street, Meadowbank." }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Thanks. Actually, my uncle lives in the same street. It's a very nice area, isn't it?" }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Yes, pretty good." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Now, " },
+        { "type": "blank", "id": "audio29_q21" },
+        { "type": "text", "value": " licence: motorcar, motorbike and heavy vehicle. Do you " },
+        { "type": "blank", "id": "audio29_q22" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Oh, not any more. I had a motorbike when I was a student and then, before I went abroad, " },
+        { "type": "blank", "id": "audio29_q23" },
+        { "type": "text", "value": " but I never want to do that again. These days you'll only find me " },
+        { "type": "blank", "id": "audio29_q24" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Well, that's all done—now for one final question?" }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "What's that?" }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "I need to ask you whether " },
+        { "type": "blank", "id": "audio29_q25" },
+        { "type": "text", "value": " or endorsements on your licence." }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Well, I've had a few parking tickets." }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "We don't count those." }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "And... " },
+        { "type": "blank", "id": "audio29_q26" },
+        { "type": "text", "value": " ...but I do have a dangerous driving conviction from back in 1993. I was young " },
+        { "type": "blank", "id": "audio29_q27" },
+        { "type": "text", "value": " and going too fast in wet weather and " },
+        { "type": "blank", "id": "audio29_q28" },
+        { "type": "text", "value": " and hit a power pole." }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Well, I have to " },
+        { "type": "blank", "id": "audio29_q29" },
+        { "type": "text", "value": " but you're lucky—because " },
+        { "type": "blank", "id": "audio29_q30" },
+        { "type": "text", "value": ", it won't be held against you." }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "blank", "id": "audio29_q31" },
+        { "type": "text", "value": " at the Royal Car Club since you were last a member." }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Oh?" }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "We now " },
+        { "type": "blank", "id": "audio29_q32" },
+        { "type": "text", "value": " membership starting at Blue, then moving through Bronze to Gold." }
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "blank", "id": "audio29_q33" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Well, you get a different level of " },
+        { "type": "blank", "id": "audio29_q34" },
+        { "type": "text", "value": " and different benefits " },
+        { "type": "blank", "id": "audio29_q35" },
+        { "type": "text", "value": ". Of course " },
+        { "type": "blank", "id": "audio29_q36" },
+        { "type": "text", "value": "—the more benefits, the higher the fee." }
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "I see." }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "The Standard Club Care " },
+        { "type": "blank", "id": "audio29_q37" },
+        { "type": "text", "value": " at Bronze level and a 7.5% discount at Silver level. And Gold?" }
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "blank", "id": "audio29_q38" },
+        { "type": "text", "value": ", I'd recommend the Gold level because you only pay half the fee " },
+        { "type": "blank", "id": "audio29_q39" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "I'm not sure I need that." }
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "Well, Bronze and Silver " },
+        { "type": "blank", "id": "audio29_q40" },
+        { "type": "text", "value": " the Insurance fee but with the Gold membership... say you had an accident and " },
+        { "type": "blank", "id": "audio29_q41" },
+        { "type": "text", "value": " or off the road for any length of time...you'd be eligible for car hire " },
+        { "type": "blank", "id": "audio29_q42" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 47,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Mmm, that's good." }
+      ]
+    },
+    {
+      "id": 48,
+      "speaker": "Dawn",
+      "text": [
+        { "type": "text", "value": "There's one more thing. " },
+        { "type": "blank", "id": "audio29_q43" },
+        { "type": "text", "value": " to purchase a new car, we offer " },
+        { "type": "blank", "id": "audio29_q44" },
+        { "type": "text", "value": " at a reduction off the general applicable rate. These start at point two five percent, go up to half a percent Bronze level and increase to point seven five percent " },
+        { "type": "blank", "id": "audio29_q45" },
+        { "type": "text", "value": ". Gold has a whopping 1.25 percent reduction " },
+        { "type": "blank", "id": "audio29_q46" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 49,
+      "speaker": "Gavin",
+      "text": [
+        { "type": "text", "value": "Well, that is something " },
+        { "type": "blank", "id": "audio29_q47" },
+        { "type": "text", "value": ". Thanks for your help, I'll think it over and let you know." }
+      ]
+    }
+  ]
+}

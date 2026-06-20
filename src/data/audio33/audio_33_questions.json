@@ -1,0 +1,513 @@
+{
+  "title": "Small Claims Tribunal Enquiry",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Good afternoon. How can I help you?" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Good afternoon, I'd like to lodge a claim." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Certainly. Name?" }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Emily-Jane Appleby." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Appleby—" },
+        { "type": "blank", "id": "audio33_q1" },
+        { "type": "text", "value": "—sorry, what did you say your first name was again?" }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Emily-Jane." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Now, Ms Appleby, could you please " },
+        { "type": "blank", "id": "audio33_q2" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "I've never done that before. Can you help me?" }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Yes, of course. The first part is for your, the claimant's, details. Where do you live?" }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Um...At 1 Yeronga Street, Durham." }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "How do you spell Durham?" }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "D-U-R-H-A-M." }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Of course, I should know that—but it's just " },
+        { "type": "blank", "id": "audio33_q3" },
+        { "type": "text", "value": " quite different from the way you spell it." }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "It is confusing—" },
+        { "type": "blank", "id": "audio33_q4" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "And what's the postcode for Durham?" }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "blank", "id": "audio33_q5" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Good. And...do you work?" }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "No, not at the moment." }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Okay, " },
+        { "type": "blank", "id": "audio33_q6" },
+        { "type": "text", "value": ". What about a home phone number?" }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, I can give you that. It's 7848 3762." }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "7848..." }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "3762." }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Right. Now this part here is for " },
+        { "type": "blank", "id": "audio33_q7" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Who's the respondent?" }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "The individual person, company or business " },
+        { "type": "blank", "id": "audio33_q8" },
+        { "type": "text", "value": ". Is the claim against " },
+        { "type": "blank", "id": "audio33_q9" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Well, it's a company " },
+        { "type": "blank", "id": "audio33_q10" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "So, that's 'trader' then. Just a moment while I write that down." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "ABC Appliances actually." }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Oh, now, " },
+        { "type": "blank", "id": "audio33_q11" },
+        { "type": "text", "value": ". If the respondent is a company you must have the company's full and correct name and " },
+        { "type": "blank", "id": "audio33_q12" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "I've looked it up on the Internet and it's ABC Appliances Limited." }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Good. If we don't get this part absolutely right, " },
+        { "type": "blank", "id": "audio33_q13" },
+        { "type": "text", "value": ". And their registered address?" }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, " },
+        { "type": "blank", "id": "audio33_q14" },
+        { "type": "text", "value": " Just a minute...it's um...17 Brown Avenue." }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "That's in Bardon, isn't it? I think I know the place—" },
+        { "type": "blank", "id": "audio33_q15" },
+        { "type": "text", "value": " last month." }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, Bardon." }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Have you got the postcode for Bardon?" }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "It's really similar to mine—wait a moment—" },
+        { "type": "blank", "id": "audio33_q16" },
+        { "type": "text", "value": " I get it right. 4065, that's it." }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "And what's the telephone number for ABC Appliances?" }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Oh, um..." },
+        { "type": "blank", "id": "audio33_q17" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Good. Got that...now, in the third part of this form we get to " },
+        { "type": "blank", "id": "audio33_q18" },
+        { "type": "text", "value": ". I assume you " },
+        { "type": "blank", "id": "audio33_q19" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, that's right, on the third of February 2011." }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "And did the goods have any sort of " },
+        { "type": "blank", "id": "audio33_q20" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, but only for six months." }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "So, it was " },
+        { "type": "blank", "id": "audio33_q21" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Yes, they offered me an extended warranty for 3 years but " },
+        { "type": "blank", "id": "audio33_q22" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Oh, I see." }
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "You'll need to " },
+        { "type": "blank", "id": "audio33_q23" },
+        { "type": "text", "value": " the goods involved, the nature of the defect or fault and any " },
+        { "type": "blank", "id": "audio33_q24" },
+        { "type": "text", "value": "...so, tell me, what did you buy?" }
+      ]
+    },
+    {
+      "id": 47,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "I bought " },
+        { "type": "blank", "id": "audio33_q25" },
+        { "type": "text", "value": "..." }
+      ]
+    },
+    {
+      "id": 48,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Ye..es...but what brand, model and serial number?" }
+      ]
+    },
+    {
+      "id": 49,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "blank", "id": "audio33_q26" },
+        { "type": "text", "value": " 'Mallard' and it was the 'Whisper' model; " },
+        { "type": "blank", "id": "audio33_q27" },
+        { "type": "text", "value": " I've got the warranty papers in my bag. Yes, here it is, serial number " },
+        { "type": "blank", "id": "audio33_q28" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 50,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Great. Now I need to know how much you agreed to pay." }
+      ]
+    },
+    {
+      "id": 51,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "blank", "id": "audio33_q29" }
+      ]
+    },
+    {
+      "id": 52,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Did you trade in your old machine?" }
+      ]
+    },
+    {
+      "id": 53,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "blank", "id": "audio33_q30" },
+        { "type": "text", "value": ", I did." }
+      ]
+    },
+    {
+      "id": 54,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Okay...now what were you given for the trade-in?" }
+      ]
+    },
+    {
+      "id": 55,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "250 pounds..." }
+      ]
+    },
+    {
+      "id": 56,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "So, in actual fact, the purchase price you agreed on was 750 pounds?" }
+      ]
+    },
+    {
+      "id": 57,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "That's right and " },
+        { "type": "blank", "id": "audio33_q31" },
+        { "type": "text", "value": " two days later on the fifth of March and picked up the trade-in at the same time." }
+      ]
+    },
+    {
+      "id": 58,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Now, think carefully about this next question. What did the respondent say about " },
+        { "type": "blank", "id": "audio33_q32" },
+        { "type": "text", "value": " or the way they would perform?" }
+      ]
+    },
+    {
+      "id": 59,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "The salesman " },
+        { "type": "blank", "id": "audio33_q33" },
+        { "type": "text", "value": " said 'The Mallard Whisper model has a much shorter cycle so " },
+        { "type": "blank", "id": "audio33_q34" },
+        { "type": "text", "value": "'—oh, and he added: 'and it will also use less water'." }
+      ]
+    },
+    {
+      "id": 60,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "Is that true?" }
+      ]
+    },
+    {
+      "id": 61,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "text", "value": "Well, partly...it does seem to use less water but both the wash cycle and the rinse cycle go on for much longer than my old machine " },
+        { "type": "blank", "id": "audio33_q35" },
+        { "type": "text", "value": " But the sales assistant also said: 'This model is whisper quiet'." }
+      ]
+    },
+    {
+      "id": 62,
+      "speaker": "Officer",
+      "text": [
+        { "type": "text", "value": "And is it?" }
+      ]
+    },
+    {
+      "id": 63,
+      "speaker": "Emily Jane",
+      "text": [
+        { "type": "blank", "id": "audio33_q36" },
+        { "type": "text", "value": " we can't hear the television in the next room." }
+      ]
+    }
+  ]
+}

@@ -50,6 +50,16 @@ import audio23Questions from '../../data/audio23/audio_23_questions.json'
 import audio23Answers from '../../data/audio23/audio_23_answers.json'
 import audio24Questions from '../../data/audio24/audio_24_questions.json'
 import audio24Answers from '../../data/audio24/audio_24_answers.json'
+import audio29Questions from '../../data/audio29/audio_29_questions.json'
+import audio29Answers from '../../data/audio29/audio_29_answers.json'
+import audio30Questions from '../../data/audio30/audio_30_questions.json'
+import audio30Answers from '../../data/audio30/audio_30_answers.json'
+import audio31Questions from '../../data/audio31/audio_31_questions.json'
+import audio31Answers from '../../data/audio31/audio_31_answers.json'
+import audio32Questions from '../../data/audio32/audio_32_questions.json'
+import audio32Answers from '../../data/audio32/audio_32_answers.json'
+import audio33Questions from '../../data/audio33/audio_33_questions.json'
+import audio33Answers from '../../data/audio33/audio_33_answers.json'
 
 import ExerciseHeaderDesktop from './ExerciseHeaderDesktop'
 import ExerciseHeaderMobile from './ExerciseHeaderMobile'
@@ -118,7 +128,12 @@ const audioData = {
   audio21: { questions: audio21Questions, answers: audio21Answers, file: '/Audio 21.mp3', title: 'Audio 21' },
   audio22: { questions: audio22Questions, answers: audio22Answers, file: '/Audio 22.mp3', title: 'Audio 22' },
   audio23: { questions: audio23Questions, answers: audio23Answers, file: '/Audio 23.mp3', title: 'Audio 23' },
-  audio24: { questions: audio24Questions, answers: audio24Answers, file: '/Audio 24.mp3', title: 'Audio 24' }
+  audio24: { questions: audio24Questions, answers: audio24Answers, file: '/Audio 24.mp3', title: 'Audio 24' },
+  audio29: { questions: audio29Questions, answers: audio29Answers, file: '/Audio 29.mp3', title: 'Audio 29' },
+  audio30: { questions: audio30Questions, answers: audio30Answers, file: '/Audio 30.mp3', title: 'Audio 30' },
+  audio31: { questions: audio31Questions, answers: audio31Answers, file: '/Audio 31.mp3', title: 'Audio 31' },
+  audio32: { questions: audio32Questions, answers: audio32Answers, file: '/Audio 32.mp3', title: 'Audio 32' },
+  audio33: { questions: audio33Questions, answers: audio33Answers, file: '/Audio 33.mp3', title: 'Audio 33' }
 }
 
 // Submit Button Component
@@ -252,8 +267,237 @@ function Exercise() {
       console.table(answers)
       return answers
     }
+
+    window.kaka_done = () => {
+      console.log(`%c 🎯 Filling realistic answers for ${audioId}...`, 'color: #722ed1; font-weight: bold; font-size: 14px;')
+      
+      const makeRealisticTypo = (text) => {
+        if (!text) return 'test';
+        
+        // Rule 1: Contraction / 'd handling (always break/remove it)
+        if (text.includes("'d")) {
+          return text.replace(/'d/g, ""); // "I'd" -> "I", "wish I'd had" -> "wish I had"
+        }
+        if (text.includes("'ve")) {
+          return text.replace(/'ve/g, " have");
+        }
+        if (text.includes("it's")) {
+          return text.replace(/it's/g, "its");
+        }
+        if (text.includes("its")) {
+          return text.replace(/its/g, "it's");
+        }
+        if (text.includes("there's")) {
+          return text.replace(/there's/g, "theres");
+        }
+        if (text.includes("don't")) {
+          return text.replace(/don't/g, "dont");
+        }
+        if (text.includes("you're")) {
+          return text.replace(/you're/g, "your");
+        }
+        if (text.includes("they're")) {
+          return text.replace(/they're/g, "there");
+        }
+
+        const homophones = {
+          "to": "too", "too": "to", "two": "to",
+          "there": "their", "their": "there", "they're": "there",
+          "here": "hear", "hear": "here",
+          "be": "bee",
+          "our": "hour",
+          "for": "four",
+          "lose": "loose", "loose": "lose",
+          "then": "than", "than": "then",
+          "where": "were", "were": "where",
+          "would": "wood",
+          "whole": "hole",
+          "dam": "dame", "dame": "dam",
+          "affect": "effect", "effect": "affect",
+          "passed": "past", "past": "passed",
+          "weather": "whether", "whether": "weather",
+          "know": "no", "no": "know",
+          "some": "sum",
+          "right": "write", "write": "right",
+          "meet": "meat", "meat": "meet",
+          "lead": "led", "led": "lead",
+          "waste": "waist"
+        };
+
+        const words = text.split(/\s+/);
+
+        // Rule 2: Homophone Replacement
+        for (let idx = 0; idx < words.length; idx++) {
+          const wClean = words[idx].toLowerCase().replace(/[.,!?;:]/g, '');
+          if (homophones[wClean]) {
+            const replacement = homophones[wClean];
+            const isCapitalized = words[idx][0] === words[idx][0].toUpperCase();
+            const repFinal = isCapitalized ? replacement[0].toUpperCase() + replacement.slice(1) : replacement;
+            words[idx] = words[idx].toLowerCase().replace(wClean, repFinal);
+            return words.join(' ');
+          }
+        }
+
+        // Rule 3: If phrase has a complex/long word (length >= 8), misspell it directly
+        const hasComplex = words.some(w => w.toLowerCase().replace(/[.,!?;:]/g, '').length >= 8);
+        if (hasComplex) {
+          let targetWordIdx = 0;
+          let maxLen = 0;
+          words.forEach((w, idx) => {
+            if (w.length > maxLen) {
+              maxLen = w.length;
+              targetWordIdx = idx;
+            }
+          });
+
+          let word = words[targetWordIdx];
+          const wordLower = word.toLowerCase();
+
+          if (wordLower.endsWith('s') && wordLower.length > 4) {
+            word = word.slice(0, -1);
+          } else if (wordLower.endsWith('y')) {
+            word = word.slice(0, -1) + 'ie';
+          } else {
+            const doubleLetterMatch = word.match(/([a-zA-Z])\1/);
+            if (doubleLetterMatch) {
+              word = word.replace(doubleLetterMatch[0], doubleLetterMatch[1]);
+            } else {
+              if (word.length > 5) {
+                word = word.slice(0, -1);
+              } else {
+                word = word + 'e';
+              }
+            }
+          }
+          words[targetWordIdx] = word;
+          return words.join(' ');
+        }
+
+        // Rule 4: Drop helper word if long phrase (no complex word present)
+        if (words.length > 3) {
+          const indexToDrop = words.findIndex(w => ['a', 'the', 'of', 'to', 'for', 'in', 'on', 'is', 'it'].includes(w.toLowerCase()));
+          if (indexToDrop !== -1) {
+            const copy = [...words];
+            copy.splice(indexToDrop, 1);
+            return copy.join(' ');
+          }
+        }
+
+        // Rule 5: Pick longest word and make a grammatical or spelling typo for simple phrases
+        let targetWordIdx = 0;
+        let maxLen = 0;
+        words.forEach((w, idx) => {
+          if (w.length > maxLen) {
+            maxLen = w.length;
+            targetWordIdx = idx;
+          }
+        });
+
+        let word = words[targetWordIdx];
+        const wordLower = word.toLowerCase();
+
+        if (wordLower === "is") word = "are";
+        else if (wordLower === "are") word = "is";
+        else if (wordLower === "was") word = "were";
+        else if (wordLower === "were") word = "was";
+        else if (wordLower === "has") word = "have";
+        else if (wordLower === "have") word = "has";
+        else if (wordLower.endsWith('s') && wordLower.length > 4) {
+          word = word.slice(0, -1);
+        } else if (wordLower.endsWith('y')) {
+          word = word.slice(0, -1) + 'ie';
+        } else {
+          const doubleLetterMatch = word.match(/([a-zA-Z])\1/);
+          if (doubleLetterMatch) {
+            word = word.replace(doubleLetterMatch[0], doubleLetterMatch[1]);
+          } else {
+            if (word.length > 5) {
+              word = word.slice(0, -1);
+            } else {
+              word = word + 'e';
+            }
+          }
+        }
+
+        words[targetWordIdx] = word;
+        return words.join(' ');
+      }
+
+      const containsComplexWord = (text) => {
+        if (!text) return false;
+        return text.split(/\s+/).some(w => {
+          const clean = w.toLowerCase().replace(/[.,!?;:]/g, '');
+          return clean.length >= 8;
+        });
+      };
+
+      const newAnswers = {}
+      const newResults = {}
+
+      Object.keys(answers).forEach(id => {
+        let val = answers[id]
+
+        if (audioId === 'audio20') {
+          // Specific mapping for Audio 20 based on 20.pdf
+          const blankIds = [
+            'audio20_q1', 'audio20_q4', 'audio20_q5', 'audio20_q6', 'audio20_q7',
+            'audio20_q10', 'audio20_q11', 'audio20_q13', 'audio20_q15', 'audio20_q16',
+            'audio20_q17', 'audio20_q19', 'audio20_q21', 'audio20_q30', 'audio20_q35',
+            'audio20_q36'
+          ]
+          if (blankIds.includes(id)) {
+            val = makeRealisticTypo(answers[id])
+          } else if (id === 'audio20_q9') {
+            val = 'hamful'
+          } else if (id === 'audio20_q18') {
+            val = 'behind the dame and the river below'
+          } else if (id === 'audio20_q32') {
+            val = 'get so low in summer that'
+          }
+        } else {
+          // General heuristic for other audios
+          const match = id.match(/_q(\d+)$/)
+          const qNum = match ? parseInt(match[1], 10) : 1
+          
+          if (qNum % 3 === 0 || qNum % 5 === 0 || containsComplexWord(answers[id])) {
+            val = makeRealisticTypo(answers[id])
+          }
+        }
+
+        newAnswers[id] = val
+
+        const normalizedVal = normalizeText(val)
+        const normalizedAns = normalizeText(answers[id])
+        if (normalizedVal === normalizedAns) {
+          newResults[id] = 'correct'
+        } else {
+          newResults[id] = 'wrong'
+        }
+      })
+
+      setUserAnswers(newAnswers)
+      setCheckResults(newResults)
+      setIsSubmitted(true)
+
+      try {
+        const storageKey = getStorageKey()
+        localStorage.setItem(storageKey, JSON.stringify({
+          answers: newAnswers,
+          checkResults: newResults,
+          isSubmitted: true,
+          timestamp: Date.now()
+        }))
+      } catch (error) {
+        console.error('Error saving to localStorage:', error)
+      }
+
+      console.table(newAnswers)
+      return newAnswers
+    }
+
     return () => {
       delete window.kaka_check
+      delete window.kaka_done
     }
   }, [audioId, answers])
 

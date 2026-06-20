@@ -1,0 +1,152 @@
+{
+  "title": "The Grand Old Duke of York",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Good evening. " },
+        { "type": "blank", "id": "audio32_q1" },
+        { "type": "text", "value": " the Continuing Education Department " },
+        { "type": "blank", "id": "audio32_q2" },
+        { "type": "text", "value": " \"People behind the names you thought were fiction\". Welcome to this talk on \"The Grand Old Duke of York\"." }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "I'm sure " },
+        { "type": "blank", "id": "audio32_q3" },
+        { "type": "text", "value": " the old nursery rhyme: The Grand Old Duke of York. He had ten thousand men. He marched them up " },
+        { "type": "blank", "id": "audio32_q4" },
+        { "type": "text", "value": ". And he marched them down again, and so on. But did you know that the Duke of York immortalized in this popular song was actually Frederick Augustus, " },
+        { "type": "blank", "id": "audio32_q5" },
+        { "type": "text", "value": " King George the Third of England and Queen Charlotte? " },
+        { "type": "blank", "id": "audio32_q6" },
+        { "type": "text", "value": " because of the humiliation he " },
+        { "type": "blank", "id": "audio32_q7" },
+        { "type": "text", "value": " the French during the Revolutionary Wars " },
+        { "type": "blank", "id": "audio32_q8" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Frederick was born on the 16th of August 1763 and " },
+        { "type": "blank", "id": "audio32_q9" },
+        { "type": "text", "value": " he had been trained as a soldier. " },
+        { "type": "blank", "id": "audio32_q10" },
+        { "type": "text", "value": " between England and France in 1793, his father, the king, " },
+        { "type": "blank", "id": "audio32_q11" },
+        { "type": "text", "value": " he should command the British contingent " },
+        { "type": "blank", "id": "audio32_q12" },
+        { "type": "text", "value": " Flanders to co-operate with the Austrians and the Dutch. The Duke was a brave soldier, but, remember, " },
+        { "type": "blank", "id": "audio32_q13" },
+        { "type": "text", "value": "; not only was he young but " },
+        { "type": "blank", "id": "audio32_q14" },
+        { "type": "text", "value": " and was unable to cope with the enthusiastic French Revolutionary Army. " },
+        { "type": "blank", "id": "audio32_q15" },
+        { "type": "text", "value": ", and in spite of the arrival of ten thousand fresh troops from England, " },
+        { "type": "blank", "id": "audio32_q16" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio32_q17" },
+        { "type": "text", "value": " Dunkirk in September 1793, Flanders in May 1794, and Belgium in July 1794. Finally, " },
+        { "type": "blank", "id": "audio32_q18" },
+        { "type": "text", "value": " 1794 to 1795, his army retreated " },
+        { "type": "blank", "id": "audio32_q19" },
+        { "type": "text", "value": " Hanover. And...with his unsuccessful campaigns over, the Duke returned to England. It was after this military fiasco that the Duke of York came to be (rather unkindly) satirized in song." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Would you believe, despite all this, King George the Third " },
+        { "type": "blank", "id": "audio32_q20" },
+        { "type": "text", "value": " Commander-in-Chief of the army in 1798? And, " },
+        { "type": "blank", "id": "audio32_q21" },
+        { "type": "text", "value": " he was appointed to command an army sent to invade Holland. Again he was unsuccessful and " },
+        { "type": "blank", "id": "audio32_q22" },
+        { "type": "text", "value": " he was not capable of commanding " },
+        { "type": "blank", "id": "audio32_q23" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Nevertheless, the rhyme " },
+        { "type": "blank", "id": "audio32_q24" },
+        { "type": "text", "value": " and harsh because it doesn't take into account " },
+        { "type": "blank", "id": "audio32_q25" },
+        { "type": "text", "value": " who served with Frederick. All the blame for lack of success should " },
+        { "type": "blank", "id": "audio32_q26" },
+        { "type": "text", "value": " the Duke alone because the army he had " },
+        { "type": "blank", "id": "audio32_q27" },
+        { "type": "text", "value": " was made up from what is commonly described as \"the scum of the earth\"—this is a somewhat offensive " },
+        { "type": "blank", "id": "audio32_q28" },
+        { "type": "text", "value": " a group of people regarded as despicable " },
+        { "type": "blank", "id": "audio32_q29" },
+        { "type": "text", "value": ". Who were they—these ordinary soldiers? Well, they were mostly vicious, brutal ex-convicts or " },
+        { "type": "blank", "id": "audio32_q30" },
+        { "type": "text", "value": " and elderly men. The officers who commanded them were all untrained as military men. In fact, they were anybody " },
+        { "type": "blank", "id": "audio32_q31" },
+        { "type": "text", "value": " buy a commission." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Um, but here's the really great thing that, unfortunately, the Duke of York " },
+        { "type": "blank", "id": "audio32_q32" },
+        { "type": "text", "value": ": he realized that this was " },
+        { "type": "blank", "id": "audio32_q33" },
+        { "type": "text", "value": " and he set about improving conditions " },
+        { "type": "blank", "id": "audio32_q34" },
+        { "type": "text", "value": ". He introduced padres—are you familiar with the term? No? Well, let me explain...you see, members of the British Armed Forces are generally Christians of one denomination or another, and a padre is a Christian cleric or chaplain who ministers to the soldiers and " },
+        { "type": "blank", "id": "audio32_q35" },
+        { "type": "text", "value": " without belonging to any particular grouping within the Christian faith." }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Now, where was I? Yes, Frederick introduced padres, doctors and veterinary surgeons " },
+        { "type": "blank", "id": "audio32_q36" },
+        { "type": "text", "value": ". Why vets? To attend to the horses, of course! Remember we're talking about " },
+        { "type": "blank", "id": "audio32_q37" },
+        { "type": "text", "value": " battlefields. He was also the founder of the Royal Military College for the training of officers at Sandhurst—yes, the very same one where " },
+        { "type": "blank", "id": "audio32_q38" },
+        { "type": "text", "value": " and other members of the royal family " },
+        { "type": "blank", "id": "audio32_q39" },
+        { "type": "text", "value": "! Frederick also founded the Duke of York's School in London " },
+        { "type": "blank", "id": "audio32_q40" },
+        { "type": "text", "value": ". His name is perhaps better commemorated by this school in Chelsea than by the column that stands at the top of Waterloo Steps in St. James's Park." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "In 1807, the Duke " },
+        { "type": "blank", "id": "audio32_q41" },
+        { "type": "text", "value": " with a woman and as a result resigned as Commander-in-Chief but he was reinstated in 1811 " },
+        { "type": "blank", "id": "audio32_q42" },
+        { "type": "text", "value": ", the Prince Regent, who later became George the Fourth of England. He continued in this post until his death in 1827." }
+      ]
+    }
+  ]
+}
