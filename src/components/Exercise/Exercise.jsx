@@ -60,6 +60,10 @@ import audio32Questions from '../../data/audio32/audio_32_questions.json'
 import audio32Answers from '../../data/audio32/audio_32_answers.json'
 import audio33Questions from '../../data/audio33/audio_33_questions.json'
 import audio33Answers from '../../data/audio33/audio_33_answers.json'
+import audio34Questions from '../../data/audio34/audio_34_questions.json'
+import audio34Answers from '../../data/audio34/audio_34_answers.json'
+import audio35Questions from '../../data/audio35/audio_35_questions.json'
+import audio35Answers from '../../data/audio35/audio_35_answers.json'
 
 import ExerciseHeaderDesktop from './ExerciseHeaderDesktop'
 import ExerciseHeaderMobile from './ExerciseHeaderMobile'
@@ -133,7 +137,9 @@ const audioData = {
   audio30: { questions: audio30Questions, answers: audio30Answers, file: '/Audio 30.mp3', title: 'Audio 30' },
   audio31: { questions: audio31Questions, answers: audio31Answers, file: '/Audio 31.mp3', title: 'Audio 31' },
   audio32: { questions: audio32Questions, answers: audio32Answers, file: '/Audio 32.mp3', title: 'Audio 32' },
-  audio33: { questions: audio33Questions, answers: audio33Answers, file: '/Audio 33.mp3', title: 'Audio 33' }
+  audio33: { questions: audio33Questions, answers: audio33Answers, file: '/Audio 33.mp3', title: 'Audio 33' },
+  audio34: { questions: audio34Questions, answers: audio34Answers, file: '/Audio 34.mp3', title: 'Audio 34' },
+  audio35: { questions: audio35Questions, answers: audio35Answers, file: '/Audio 35.mp3', title: 'Audio 35' }
 }
 
 // Submit Button Component

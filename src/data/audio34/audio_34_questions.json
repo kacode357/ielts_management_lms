@@ -1,0 +1,157 @@
+{
+  "title": "Dreamtime Tours",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Dreamtime Tours have just the tour for you. " },
+        { "type": "blank", "id": "audio34_q1" },
+        { "type": "text", "value": " talk to you about today is what I consider our best tour—it will take you " },
+        { "type": "blank", "id": "audio34_q2" },
+        { "type": "text", "value": " and back again. You'll spend " },
+        { "type": "blank", "id": "audio34_q3" },
+        { "type": "text", "value": " travelling in air-conditioned luxury. You'll see from our brochure that " },
+        { "type": "blank", "id": "audio34_q4" },
+        { "type": "text", "value": " along the coast and, " },
+        { "type": "blank", "id": "audio34_q5" },
+        { "type": "text", "value": " after we pick up our last passenger for the day, " },
+        { "type": "blank", "id": "audio34_q6" },
+        { "type": "text", "value": " briefly at a magnificent housing development, marina and " },
+        { "type": "blank", "id": "audio34_q7" },
+        { "type": "text", "value": "—you'll be able to admire some of the most expensive and lavish houses " },
+        { "type": "blank", "id": "audio34_q8" },
+        { "type": "text", "value": "—and here we'll take a quick walk " },
+        { "type": "blank", "id": "audio34_q9" },
+        { "type": "text", "value": ". Now, despite its name, Hope Island, we can reach it " },
+        { "type": "blank", "id": "audio34_q10" },
+        { "type": "text", "value": " or taking a boat ride. Hope Island is connected to the mainland by bridges." }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "From there " },
+        { "type": "blank", "id": "audio34_q11" },
+        { "type": "text", "value": " the beautiful Tamborine Mountain. You'll have time to browse in " },
+        { "type": "blank", "id": "audio34_q12" },
+        { "type": "text", "value": " or you can sit and relax " },
+        { "type": "blank", "id": "audio34_q13" },
+        { "type": "text", "value": ". We board the bus again " },
+        { "type": "blank", "id": "audio34_q14" },
+        { "type": "text", "value": " an old timber-milling town on our way to O'Reilly's Green Mountains. Once there, you might wish to " },
+        { "type": "blank", "id": "audio34_q15" },
+        { "type": "text", "value": " the famous tree top walk " },
+        { "type": "blank", "id": "audio34_q16" },
+        { "type": "text", "value": " suspended in the canopy of a rainforest—definitely " },
+        { "type": "blank", "id": "audio34_q17" },
+        { "type": "text", "value": "! If you're not up to the excitement of this walk, or perhaps after you've done it, why not enjoy lunch " },
+        { "type": "blank", "id": "audio34_q18" },
+        { "type": "text", "value": " O'Reilly's restaurant?" }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Before we leave, " },
+        { "type": "blank", "id": "audio34_q19" },
+        { "type": "text", "value": " the Botanical Gardens or perhaps you'd like to feed the beautiful parrots and other birds—we'll supply the birdseed. From O'Reilly's we travel to an alpaca farm for a demonstration and of course " },
+        { "type": "blank", "id": "audio34_q20" },
+        { "type": "text", "value": " with these gorgeous animals before returning to the coach for the journey " },
+        { "type": "blank", "id": "audio34_q21" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "If I've persuaded any of you to sign up for this tour, take a look at our Dreamtime Tours " },
+        { "type": "blank", "id": "audio34_q22" },
+        { "type": "text", "value": ". You'll see that you can book over the telephone or " },
+        { "type": "blank", "id": "audio34_q23" },
+        { "type": "text", "value": " through the reception desk. We generally " },
+        { "type": "blank", "id": "audio34_q24" },
+        { "type": "text", "value": " manning the desk from 7.30 am to 9 pm every day of the week. " },
+        { "type": "blank", "id": "audio34_q25" },
+        { "type": "text", "value": " reception staff any questions that you might have about this tour, or any other tour, and be sure " },
+        { "type": "blank", "id": "audio34_q26" },
+        { "type": "text", "value": " if you have any special needs. We'll do our best to make your trip " },
+        { "type": "blank", "id": "audio34_q27" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "If this is the tour you want, be sure to specify Green Mountain Tour and note that these excursions " },
+        { "type": "blank", "id": "audio34_q28" },
+        { "type": "text", "value": " on three days of the week only: Sunday, Monday and Friday—although we're hoping " },
+        { "type": "blank", "id": "audio34_q29" },
+        { "type": "text", "value": " available by next year. You'll see that fares " },
+        { "type": "blank", "id": "audio34_q30" },
+        { "type": "text", "value": " with each adult " },
+        { "type": "blank", "id": "audio34_q31" },
+        { "type": "text", "value": ". Now, that's not bad for a trip of around 280 kilometres, is it? " },
+        { "type": "blank", "id": "audio34_q32" },
+        { "type": "text", "value": ", obviously the family pass " },
+        { "type": "blank", "id": "audio34_q33" },
+        { "type": "text", "value": "—that includes two adults and two children—but if you are an older adult, over 65, in other words, " },
+        { "type": "blank", "id": "audio34_q34" },
+        { "type": "text", "value": ", your fare is discounted too—" },
+        { "type": "blank", "id": "audio34_q35" },
+        { "type": "text", "value": " than the full adult rate." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Please " },
+        { "type": "blank", "id": "audio34_q36" },
+        { "type": "text", "value": "—we adhere to these strictly—the coach will leave the southernmost point of Coolangatta at ten to eight sharp, travel through Burleigh and on to Surfers Paradise, which is our most popular pick-up point, " },
+        { "type": "blank", "id": "audio34_q37" },
+        { "type": "text", "value": " at half past eight in the morning. " },
+        { "type": "blank", "id": "audio34_q38" },
+        { "type": "text", "value": " we make our last pick-up at Labrador." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio34_q39" },
+        { "type": "text", "value": " dress appropriately for the day—ladies, " },
+        { "type": "blank", "id": "audio34_q40" },
+        { "type": "text", "value": ", please. " },
+        { "type": "blank", "id": "audio34_q41" },
+        { "type": "text", "value": " are what is required and I always recommend that " },
+        { "type": "blank", "id": "audio34_q42" },
+        { "type": "text", "value": " because the mountain air " },
+        { "type": "blank", "id": "audio34_q43" },
+        { "type": "text", "value": " compared to the heat and " },
+        { "type": "blank", "id": "audio34_q44" },
+        { "type": "text", "value": ". Oh, something else I should remind you of—" },
+        { "type": "blank", "id": "audio34_q45" },
+        { "type": "text", "value": " are just for coach travel, although we can arrange for a mini-bus to " },
+        { "type": "blank", "id": "audio34_q46" },
+        { "type": "text", "value": " and bring you to the departure point free of charge. If you want to avail yourself of this service, be sure to " },
+        { "type": "blank", "id": "audio34_q47" },
+        { "type": "text", "value": ". You will need to bring along extra cash or a credit card to cover expenses such as optional side-trips, food and drink and, of course, " },
+        { "type": "blank", "id": "audio34_q48" },
+        { "type": "text", "value": " to the various attractions." }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Well, that's all I have time to tell you—if you have further enquiries, please use the phone number on the brochure." }
+      ]
+    }
+  ]
+}

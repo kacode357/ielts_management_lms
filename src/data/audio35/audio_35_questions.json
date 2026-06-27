@@ -1,0 +1,376 @@
+{
+  "title": "Volunteer Programme Support",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Come in and sit down, Lester... Sharon. I can see " },
+        { "type": "blank", "id": "audio35_q1" },
+        { "type": "text", "value": " To start with, I'd just like to say that we " },
+        { "type": "blank", "id": "audio35_q2" },
+        { "type": "text", "value": " and recognise their importance and assistance " },
+        { "type": "blank", "id": "audio35_q3" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Thank you ... we're looking forward to helping out, but what exactly can we do?" }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Volunteers can " },
+        { "type": "blank", "id": "audio35_q4" },
+        { "type": "text", "value": " in general they enrich the English language programme and complement the contributions " },
+        { "type": "blank", "id": "audio35_q5" }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "Yes, but...what would we do " },
+        { "type": "blank", "id": "audio35_q6" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Oh, a variety of tasks, " },
+        { "type": "blank", "id": "audio35_q7" },
+        { "type": "text", "value": " you can tutor individual students in reading..." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "I thought that might be the case ..." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "But...you can also help students " },
+        { "type": "blank", "id": "audio35_q8" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Great...Is that also a one-on-one activity?" }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Oh, yes, definitely; but volunteers are also called on to " },
+        { "type": "blank", "id": "audio35_q9" }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "And, what exactly would we do there?" }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Well, ", "type": "text" },
+        { "type": "blank", "id": "audio35_q10" },
+        { "type": "text", "value": " of course, but usually you take on " },
+        { "type": "blank", "id": "audio35_q11" }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "A teacher's assistant? Yes, that's it." }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "blank", "id": "audio35_q12" },
+        { "type": "text", "value": " and good preparation for our own careers." }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Then, an enormous area of assistance is developing students' " },
+        { "type": "blank", "id": "audio35_q13" }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Yes, I can imagine that's why some of them " },
+        { "type": "blank", "id": "audio35_q14" }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "There's also " },
+        { "type": "blank", "id": "audio35_q15" },
+        { "type": "text", "value": " They always need volunteers there." }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "But we have no training in special needs." }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "That's not necessary. These students just really appreciate having any extra attention-sometimes help with the simplest things " },
+        { "type": "blank", "id": "audio35_q16" }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Ah... well, that's something all able-bodied students should learn. " },
+        { "type": "blank", "id": "audio35_q17" },
+        { "type": "text", "value": " the strangest pen grips amongst my peers and I'm sure they must " },
+        { "type": "blank", "id": "audio35_q18" },
+        { "type": "text", "value": " or shoulder muscles " },
+        { "type": "blank", "id": "audio35_q19" }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Yes. I'm sure you're right. " },
+        { "type": "blank", "id": "audio35_q20" },
+        { "type": "text", "value": " I'd like you two " },
+        { "type": "blank", "id": "audio35_q21" },
+        { "type": "text", "value": " is encouraging and improving the students' work ethic." }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "Oh, " },
+        { "type": "blank", "id": "audio35_q22" },
+        { "type": "text", "value": "!" }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "No, but it is important, and I can give you some training in that field." }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "That'll be good." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "blank", "id": "audio35_q23" },
+        { "type": "text", "value": " you'll be working alongside quality teachers " },
+        { "type": "blank", "id": "audio35_q24" },
+        { "type": "text", "value": " who are not only caring role-models but excellent motivators." }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio35_q25" }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Yes, the teachers you'll be assigned to are innovative and very responsive " },
+        { "type": "blank", "id": "audio35_q26" },
+        { "type": "text", "value": " individual students." }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "If that's true, they " },
+        { "type": "blank", "id": "audio35_q27" },
+        { "type": "text", "value": " a variety of teaching styles." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Quite right. You know, part of my mission is to forge close partnerships between " },
+        { "type": "blank", "id": "audio35_q28" },
+        { "type": "text", "value": " like yourselves. As far as I can see everyone has something to gain from " },
+        { "type": "blank", "id": "audio35_q29" },
+        { "type": "text", "value": " -not just the students you're helping." }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "There are a number of interesting developments going on at the moment and I've chosen you two because of " },
+        { "type": "blank", "id": "audio35_q30" },
+        { "type": "text", "value": " now, you, Sharon..." }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Sharon",
+      "text": [
+        { "type": "text", "value": "I majored in business studies before I came to teachers' " },
+        { "type": "blank", "id": "audio35_q31" }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Well, I've always been " },
+        { "type": "blank", "id": "audio35_q32" },
+        { "type": "text", "value": ", marine biology, in particular." }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Yes, I think " },
+        { "type": "blank", "id": "audio35_q33" },
+        { "type": "text", "value": " The school you're going to assist at is augmenting " },
+        { "type": "blank", "id": "audio35_q34" },
+        { "type": "text", "value": " offered within its subjects. Educational philosophy these days seems to recognise the importance of increasing practical components " },
+        { "type": "blank", "id": "audio35_q35" },
+        { "type": "text", "value": " Areas of development being pursued include " },
+        { "type": "blank", "id": "audio35_q36" },
+        { "type": "text", "value": ", agriculture, business education and " },
+        { "type": "blank", "id": "audio35_q37" },
+        { "type": "text", "value": "; but the marine studies course is already " },
+        { "type": "blank", "id": "audio35_q38" }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Oh, now I see where we fit in." }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "You'll find that the school has " },
+        { "type": "blank", "id": "audio35_q39" },
+        { "type": "text", "value": " There are 3 computer laboratories and a special-needs network with 6 stations." }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Ah...they are well equipped." }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Mmm ...wait till you see their Independent Learning Centre." }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "What's so special about their ILC?" }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "They have the most " },
+        { "type": "blank", "id": "audio35_q40" },
+        { "type": "text", "value": " I've ever seen in this region of the country." }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Really?" }
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Ah huh. And there's a wide number of " },
+        { "type": "blank", "id": "audio35_q41" },
+        { "type": "text", "value": ", an extensive sporting programme..." }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "Oh, sport-not my thing at all..." }
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "Liaison",
+      "text": [
+        { "type": "text", "value": "Well, no, maybe not, but they also promote students' participation in different " },
+        { "type": "blank", "id": "audio35_q42" }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "Lester",
+      "text": [
+        { "type": "text", "value": "I'm impressed-I think we're going to enjoy this." }
+      ]
+    }
+  ]
+}
