@@ -1,0 +1,319 @@
+{
+  "title": "Wetlands Geography Project",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Hi, Opal. Any ideas about what we should " },
+        { "type": "blank", "id": "audio39_q1" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Hi, Perry. Yes, I'd like to do something on Wetlands." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "I think that's a great idea-where do we start?" }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Opal",
+      "text": [
+        { "type": "blank", "id": "audio39_q2" },
+        { "type": "text", "value": "-something like: 'a marshy area of land where the soil near the surface is saturated or covered with water, forming " },
+        { "type": "blank", "id": "audio39_q3" },
+        { "type": "text", "value": "'." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "And we could add: 'the flora and fauna of the area " },
+        { "type": "blank", "id": "audio39_q4" },
+        { "type": "text", "value": " the water-logged soil for their survival'." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Yes, " },
+        { "type": "blank", "id": "audio39_q5" },
+        { "type": "text", "value": "-when commercial developers or farmers come along and decide to drain the swamps-everything dies. " },
+        { "type": "blank", "id": "audio39_q6" },
+        { "type": "text", "value": " Did you know that, as a result, wetlands are recognised internationally as one of " },
+        { "type": "blank", "id": "audio39_q7" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "That's right. We'll have to be sure to discuss their importance " },
+        { "type": "blank", "id": "audio39_q8" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "But, first; I think we should state " },
+        { "type": "blank", "id": "audio39_q9" },
+        { "type": "text", "value": " wetlands." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Well, there are three that I can think of. To start with: wetlands are limited areas of open water, " },
+        { "type": "blank", "id": "audio39_q10" }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Yes ...and the second could be that there's usually a variety of water-tolerant flora " },
+        { "type": "blank", "id": "audio39_q11" },
+        { "type": "text", "value": " and throughout the water." }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Of course, " },
+        { "type": "blank", "id": "audio39_q12" },
+        { "type": "text", "value": ", there may be more or less water but levels generally " },
+        { "type": "blank", "id": "audio39_q13" }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Okay...now let's move on to the importance of wetlands. Shall we start with plant and wildlife habitat?" }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Shall we start with plant and wildlife habitat?" }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Yes, I think we should " },
+        { "type": "blank", "id": "audio39_q14" },
+        { "type": "text", "value": " wetlands are homes for countless species of water birds, frogs, invertebrates and fish..." }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "... and they support many varieties of " },
+        { "type": "blank", "id": "audio39_q15" },
+        { "type": "text", "value": " ..." }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "which brings us naturally " },
+        { "type": "blank", "id": "audio39_q16" },
+        { "type": "text", "value": "-even small wetlands act as borders between land and permanent water. They turn into refuge areas or sanctuaries " },
+        { "type": "blank", "id": "audio39_q17" },
+        { "type": "text", "value": "and they often support " },
+        { "type": "blank", "id": "audio39_q18" },
+        { "type": "text", "value": " plants and animals found nowhere else." }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Exactly. And they're especially important as nurseries " },
+        { "type": "blank", "id": "audio39_q19" },
+        { "type": "text", "value": " for all kinds of fish, birds and invertebrates." }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Wetlands are important for improving " },
+        { "type": "blank", "id": "audio39_q20" },
+        { "type": "text", "value": ", too." }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Yes, that's because the flow of water through the wetlands is slowed by bank and in-stream plants, and so it allows sediment to settle. Nutrients, such as nitrogen and phosphorous and " },
+        { "type": "blank", "id": "audio39_q21" },
+        { "type": "text", "value": "as the water passes through." }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Okay, at this point I think we should look at mangroves ... they're important for nutrient removal ..." }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "I think 'nutrient recycling' " },
+        { "type": "blank", "id": "audio39_q22" },
+        { "type": "text", "value": " ... and biological productivity ... because wetlands are " },
+        { "type": "blank", "id": "audio39_q23" }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Should we do a food web, then?" }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Perry",
+      "text": [
+        { "type": "blank", "id": "audio39_q24" },
+        { "type": "text", "value": "some sort showing the importance of mangrove trees" },
+        { "type": "blank", "id": "audio39_q25" },
+        { "type": "text", "value": " ..." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "How about you explain it " },
+        { "type": "blank", "id": "audio39_q26" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Right. Well, let's start with the mangrove trees. They're very special because of their aerial roots that " },
+        { "type": "blank", "id": "audio39_q27" },
+        { "type": "text", "value": "even when the tide is high and their roots are under water. They can live in salt water and " },
+        { "type": "blank", "id": "audio39_q28" },
+        { "type": "text", "value": " travels up to the older leaves and then these " },
+        { "type": "blank", "id": "audio39_q29" },
+        { "type": "text", "value": " A unique feature of mangroves is their ability to " },
+        { "type": "blank", "id": "audio39_q30" },
+        { "type": "text", "value": " while they're still on the tree and the seedlings drop down " },
+        { "type": "blank", "id": "audio39_q31" }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Mmm, got that. What happens to those older leaves that fall?" }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Perry",
+      "text": [
+        { "type": "blank", "id": "audio39_q32" },
+        { "type": "text", "value": ", or litter, decay in the water and " },
+        { "type": "blank", "id": "audio39_q33" },
+        { "type": "text", "value": " that feeds bacteria, worms and small crustaceans." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "You mean things like prawns and crabs " },
+        { "type": "blank", "id": "audio39_q34" },
+        { "type": "text", "value": " the decomposed leaves?" }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Yes, and " },
+        { "type": "blank", "id": "audio39_q35" },
+        { "type": "text", "value": "I. And bigger fish feed on them." }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "And bigger fish feed on them." }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Eventually the remaining " },
+        { "type": "blank", "id": "audio39_q36" },
+        { "type": "text", "value": "-which is now just very tiny particles-is taken up " },
+        { "type": "blank", "id": "audio39_q37" },
+        { "type": "text", "value": " providing nourishment for the mangrove trees. And the cycle begins all over again." }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "And the cycle begins all over again." }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Yes, that's exactly it, that's what we'll call it-the " },
+        { "type": "blank", "id": "audio39_q38" },
+        { "type": "text", "value": " of mangrove litter." }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Opal",
+      "text": [
+        { "type": "text", "value": "Great. I'll go home and work on this and we'll meet again tomorrow." }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Perry",
+      "text": [
+        { "type": "text", "value": "Okay, see you then." }
+      ]
+    }
+  ]
+}

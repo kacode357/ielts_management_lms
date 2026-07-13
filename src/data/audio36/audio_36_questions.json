@@ -1,0 +1,120 @@
+{
+  "title": "Anxiety",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "My talk today is on Anxiety. Anxiety is something " },
+        { "type": "blank", "id": "audio36_q1" },
+        { "type": "text", "value": " at some time in your life so you'll know that " },
+        { "type": "blank", "id": "audio36_q2" },
+        { "type": "text", "value": " in which feelings of dread, fear and mental agitation predominate." }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "However, what we call " },
+        { "type": "blank", "id": "audio36_q3" },
+        { "type": "text", "value": ", or anxiety neurosis or phobic state-" },
+        { "type": "blank", "id": "audio36_q4" },
+        { "type": "text", "value": "-is characterized by anxiety reactions far greater than those " },
+        { "type": "blank", "id": "audio36_q5" },
+        { "type": "text", "value": " the circumstances and these reactions " },
+        { "type": "blank", "id": "audio36_q6" },
+        { "type": "text", "value": " and prolonged. This is " },
+        { "type": "blank", "id": "audio36_q7" },
+        { "type": "text", "value": "neurosis in westernized countries. Usually, normal anxiety decreases with repeated exposure " },
+        { "type": "blank", "id": "audio36_q8" },
+        { "type": "text", "value": " whereas a neurotic anxiety tends to increase. Gradually the person is inclined to avoid the feared situation and views it with increasing dread. Sometimes there may be an inherited tendency for this, but " },
+        { "type": "blank", "id": "audio36_q9" },
+        { "type": "text", "value": " are more important. The individual " },
+        { "type": "blank", "id": "audio36_q10" },
+        { "type": "text", "value": "throughout life and a stressful condition, just before symptoms set in, is common. Often " },
+        { "type": "blank", "id": "audio36_q11" },
+        { "type": "text", "value": "anxiety, possibly for weeks or months, before the ultimate break occurs. The precipitating cause is usually one of great significance " },
+        { "type": "blank", "id": "audio36_q12" },
+        { "type": "text", "value": ", often related to " },
+        { "type": "blank", "id": "audio36_q13" },
+        { "type": "text", "value": "-such as bereavement, a break-up, threats to career, health or personal integrity." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "What are the symptoms of phobia? Well, phobic states often develop into severe, crippling " },
+        { "type": "blank", "id": "audio36_q14" },
+        { "type": "text", "value": "that can be very difficult to overcome. The person " },
+        { "type": "blank", "id": "audio36_q15" },
+        { "type": "text", "value": " certain situations. It's not uncommon to " },
+        { "type": "blank", "id": "audio36_q16" },
+        { "type": "text", "value": " at the same time. I'm going to name some frequent phobias and give you " },
+        { "type": "blank", "id": "audio36_q17" },
+        { "type": "text", "value": ": Let's start with Agoraphobia which is when the person " },
+        { "type": "blank", "id": "audio36_q18" },
+        { "type": "text", "value": "about venturing outside the safety of " },
+        { "type": "blank", "id": "audio36_q19" },
+        { "type": "text", "value": ". It may be impossible for this person to ever go out alone. " },
+        { "type": "blank", "id": "audio36_q20" },
+        { "type": "text", "value": " is completely irrational and they often end up leading very secluded lives." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Claustrophobia, on the other hand, is a morbid fear of closed-in areas or places-if you see me " },
+        { "type": "blank", "id": "audio36_q21" },
+        { "type": "text", "value": " instead of the lift, think about it-am I trying to " },
+        { "type": "blank", "id": "audio36_q22" },
+        { "type": "text", "value": " or am I trying to avoid the confined interior of the lift? And I'm sure you all know people " },
+        { "type": "blank", "id": "audio36_q23" },
+        { "type": "text", "value": "-sometimes it's the fear of being enclosed in the aeroplane itself-and you can imagine how the cramped confines of airline toilets are " },
+        { "type": "blank", "id": "audio36_q24" }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Now, I'll move on to discuss Social phobia which, believe it or not, is more common in men. It's an acute anxiety that develops when " },
+        { "type": "blank", "id": "audio36_q25" },
+        { "type": "text", "value": " They feel self-conscious, apprehensive and embarrassed. If attention (real or imagined) is focused on the sufferer, " },
+        { "type": "blank", "id": "audio36_q26" },
+        { "type": "text", "value": " and may blush, stammer or stutter. Some sufferers even develop tremors-shaking or trembling movements of a part ( or parts) of the body-or, another very common sign of their " },
+        { "type": "blank", "id": "audio36_q27" },
+        { "type": "text", "value": " is that they perspire profusely on their palms, under their arms or on their feet." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "That brings me to the last one that I want to mention today and that is Single phobia-and no, it's not a fear of lifelong bachelorhood! This one is actually precipitated by an acute aversion " },
+        { "type": "blank", "id": "audio36_q28" },
+        { "type": "text", "value": "-you may have heard of the term, arachnophobia? Well it applies specifically to spiders-but any single thing can basically cause a strong aversion: snakes, frogs, mice or rats, for instance. I can assure you, " },
+        { "type": "blank", "id": "audio36_q29" },
+        { "type": "text", "value": " You name it, and someone is sure to " },
+        { "type": "blank", "id": "audio36_q30" },
+        { "type": "text", "value": " Some people are terrified of the dark, for example, and I'm not talking about young children here. " },
+        { "type": "blank", "id": "audio36_q31" },
+        { "type": "text", "value": "how many adults are afflicted in this way." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Well, I see " },
+        { "type": "blank", "id": "audio36_q32" },
+        { "type": "text", "value": ". Next week, I'll go into some of " },
+        { "type": "blank", "id": "audio36_q33" },
+        { "type": "text", "value": " that have been used over the ages and some of the relatively new drugs that have recently come on the scene." }
+      ]
+    }
+  ]
+}

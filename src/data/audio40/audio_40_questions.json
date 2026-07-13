@@ -1,0 +1,121 @@
+{
+  "title": "Meteorology and Cloud Formation",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Good morning. It's good to see so many of you " },
+        { "type": "blank", "id": "audio40_q1" },
+        { "type": "text", "value": ".meteorology. As you are all newcomers to the topic, " },
+        { "type": "blank", "id": "audio40_q2" },
+        { "type": "text", "value": " In fact, let's begin with a very simple definition of what meteorology is-the suffix '-ology' " },
+        { "type": "blank", "id": "audio40_q3" },
+        { "type": "text", "value": "-at least you can all guess that it is' the study of' ... something. Meteorology is indeed a scientific study " },
+        { "type": "blank", "id": "audio40_q4" },
+        { "type": "text", "value": " in the atmosphere " },
+        { "type": "blank", "id": "audio40_q5" },
+        { "type": "text", "value": " , of course. And you all know what weather is, right? " },
+        { "type": "blank", "id": "audio40_q6" },
+        { "type": "text", "value": ".the sun, the atmosphere, water vapour and the wind. They all come together, disseminating heat from the sun " },
+        { "type": "blank", "id": "audio40_q7" },
+        { "type": "text", "value": " and making clouds in the layer of the atmosphere " },
+        { "type": "blank", "id": "audio40_q8" },
+        { "type": "text", "value": " which is called the troposphere. Look up into the sky and on almost any day of the year " },
+        { "type": "blank", "id": "audio40_q9" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Clouds form when water that has evaporated " },
+        { "type": "blank", "id": "audio40_q10" },
+        { "type": "text", "value": " condenses onto microscopic dust particles ( or other particles) " },
+        { "type": "blank", "id": "audio40_q11" },
+        { "type": "text", "value": ". Cloud formation takes different shapes and they mostly " },
+        { "type": "blank", "id": "audio40_q12" },
+        { "type": "text", "value": ".Lat in roots. Now, let's look at " },
+        { "type": "blank", "id": "audio40_q13" },
+        { "type": "text", "value": " We'll start with Cumulus which is a low cloud with a white, puffy appearance and most often composed of " },
+        { "type": "blank", "id": "audio40_q14" },
+        { "type": "text", "value": ". It gets its name from 'cumulo' meaning 'heap' for its typical 'piled-up' appearance." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Now, let's move on to Stratus (from 'strato' meaning 'layer' )-these are the grey, " },
+        { "type": "blank", "id": "audio40_q15" },
+        { "type": "text", "value": " (often with a flat base) that you see on an overcast day and they too are " },
+        { "type": "blank", "id": "audio40_q16" },
+        { "type": "text", "value": " At this point, I should mention Fog, which you probably " },
+        { "type": "blank", "id": "audio40_q17" },
+        { "type": "text", "value": ", but fog consists of very low stratus-ground-bugging clouds." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "The high altitude Cirrus cloud, on the other hand is mostly made of ice crystals and appears wispy and thin-almost hair-like-in fact, that's where " },
+        { "type": "blank", "id": "audio40_q18" },
+        { "type": "text", "value": " ... from the word 'cirro' meaning 'wisp of hair'. They are generally fair-weather clouds. Not so the Cumulonimbus- " },
+        { "type": "blank", "id": "audio40_q19" },
+        { "type": "text", "value": "-they extend way up into the troposphere and these are the ones that " },
+        { "type": "blank", "id": "audio40_q20" },
+        { "type": "text", "value": ", thunder, heavy rain, strong winds and tornadoes. Beware the Cumulonimbus! You already know what cumulo means and " },
+        { "type": "blank", "id": "audio40_q21" },
+        { "type": "text", "value": " 'nimbus' means 'rain' and, added as a suffix, " },
+        { "type": "blank", "id": "audio40_q22" },
+        { "type": "text", "value": "the cloud's ability to produce precipitation which could be rain, snow or hailstones." }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "As this course progresses, you'll learn a lot more about " },
+        { "type": "blank", "id": "audio40_q23" },
+        { "type": "text", "value": " , but before I finish today, I want to " },
+        { "type": "blank", "id": "audio40_q24" },
+        { "type": "text", "value": " something I mentioned before-dust. It is generally accepted that when water vapour ascends " },
+        { "type": "blank", "id": "audio40_q25" },
+        { "type": "text", "value": " cloud formation it condenses onto dust particles. So, it was assumed, large dust particles would produce larger droplets and " },
+        { "type": "blank", "id": "audio40_q26" },
+        { "type": "text", "value": ". However, recent research " },
+        { "type": "blank", "id": "audio40_q27" },
+        { "type": "text", "value": " Droplet size increases the farther the clouds are from dust-filled air. More dust reaching rain clouds " },
+        { "type": "blank", "id": "audio40_q28" },
+        { "type": "text", "value": " Scientists have shown that as more and more dust " },
+        { "type": "blank", "id": "audio40_q29" },
+        { "type": "text", "value": " , the same amount of water becomes spread out. " },
+        { "type": "blank", "id": "audio40_q30" },
+        { "type": "text", "value": " scatter instead of combining and growing large enough to make up raindrops." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "This study shows that higher dust frequency is not inevitably " },
+        { "type": "blank", "id": "audio40_q31" },
+        { "type": "text", "value": " diminished rainfall " },
+        { "type": "blank", "id": "audio40_q32" },
+        { "type": "text", "value": "! Therefore, loss of topsoil from over-grazing, " },
+        { "type": "blank", "id": "audio40_q33" },
+        { "type": "text", "value": " or bad livestock management " },
+        { "type": "blank", "id": "audio40_q34" },
+        { "type": "text", "value": "will contribute to " },
+        { "type": "blank", "id": "audio40_q35" },
+        { "type": "text", "value": " those arid regions. Your assignment for this week will be " },
+        { "type": "blank", "id": "audio40_q36" },
+        { "type": "text", "value": " and write a report on how dust from damaged land may " },
+        { "type": "blank", "id": "audio40_q37" },
+        { "type": "text", "value": " and lead to further desertification of arid areas. In other words, how land use has an impact on climate change." }
+      ]
+    }
+  ]
+}

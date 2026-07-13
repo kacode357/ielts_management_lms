@@ -37,7 +37,12 @@ const audioList = [
   { id: 'audio32', title: 'Audio 32', questions: 42 },
   { id: 'audio33', title: 'Audio 33', questions: 36 },
   { id: 'audio34', title: 'Audio 34', questions: 48 },
-  { id: 'audio35', title: 'Audio 35', questions: 42 }
+  { id: 'audio35', title: 'Audio 35', questions: 42 },
+  { id: 'audio36', title: 'Audio 36', questions: 33 },
+  { id: 'audio37', title: 'Audio 37', questions: 36 },
+  { id: 'audio38', title: 'Audio 38', questions: 48 },
+  { id: 'audio39', title: 'Audio 39', questions: 38 },
+  { id: 'audio40', title: 'Audio 40', questions: 37 }
 ]
 
 function Listening() {

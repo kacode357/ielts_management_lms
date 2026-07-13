@@ -1,0 +1,169 @@
+{
+  "title": "Child Safety",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "I'm sure " },
+        { "type": "blank", "id": "audio38_q1" },
+        { "type": "text", "value": " that babies, infants and children " },
+        { "type": "blank", "id": "audio38_q2" },
+        { "type": "text", "value": " an enormous] number of potentially serious accidents " },
+        { "type": "blank", "id": "audio38_q3" },
+        { "type": "text", "value": " Accidents where vehicles are involved " },
+        { "type": "blank", "id": "audio38_q4" },
+        { "type": "text", "value": " but particularly so when children are injured. Now, of course , most should never happen but, unfortunately, the casualty lists " },
+        { "type": "blank", "id": "audio38_q5" },
+        { "type": "text", "value": ". It still surprises me that " },
+        { "type": "blank", "id": "audio38_q6" },
+        { "type": "text", "value": " fall from shopping carts, for example. With small children, however, " },
+        { "type": "blank", "id": "audio38_q7" },
+        { "type": "text", "value": " will occur inside the house or " },
+        { "type": "blank", "id": "audio38_q8" },
+        { "type": "text", "value": ". Many of the risks are obvious, but are often ill-considered - " },
+        { "type": "blank", "id": "audio38_q9" },
+        { "type": "text", "value": ". Older children are exposed to a greater number, for they are also open to the hazards " },
+        { "type": "blank", "id": "audio38_q10" },
+        { "type": "text", "value": " This should be " },
+        { "type": "blank", "id": "audio38_q11" },
+        { "type": "text", "value": " by parents." }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Education is vital. There are some very good " },
+        { "type": "blank", "id": "audio38_q12" },
+        { "type": "text", "value": " which do the job quite well but children should be educated from the moment they learn to crawl and so " },
+        { "type": "blank", "id": "audio38_q13" },
+        { "type": "text", "value": " parents who can instil safety habits in the responsive minds of their children " },
+        { "type": "blank", "id": "audio38_q14" },
+        { "type": "text", "value": ". In this way, they will gradually learn to " },
+        { "type": "blank", "id": "audio38_q15" },
+        { "type": "text", "value": ". Of course, if they go to pre-school, there'll be fewer hazards there but I'm going to cover a few of the important household areas now." }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Firstly, kitchen hazards-the family kitchen is actually " },
+        { "type": "blank", "id": "audio38_q16" },
+        { "type": "text", "value": " .although children may spend a lot of time there with their mothers. All I can say is: never leave saucepans " },
+        { "type": "blank", "id": "audio38_q17" },
+        { "type": "text", "value": " with their handles jutting out-it's easy for little hands to seize hold of them and adults can even catch themselves on them too. Scalding is a serious issue " },
+        { "type": "blank", "id": "audio38_q18" },
+        { "type": "text", "value": "." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "If you are transporting dangerous items about the kitchen, always look to see where children are standing. Hot items " },
+        { "type": "blank", "id": "audio38_q19" },
+        { "type": "text", "value": " Cooking with an infant at your feet can be very dangerous. Be careful with " },
+        { "type": "blank", "id": "audio38_q20" },
+        { "type": "text", "value": " as well. And not the least of dangers is treading on the child-or their hands or feet at any rate!" }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio38_q21" },
+        { "type": "text", "value": " An amazing number of household items are potentially lethal to babies but " },
+        { "type": "blank", "id": "audio38_q22" },
+        { "type": "text", "value": " Bleach, drain cleaner and similar items should be " },
+        { "type": "blank", "id": "audio38_q23" },
+        { "type": "text", "value": " , who have no idea of their risks. And a word of warning here: " },
+        { "type": "blank", "id": "audio38_q24" },
+        { "type": "text", "value": " .as containers for lethal fluids and never leave these items " },
+        { "type": "blank", "id": "audio38_q25" }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Playground equipment deserves a mention, too-even in the most skilfully designed playground, " },
+        { "type": "blank", "id": "audio38_q26" },
+        { "type": "text", "value": " We all enjoy the seesaws but do make sure that " },
+        { "type": "blank", "id": "audio38_q27" },
+        { "type": "text", "value": " Personally, I don't understand the attraction of the roundabout- " },
+        { "type": "blank", "id": "audio38_q28" },
+        { "type": "text", "value": " .... but the little ones enjoy the ride. Swings are great fun but children just don't understand " },
+        { "type": "blank", "id": "audio38_q29" },
+        { "type": "text", "value": " and striking a standing child-the results are often " },
+        { "type": "blank", "id": "audio38_q30" },
+        { "type": "text", "value": " ..or even broken bones. Fractured skulls are the worst playground injuries I've seen and these are common when young ones " },
+        { "type": "blank", "id": "audio38_q31" },
+        { "type": "text", "value": " such as the top of a climbing frame. I think the slides are much safer. Whatever your preference, though, be sure to " },
+        { "type": "blank", "id": "audio38_q32" },
+        { "type": "text", "value": " your children in the playground." }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "We're up to bath-time now...you know that you should never leave a baby alone " },
+        { "type": "blank", "id": "audio38_q33" },
+        { "type": "text", "value": " because it's possible for babies to drown in a few centimetres of water; but how many of you have been tempted to " },
+        { "type": "blank", "id": "audio38_q34" },
+        { "type": "text", "value": " when it rings? My advice to you is to " },
+        { "type": "blank", "id": "audio38_q35" },
+        { "type": "text", "value": "! And remember when you're filling the bath to put cold water in before the hot to prevent severe scalding " },
+        { "type": "blank", "id": "audio38_q36" },
+        { "type": "text", "value": " before it's ready." }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Moving on to " },
+        { "type": "blank", "id": "audio38_q37" },
+        { "type": "text", "value": " ..first of all, power points. These have a fascination for toddlers and " },
+        { "type": "blank", "id": "audio38_q38" },
+        { "type": "text", "value": " like hairpins, nails, screwdrivers-you name it. Points should always be fitted with " },
+        { "type": "blank", "id": "audio38_q39" },
+        { "type": "text", "value": " to prevent this. Teach children to " },
+        { "type": "blank", "id": "audio38_q40" },
+        { "type": "text", "value": " -because they are all potential hazards." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "blank", "id": "audio38_q41" },
+        { "type": "text", "value": "? Unfortunately, I still see parents smoking in spaces where their children have to inhale the cigarette smoke-we all know the dangers of " },
+        { "type": "blank", "id": "audio38_q42" },
+        { "type": "text", "value": " ..But even leaving a packet of cigarettes within reach is dangerous because eating just one cigarette " },
+        { "type": "blank", "id": "audio38_q43" },
+        { "type": "text", "value": " If quitting the habit is too difficult, please ensure all tobacco products " },
+        { "type": "blank", "id": "audio38_q44" },
+        { "type": "text", "value": " and smoke outside." }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Speaker",
+      "text": [
+        { "type": "text", "value": "Lastly, given our cold winters, I need to warn you about " },
+        { "type": "blank", "id": "audio38_q45" },
+        { "type": "text", "value": " Open fires and heaters must be covered by " },
+        { "type": "blank", "id": "audio38_q46" },
+        { "type": "text", "value": " Even radiators and other sources of heat-which are attractive to children--can cause a nasty bum " },
+        { "type": "blank", "id": "audio38_q47" },
+        { "type": "text", "value": " Remember, there is " },
+        { "type": "blank", "id": "audio38_q48" },
+        { "type": "text", "value": " good time to leave infants by themselves in a room where there is an unprotected source of heat." }
+      ]
+    }
+  ]
+}

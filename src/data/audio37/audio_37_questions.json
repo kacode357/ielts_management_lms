@@ -1,0 +1,442 @@
+{
+  "title": "Adult Education Classes",
+  "type": "gap_fill_exercise",
+  "dialogue": [
+    {
+      "id": 1,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Good afternoon. Estelle speaking... What can I do for you?" }
+      ]
+    },
+    {
+      "id": 2,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "I was told that the school holds...umm, " },
+        { "type": "blank", "id": "audio37_q1" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 3,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Yes, it does. We run seven a week: " },
+        { "type": "blank", "id": "audio37_q2" },
+        { "type": "text", "value": " and one on Wednesdays." }
+      ]
+    },
+    {
+      "id": 4,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Are they all " },
+        { "type": "blank", "id": "audio37_q3" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 5,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "No, because of the number of people who work shifts these days " },
+        { "type": "blank", "id": "audio37_q4" },
+        { "type": "text", "value": " as well." }
+      ]
+    },
+    {
+      "id": 6,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Well, I don't work and I really want to get out and meet people so " },
+        { "type": "blank", "id": "audio37_q5" }
+      ]
+    },
+    {
+      "id": 7,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "What is it you're " },
+        { "type": "blank", "id": "audio37_q6" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 8,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Oh, anything, really." }
+      ]
+    },
+    {
+      "id": 9,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Okay...on Tuesdays we have a Writing Workshop for those people " },
+        { "type": "blank", "id": "audio37_q7" },
+        { "type": "text", "value": " write but are hesitant about putting pen to paper." }
+      ]
+    },
+    {
+      "id": 10,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Hmm..." }
+      ]
+    },
+    {
+      "id": 11,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "It's an evening class and runs from six to seven thirty but " },
+        { "type": "blank", "id": "audio37_q8" }
+      ]
+    },
+    {
+      "id": 12,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Oh?" }
+      ]
+    },
+    {
+      "id": 13,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Yes. The tutor " },
+        { "type": "blank", "id": "audio37_q9" },
+        { "type": "text", "value": " restrict participants to a maximum of ten per session...so, I'll have to check and let you know " },
+        { "type": "blank", "id": "audio37_q10" }
+      ]
+    },
+    {
+      "id": 14,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Thank you." }
+      ]
+    },
+    {
+      "id": 15,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Also on Tuesdays there is a Book Club designed for older adults looking to be inspired, to learn, and " },
+        { "type": "blank", "id": "audio37_q11" }
+      ]
+    },
+    {
+      "id": 16,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Are there any restrictions on that?" }
+      ]
+    },
+    {
+      "id": 17,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Not really but " },
+        { "type": "blank", "id": "audio37_q12" },
+        { "type": "text", "value": " the prescribed book each week." }
+      ]
+    },
+    {
+      "id": 18,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Mmm, you have to read set books, do you?" }
+      ]
+    },
+    {
+      "id": 19,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Yes, and " },
+        { "type": "blank", "id": "audio37_q13" },
+        { "type": "text", "value": " by finishing one a week." }
+      ]
+    },
+    {
+      "id": 20,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "I understand. What else do you have?" }
+      ]
+    },
+    {
+      "id": 21,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "There's a History Group on Tuesdays as well...run by " },
+        { "type": "blank", "id": "audio37_q14" },
+        { "type": "text", "value": " who provides a fascinating glimpse for you into " },
+        { "type": "blank", "id": "audio37_q15" },
+        { "type": "text", "value": " around this area a hundred years ago." }
+      ]
+    },
+    {
+      "id": 22,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Hmm.. .I don't think so." }
+      ]
+    },
+    {
+      "id": 23,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Well, what about Scrabble Club on Wednesday-it's extremely popular, you know." }
+      ]
+    },
+    {
+      "id": 24,
+      "speaker": "Woman",
+      "text": [
+        { "type": "blank", "id": "audio37_q16" },
+        { "type": "text", "value": " What time?" }
+      ]
+    },
+    {
+      "id": 25,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Two to three thirty in the afternoon." }
+      ]
+    },
+    {
+      "id": 26,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Yes. " },
+        { "type": "blank", "id": "audio37_q17" }
+      ]
+    },
+    {
+      "id": 27,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Well, if you like scrabble you might like to join the Chess Night...on Thursday evenings-" },
+        { "type": "blank", "id": "audio37_q18" },
+        { "type": "text", "value": " though." }
+      ]
+    },
+    {
+      "id": 28,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Unfortunately " },
+        { "type": "blank", "id": "audio37_q19" }
+      ]
+    },
+    {
+      "id": 29,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Would you be interested in Cake Decorating?" }
+      ]
+    },
+    {
+      "id": 30,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Well, " },
+        { "type": "blank", "id": "audio37_q20" }
+      ]
+    },
+    {
+      "id": 31,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Have you thought about decorated cakes though? You know they make a wonderful focal point of any " },
+        { "type": "blank", "id": "audio37_q21" }
+      ]
+    },
+    {
+      "id": 32,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Maybe not." }
+      ]
+    },
+    {
+      "id": 33,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Look, I don't know if " },
+        { "type": "blank", "id": "audio37_q22" },
+        { "type": "text", "value": " but next month there's going to be an Adult Learners' Week and " },
+        { "type": "blank", "id": "audio37_q23" },
+        { "type": "text", "value": " learn something new and " },
+        { "type": "blank", "id": "audio37_q24" },
+        { "type": "text", "value": ". All the events are free but " },
+        { "type": "blank", "id": "audio37_q25" }
+      ]
+    },
+    {
+      "id": 34,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "What are the events?" }
+      ]
+    },
+    {
+      "id": 35,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "blank", "id": "audio37_q26" },
+        { "type": "text", "value": " and if you decide there's something in it for you, I can send you " },
+        { "type": "blank", "id": "audio37_q27" }
+      ]
+    },
+    {
+      "id": 36,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Great! When is it?" }
+      ]
+    },
+    {
+      "id": 37,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "The first week " },
+        { "type": "blank", "id": "audio37_q28" },
+        { "type": "text", "value": ", from the first to the eighth." }
+      ]
+    },
+    {
+      "id": 38,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Oh, are they all daytime events?" }
+      ]
+    },
+    {
+      "id": 39,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Yes, but " },
+        { "type": "blank", "id": "audio37_q29" },
+        { "type": "text", "value": " and some are whole-day sessions." }
+      ]
+    },
+    {
+      "id": 40,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Can you just quickly tell me about the half-day ones, please?" }
+      ]
+    },
+    {
+      "id": 41,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Okay. The Techno Expo will help you work with " },
+        { "type": "blank", "id": "audio37_q30" },
+        { "type": "text", "value": " and you can learn more about online privacy and security and online entertainment. That's Monday the first." }
+      ]
+    },
+    {
+      "id": 42,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "In the morning?" }
+      ]
+    },
+    {
+      "id": 43,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Actually " },
+        { "type": "blank", "id": "audio37_q31" },
+        { "type": "text", "value": ", from one to 4.30." }
+      ]
+    },
+    {
+      "id": 44,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "What else is there in the afternoon?" }
+      ]
+    },
+    {
+      "id": 45,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Well, on Wednesday, there's Work/Life Balance-understanding how to " },
+        { "type": "blank", "id": "audio37_q32" },
+        { "type": "text", "value": ", the importance of balance and harmony in your life and " },
+        { "type": "blank", "id": "audio37_q33" }
+      ]
+    },
+    {
+      "id": 46,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "That's another one I'd like to go to-are there any more?" }
+      ]
+    },
+    {
+      "id": 47,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "No, no more half days in the afternoon. Wait a minute... there is a poetry event." }
+      ]
+    },
+    {
+      "id": 48,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "What does that entail?" }
+      ]
+    },
+    {
+      "id": 49,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Writing some inspirational poems and " },
+        { "type": "blank", "id": "audio37_q34" }
+      ]
+    },
+    {
+      "id": 50,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "No, thank you-I'm not going to read my poems to other people!" }
+      ]
+    },
+    {
+      "id": 51,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "I know what you mean." }
+      ]
+    },
+    {
+      "id": 52,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "One " },
+        { "type": "blank", "id": "audio37_q35" },
+        { "type": "text", "value": " can you tell me " },
+        { "type": "blank", "id": "audio37_q36" },
+        { "type": "text", "value": "?" }
+      ]
+    },
+    {
+      "id": 53,
+      "speaker": "Estelle",
+      "text": [
+        { "type": "text", "value": "Yes-all the workshops are at the Central Library." }
+      ]
+    },
+    {
+      "id": 54,
+      "speaker": "Woman",
+      "text": [
+        { "type": "text", "value": "Oh, good. That's handy." }
+      ]
+    }
+  ]
+}
